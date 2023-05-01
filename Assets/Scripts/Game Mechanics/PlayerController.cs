@@ -50,5 +50,7 @@ public class PlayerController : MonoBehaviour
                 GridManager.Instance.blocks[i].status = true;
             }
         }
+
+        //GridManager.Instance.CheckMatches();
     }
 }

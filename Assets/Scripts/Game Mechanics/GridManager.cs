@@ -4,33 +4,25 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class Blocks
-    {
-        public bool status;
-        public GameObject foodComp;
-        public GameObject block;
-    }
-
-
     public static GridManager Instance;
 
     [Header ("Grid Charateristics")]
     public GameObject block;
     public Transform spawnPoint;
     public int gridSize;
-    private int blockIndex = 0;
+    public int blockIndex;
 
     [Header ("Generated Grid Info")]
-    public Blocks[] blocks;
+    public List<Blocks> blocks;
 
     private void Awake()
     {
         Instance = this;
+        blocks = new List<Blocks>(gridSize * gridSize);
+        blockIndex = 0;
     }
     private void Start()
     {
-        blocks = new Blocks[gridSize * gridSize];
         //GenerateGrid();
     }
 
@@ -48,7 +40,9 @@ public class GridManager : MonoBehaviour
             {
                 GameObject gridBloc = Instantiate(block, spawnPoint.position, Quaternion.identity, spawnPoint.parent);
                 spawnPoint.position += new Vector3(3, 0, 0);
-                blocks[blockIndex].block = gridBloc;
+                //Debug.LogError(blocks[blockIndex].block);
+                Blocks curr_block = new Blocks { block = gridBloc };
+                blocks.Add(curr_block);
                 blockIndex++;
 
                 //gridBloc.GetComponent<CubeSlot>().row_p = i;
@@ -57,4 +51,27 @@ public class GridManager : MonoBehaviour
             spawnPoint.position += new Vector3(-3 * gridSize, 0, -3);
         }
     }
+
+    public void CheckMatches()
+    {
+        for (int i = 0; i < gridSize * gridSize; i++)
+        {
+            if(blocks[i].foodComp == blocks[i+1].foodComp)
+            {
+                Debug.LogError("match horizontal");
+            }
+            if(blocks[i].foodComp == blocks[i + gridSize].foodComp)
+            {
+                Debug.LogError("match vertical");
+            }
+        }
+    }    
+}
+
+[System.Serializable]
+public class Blocks
+{
+    public bool status;
+    public GameObject foodComp;
+    public GameObject block;
 }
