@@ -471,11 +471,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burgerComponents:
-  - {fileID: 3850577987796751411, guid: b3fae758df57e2e489a49c7541d9ad41, type: 3}
-  - {fileID: 2705679556930443929, guid: 76642104797526f4c887873d0a84f1e3, type: 3}
-  - {fileID: 2366554938564775961, guid: 596c6aaa6dc62984dac20558008c1141, type: 3}
-  - {fileID: 8893603635720584567, guid: 553fb84f9443ff244a86d091727287d4, type: 3}
-  - {fileID: 344013340249587191, guid: 104e1aa97b0fd8d4d9ff1ea9efa6f1b3, type: 3}
+  - {fileID: 9195770632598853515, guid: 76642104797526f4c887873d0a84f1e3, type: 3}
+  - {fileID: 7250163779976676146, guid: 596c6aaa6dc62984dac20558008c1141, type: 3}
+  - {fileID: 6675645176262182849, guid: 553fb84f9443ff244a86d091727287d4, type: 3}
+  - {fileID: 8609666394640247933, guid: 104e1aa97b0fd8d4d9ff1ea9efa6f1b3, type: 3}
   currentCompenent: {fileID: 0}
 --- !u!1001 &918383166
 PrefabInstance:
@@ -797,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eda799522bfaad498f14adb1235b6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fill: 0
+  slotIndex: 0
 --- !u!1 &1430322110
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,11 +841,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1844f5261384d41ac75335c73bfe12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blocks: []
-  block: {fileID: 8182553429752846789, guid: 70ea1a6c404eebd48b7de59768df8c05, type: 3}
+  cube: {fileID: 714203016796896461, guid: 70ea1a6c404eebd48b7de59768df8c05, type: 3}
   spawnPoint: {fileID: 552464866}
   gridSize: 3
   blockIndex: 0
+  cubes: []
 --- !u!1 &1725559215
 GameObject:
   m_ObjectHideFlags: 0

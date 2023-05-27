@@ -6,9 +6,9 @@ public class BurgerRandomizer: MonoBehaviour
 {
     public static BurgerRandomizer Instance;
 
-    public List<GameObject> burgerComponents;
+    public List<BurgerObject> burgerComponents;
 
-    public GameObject currentCompenent;
+    public BurgerObject currentCompenent;
     int x;
 
     private void Awake()

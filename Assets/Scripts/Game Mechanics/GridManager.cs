@@ -7,30 +7,27 @@ public class GridManager : MonoBehaviour
     public static GridManager Instance;
 
     [Header ("Grid Charateristics")]
-    public GameObject block;
+    // public GameObject block;
+    public CubeInfo cube;
     public Transform spawnPoint;
     public int gridSize;
-    public int blockIndex;
 
     [Header ("Generated Grid Info")]
-    public List<Blocks> blocks;
+    // public List<Blocks> blocks;
+    public List<CubeInfo> cubes;
 
     private void Awake()
     {
         Instance = this;
-        blocks = new List<Blocks>(gridSize * gridSize);
-        blockIndex = 0;
+        // blocks = new List<Blocks>(gridSize * gridSize);
+        
+        cubes = new List<CubeInfo>(gridSize * gridSize);
     }
     private void Start()
     {
-        //GenerateGrid();
+        GenerateGrid();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            GenerateGrid();
-    }
 
     public void GenerateGrid()
     {
@@ -38,12 +35,15 @@ public class GridManager : MonoBehaviour
         {
             for (int j = 0; j < gridSize; j++)
             {
-                GameObject gridBloc = Instantiate(block, spawnPoint.position, Quaternion.identity, spawnPoint.parent);
+                // GameObject gridBloc = Instantiate(block, spawnPoint.position, Quaternion.identity, spawnPoint.parent);
+                CubeInfo currentcube = Instantiate(cube, spawnPoint.position, Quaternion.identity, spawnPoint.parent);
                 spawnPoint.position += new Vector3(3, 0, 0);
+
+                cubes.Add(currentcube);
                 //Debug.LogError(blocks[blockIndex].block);
-                Blocks curr_block = new Blocks { block = gridBloc };
-                blocks.Add(curr_block);
-                blockIndex++;
+                // Blocks curr_block = new Blocks { block = gridBloc };
+                // blocks.Add(curr_block);
+                // blockIndex++;
 
                 //gridBloc.GetComponent<CubeSlot>().row_p = i;
                 //gridBloc.GetComponent<CubeSlot>().column_p = j;
@@ -52,20 +52,25 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    public void CheckMatches()
+    private void CheckMatches()
     {
-        for (int i = 0; i < gridSize * gridSize; i++)
-        {
-            if(blocks[i].foodComp == blocks[i+1].foodComp)
-            {
-                Debug.LogError("match horizontal");
-            }
-            if(blocks[i].foodComp == blocks[i + gridSize].foodComp)
-            {
-                Debug.LogError("match vertical");
-            }
-        }
-    }    
+
+    }
+
+    // public void CheckMatches()
+    // {
+    //     for (int i = 0; i < gridSize * gridSize; i++)
+    //     {
+    //         // if(blocks[i].foodComp == blocks[i+1].foodComp)
+    //         // {
+    //         //     Debug.LogError("match horizontal");
+    //         // }
+    //         // if(blocks[i].foodComp == blocks[i + gridSize].foodComp)
+    //         // {
+    //         //     Debug.LogError("match vertical");
+    //         // }
+    //     }
+    // }    
 }
 
 [System.Serializable]
