@@ -52,8 +52,12 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    private void CheckMatches()
+    private void CheckMatches(int index)
     {
+        if(cubes[index].cube.burgerpart == cubes[index + 1].cube.burgerpart)
+        {
+            
+        }
 
     }
 
