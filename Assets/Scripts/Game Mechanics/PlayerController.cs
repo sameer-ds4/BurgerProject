@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         foodObjects = GameManager.Instance.foodParent;
-        slotIndex = Mathf.Pow(GridManager.Instance.gridSize, 2);
+        // slotIndex = Mathf.Pow(GridManager.Instance.gridSize, 2);
     }
 
     // private void Update()

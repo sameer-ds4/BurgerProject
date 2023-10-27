@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public ColorPick[] picks;
+    public BurgerObject[] burgerPart;
     public Camera mainCam;
 
     public delegate void Matchmaking(int x, int y);
@@ -17,6 +17,7 @@ public class PlayerInput : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
+            Debug.LogError("1");
             CheckPlate();
         }    
     }
@@ -26,8 +27,9 @@ public class PlayerInput : MonoBehaviour
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
-        if(Physics.Raycast(ray, out hit, 5))
-        {            
+        if(Physics.Raycast(ray, out hit, 100))
+        {
+            Debug.LogError("2");
             if(hit.collider.tag == "Plate")
             {
                 Vector3 spawnPos = hit.collider.transform.position + new Vector3(0, 0.5f, 0);
@@ -39,11 +41,12 @@ public class PlayerInput : MonoBehaviour
 
     private void PlacePicks(Vector3 position, string name)
     {
+        Debug.LogError("3");
         char[] place = name.ToCharArray();
-        if(GridManager2.gridFormed[place[0] - '0', place[1] - '0'] == null)
+        if(GridManager.gridFormed[place[0] - '0', place[1] - '0'] == null)
         {
-            ColorPick plateFormed = Instantiate(picks[Random.Range(0, picks.Length)], position, Quaternion.identity);
-            GridManager2.gridFormed[place[0] - '0', place[1] - '0'] = plateFormed;
+            BurgerObject plateFormed = Instantiate(burgerPart[Random.Range(0, burgerPart.Length)], position, Quaternion.identity);
+            GridManager.gridFormed[place[0] - '0', place[1] - '0'] = plateFormed;
             CheckMatch?.Invoke(place[0] - '0', place[1] - '0');
             MatchRemoval?.Invoke();
         }
