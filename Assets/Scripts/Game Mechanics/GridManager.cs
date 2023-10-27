@@ -53,9 +53,11 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    [HideInInspector]
     public List<BurgerObject> match_H;
+    [HideInInspector]
     public List<BurgerObject> match_V;
-    public Vector2Int currentSpot;
+    
     private void MatchCheck_S(int x, int y)
     {
         match_H.Add(gridFormed[x, y]);

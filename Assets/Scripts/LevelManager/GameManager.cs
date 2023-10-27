@@ -35,28 +35,27 @@ public class GameManager : MonoBehaviour
         {
             Destroy(levelLoaded);
         }
-        InstantiateLevel();
+        // InstantiateLevel();
         //ThemeManager.Instance.InstantiateLevelTheme(((int)currenterLevelContainer.themeType));
     }
-    private void InstantiateLevel()
-    {
-        ClearSpawnedOBJ();
-        if (SaveDataHandler.Instance.LevelID >= _levelContainerData.levelContainers.Count)
-        {
-            //Debug.Log(PlayerPrefs.GetInt("LEVELID"));
-            int re = SaveDataHandler.Instance.LevelID % _levelContainerData.levelContainers.Count;
-            levelLoaded = Instantiate(Resources.Load<LevelContainerBase>("Levels/" + _levelContainerData.levelContainers[SaveDataHandler.Instance.LevelID]).gameObject, levelSpawnPoint.position, Quaternion.identity);
-            currenterLevelContainer = levelLoaded.GetComponent<LevelContainerBase>();
-            SpawnInChild(levelLoaded);
-        }
-        else
-        {
-            levelLoaded = Instantiate(Resources.Load<LevelContainerBase>("Levels/" + _levelContainerData.levelContainers[SaveDataHandler.Instance.LevelID]).gameObject, levelSpawnPoint.position, Quaternion.identity);
-            currenterLevelContainer = levelLoaded.GetComponent<LevelContainerBase>();
-            SpawnInChild(levelLoaded);
-        }
-       
-    }
+    // private void InstantiateLevel()
+    // {
+    //     ClearSpawnedOBJ();
+    //     if (SaveDataHandler.Instance.LevelID >= _levelContainerData.levelContainers.Count)
+    //     {
+    //         //Debug.Log(PlayerPrefs.GetInt("LEVELID"));
+    //         int re = SaveDataHandler.Instance.LevelID % _levelContainerData.levelContainers.Count;
+    //         levelLoaded = Instantiate(Resources.Load<LevelContainerBase>("Levels/" + _levelContainerData.levelContainers[SaveDataHandler.Instance.LevelID]).gameObject, levelSpawnPoint.position, Quaternion.identity);
+    //         currenterLevelContainer = levelLoaded.GetComponent<LevelContainerBase>();
+    //         SpawnInChild(levelLoaded);
+    //     }
+    //     else
+    //     {
+    //         levelLoaded = Instantiate(Resources.Load<LevelContainerBase>("Levels/" + _levelContainerData.levelContainers[SaveDataHandler.Instance.LevelID]).gameObject, levelSpawnPoint.position, Quaternion.identity);
+    //         currenterLevelContainer = levelLoaded.GetComponent<LevelContainerBase>();
+    //         SpawnInChild(levelLoaded);
+    //     }
+    // }
     public void NextLevel()
     {
         CreateLevel();
@@ -66,24 +65,24 @@ public class GameManager : MonoBehaviour
         NextLevel();
     }
 
-    public void OnLevelComplete()
-    {
-        AudioManager.Instance.PlaySound("LevelComplete");
-        HapticTouchManager.HeavyHapticTouch();
+    // public void OnLevelComplete()
+    // {
+    //     AudioManager.Instance.PlaySound("LevelComplete");
+    //     HapticTouchManager.HeavyHapticTouch();
 
-        Debug.Log("OnLevel Complet");
-        SaveDataHandler.Instance.LevelID++;
-        StartCoroutine(UIManager.Instance.OnLevelCompleteSequenceIn());
-    }
-    public void OnLevelFail()
-    {
-        AudioManager.Instance.PlaySound("LevelFail");
-        HapticTouchManager.HeavyHapticTouch();
+    //     Debug.Log("OnLevel Complet");
+    //     SaveDataHandler.Instance.LevelID++;
+    //     StartCoroutine(UIManager.Instance.OnLevelCompleteSequenceIn());
+    // }
+    // public void OnLevelFail()
+    // {
+    //     AudioManager.Instance.PlaySound("LevelFail");
+    //     HapticTouchManager.HeavyHapticTouch();
 
-        Debug.Log("OnLevel Faild");
-        StartCoroutine(UIManager.Instance.OnLevelFaildSequenceIn());
+    //     Debug.Log("OnLevel Faild");
+    //     StartCoroutine(UIManager.Instance.OnLevelFaildSequenceIn());
 
-    }
+    // }
 
     public void SpawnInChild(GameObject makeChild)
     {
