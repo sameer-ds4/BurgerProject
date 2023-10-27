@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2323486698242247913}
   - component: {fileID: 2862091559123790415}
   - component: {fileID: 9085032004188077842}
+  - component: {fileID: 1992284292647267480}
   m_Layer: 0
   m_Name: Bacon_Slice2
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1992284292647267480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3983628064932232685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5059b791fae85346bb1f8662e2bc924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burgerPart: 4

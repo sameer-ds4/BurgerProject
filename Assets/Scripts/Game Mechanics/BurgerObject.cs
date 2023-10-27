@@ -14,6 +14,11 @@ public class BurgerObject : MonoBehaviour
         .SetRelative()
         .SetEase(Ease.Linear);
     }
+
+    private void OnDestroy() 
+    {
+        transform.DOKill(false);
+    }
 }
 
 public enum BurgerPart
@@ -21,5 +26,8 @@ public enum BurgerPart
     bun,
     lettuce,
     patty,
-    cheese
+    cheese,
+    bacon,
+    onion,
+    pickle
 }

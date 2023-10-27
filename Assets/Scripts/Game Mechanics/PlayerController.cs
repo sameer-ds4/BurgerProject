@@ -43,13 +43,13 @@ public class PlayerController : MonoBehaviour
     //     }
     // }
 
-    public BurgerObject PlaceBurgerComponent(Transform target)
-    {
-        BurgerRandomizer.Instance.Randomize();
-        BurgerObject poc = BurgerRandomizer.Instance.currentCompenent;
-        Instantiate(poc, target.position, Quaternion.identity);
-        return poc;   
-    }
+    // public BurgerObject PlaceBurgerComponent(Transform target)
+    // {
+    //     BurgerRandomizer.Instance.Randomize();
+    //     BurgerObject poc = BurgerRandomizer.Instance.currentCompenent;
+    //     Instantiate(poc, target.position, Quaternion.identity);
+    //     return poc;   
+    // }
 
     // void PlaceBurgerComponent(RaycastHit hit)
     // {

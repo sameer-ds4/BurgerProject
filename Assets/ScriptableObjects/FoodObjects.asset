@@ -12,3 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b00108129c31b341a417a8afcff9d63, type: 3}
   m_Name: FoodObjects
   m_EditorClassIdentifier: 
+  burgerItems:
+  - burgerObject: {fileID: 9195770632598853515, guid: 76642104797526f4c887873d0a84f1e3, type: 3}
+    image: {fileID: 21300000, guid: 3b497fdd383584ec78d3b053042d2b00, type: 3}
+  - burgerObject: {fileID: 7250163779976676146, guid: 596c6aaa6dc62984dac20558008c1141, type: 3}
+    image: {fileID: 21300000, guid: 98a6a42597c5f4215ac90b2b7bcf3d54, type: 3}
+  - burgerObject: {fileID: 6675645176262182849, guid: 553fb84f9443ff244a86d091727287d4, type: 3}
+    image: {fileID: 21300000, guid: 3f5b605867ea14db489927fc87ff879a, type: 3}
+  - burgerObject: {fileID: 8609666394640247933, guid: 104e1aa97b0fd8d4d9ff1ea9efa6f1b3, type: 3}
+    image: {fileID: 21300000, guid: 4ccf5b9670d0c4a238657ef7238bf049, type: 3}
+  - burgerObject: {fileID: 1992284292647267480, guid: df89ee486c749c64d955955fc2084132, type: 3}
+    image: {fileID: 21300000, guid: 03d6648e209e244e2b5ef02b9036fded, type: 3}
+  - burgerObject: {fileID: -2410762251218070838, guid: a2c8ddbe11c3c494c8c9164c68d721b3, type: 3}
+    image: {fileID: 21300000, guid: 718d20208c0264f5b977cceb50962b79, type: 3}
+  - burgerObject: {fileID: -7715871272490370259, guid: 8653bbc34cd70074fbbdfffcd5918d51, type: 3}
+    image: {fileID: 21300000, guid: 0fa5dbd3cd3b8408b8f74935c957b17d, type: 3}

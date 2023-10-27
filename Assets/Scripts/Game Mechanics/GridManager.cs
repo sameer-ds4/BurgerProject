@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
     [Header ("Grid Charateristics")]
-    public GameObject cube;
     public Vector2Int gridSize;
     [SerializeField]
     private Transform spawnPoint;
@@ -31,6 +31,7 @@ public class GridManager : MonoBehaviour
 
     private void Start()
     {
+        gridSize = GameManager.Instance.gridData.gridSize;
         gridFormed = new BurgerObject[gridSize.x, gridSize.y];
         spawnPoint.position = Vector3.zero;
 
@@ -44,7 +45,7 @@ public class GridManager : MonoBehaviour
         {
             for (int j = 0; j < gridSize.y; j++)
             {
-                GameObject currentcube = Instantiate(cube, spawnPoint.position, Quaternion.identity, spawnPoint.parent);
+                GameObject currentcube = Instantiate(GameManager.Instance.gridData.cube, spawnPoint.position, Quaternion.identity, spawnPoint.parent);
                 spawnPoint.position += new Vector3(3, 0, 0);
                 currentcube.name = "" + i + j;
                 // cubes.Add(currentcube);
@@ -83,7 +84,7 @@ public class GridManager : MonoBehaviour
                 break;
         }
 
-           for (int i = x; i >= 0; i--)
+        for (int i = x; i >= 0; i--)
         {
             if(gridFormed[i, y] == null) break;
 
@@ -145,25 +146,27 @@ public class GridManager : MonoBehaviour
     private void DestroyMatch()
     {
         if(match_H.Count >= 3)
-        {
-            foreach (var item in match_H)
-            {
-                Destroy(item.gameObject);
-            }
-            match_H.Clear();
-        }
+            StartCoroutine(AnimateMatchMade(match_H));
         else
             match_H.Clear();
 
         if(match_V.Count >= 3)
-        {
-            foreach (var item in match_V)
-            {
-                Destroy(item.gameObject);
-            }
-            match_V.Clear();
-        }
+            StartCoroutine(AnimateMatchMade(match_V));
         else
             match_V.Clear();
+    }
+
+    IEnumerator AnimateMatchMade(List<BurgerObject> objects)
+    {
+        foreach (var item in objects)
+        {
+            Tweening.BubbleOut_gameobject(item.gameObject, 0.5f, Vector3.one * 1.8f, Vector3.one * 0.3f);
+        }
+        yield return new WaitForSeconds(0.55f);
+        foreach (var item in objects)
+        {
+            Destroy(item.gameObject);
+        }
+        objects.Clear();
     }
 }

@@ -6,9 +6,13 @@ public class BurgerRandomizer: MonoBehaviour
 {
     public static BurgerRandomizer Instance;
 
+    public FoodObjects foodObjects;
+    public BurgerItem currentBurgerItem;
+    public BurgerItem nextBurgerItem;
+
     public List<BurgerObject> burgerComponents;
 
-    public BurgerObject currentCompenent;
+    // public BurgerObject currentCompenent;
     int x;
 
     private void Awake()
@@ -16,9 +20,21 @@ public class BurgerRandomizer: MonoBehaviour
         Instance = this;
     }
 
-    public void Randomize()
+    private void Start() 
     {
-        x = Random.Range(0, burgerComponents.Count);
-        currentCompenent = burgerComponents[x];
+        currentBurgerItem = Randomize();
+        nextBurgerItem = Randomize();
+    }
+    public BurgerItem Randomize()
+    {
+        x = Random.Range(0, foodObjects.burgerItems.Length);
+        BurgerItem currentCompenent = foodObjects.burgerItems[x];
+        return currentCompenent;
+    }
+
+    private void NextBurgerComps()
+    {
+        currentBurgerItem = nextBurgerItem;
+        nextBurgerItem = Randomize();
     }
 }

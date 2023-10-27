@@ -12,19 +12,19 @@ public class CubeInfo : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
-    {
-        if(!this.cube.status)
-        {
-            BurgerObject currentburger = PlayerController.Instance.PlaceBurgerComponent(transform);
-            cube.burgerpart = currentburger;
-            cube.status = true;
-        }
-        else
-        {
-            Debug.LogError("full");        
-        }
-    }
+    // private void OnMouseDown()
+    // {
+    //     if(!this.cube.status)
+    //     {
+    //         BurgerObject currentburger = PlayerController.Instance.PlaceBurgerComponent(transform);
+    //         cube.burgerpart = currentburger;
+    //         cube.status = true;
+    //     }
+    //     else
+    //     {
+    //         Debug.LogError("full");        
+    //     }
+    // }
 
 }
 

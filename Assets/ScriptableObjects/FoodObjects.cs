@@ -3,33 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "FoodObjects", menuName = "ScriptableObjects/FoodObjects", order = 2)]
-
 public class FoodObjects : ScriptableObject
 {
-    public DebgTest de;
+    public BurgerItem[] burgerItems;
 }
 
 
 [System.Serializable]
-public class DebgTest : UnityEditor.Editor
+public class BurgerItem
 {
-    public int food;
-    public float value;
-    public bool eatable;
-
-    public DebgTest()
-    {
-        food = 3;
-        value = 6;
-        eatable = true;
-    }
-
-    public override void OnInspectorGUI()
-    {
-        if(GUILayout.Button("Create New Object"))
-        {
-            new DebgTest();
-        }
-        base.OnInspectorGUI();
-    }
+    public BurgerObject burgerObject;
+    public Sprite image;
 }

@@ -5,15 +5,20 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("ParticleSystem Data")]
+    [Header("Particle System Data")]
     public ParticleSystemData _ParticleSystemData;
 
-    [Header("Levels Spawn Point")]
-    public Transform levelSpawnPoint;
+    [Header("Game Component Data")]
+    public FoodObjects foodObjects;
+    public GridData gridData;
 
-    [Header("Levels")]
-    public LevelContainerData _levelContainerData;
+    [Header("Scene Data")]
+    public Transform levelSpawnPoint;
     public Transform foodParent;
+
+
+
+    // public LevelContainerData _levelContainerData;
 
     protected GameObject levelLoaded;
     [HideInInspector]
@@ -26,18 +31,23 @@ public class GameManager : MonoBehaviour
     {
         //CreateLevel();
     }
-    public void CreateLevel()
-    {        
-        //AudioManager.Instance.PlaySound("BG");
+
+}
+
+
+
+    // public void CreateLevel()
+    // {        
+    //     //AudioManager.Instance.PlaySound("BG");
         //UIManager.Instance.OnStartDisabel();
         //UIManager.Instance.SetLevelIDNumber();
-        if (levelLoaded)
-        {
-            Destroy(levelLoaded);
-        }
+        // if (levelLoaded)
+        // {
+        //     Destroy(levelLoaded);
+        // }
         // InstantiateLevel();
         //ThemeManager.Instance.InstantiateLevelTheme(((int)currenterLevelContainer.themeType));
-    }
+    // }
     // private void InstantiateLevel()
     // {
     //     ClearSpawnedOBJ();
@@ -56,44 +66,26 @@ public class GameManager : MonoBehaviour
     //         SpawnInChild(levelLoaded);
     //     }
     // }
-    public void NextLevel()
-    {
-        CreateLevel();
-    }
-    public void RetryLevel()
-    {
-        NextLevel();
-    }
+//     public void NextLevel()
+//     {
+//         CreateLevel();
+//     }
+//     public void RetryLevel()
+//     {
+//         NextLevel();
+//     }
 
-    // public void OnLevelComplete()
-    // {
-    //     AudioManager.Instance.PlaySound("LevelComplete");
-    //     HapticTouchManager.HeavyHapticTouch();
 
-    //     Debug.Log("OnLevel Complet");
-    //     SaveDataHandler.Instance.LevelID++;
-    //     StartCoroutine(UIManager.Instance.OnLevelCompleteSequenceIn());
-    // }
-    // public void OnLevelFail()
-    // {
-    //     AudioManager.Instance.PlaySound("LevelFail");
-    //     HapticTouchManager.HeavyHapticTouch();
+//     public void SpawnInChild(GameObject makeChild)
+//     {
+//         makeChild.transform.parent = levelSpawnPoint.transform;
+//     }
 
-    //     Debug.Log("OnLevel Faild");
-    //     StartCoroutine(UIManager.Instance.OnLevelFaildSequenceIn());
-
-    // }
-
-    public void SpawnInChild(GameObject makeChild)
-    {
-        makeChild.transform.parent = levelSpawnPoint.transform;
-    }
-
-    public void ClearSpawnedOBJ()
-    {
-        foreach (Transform child in levelSpawnPoint.transform)
-        {
-            Destroy(child.gameObject);
-        }
-    }
-}
+//     public void ClearSpawnedOBJ()
+//     {
+//         foreach (Transform child in levelSpawnPoint.transform)
+//         {
+//             Destroy(child.gameObject);
+//         }
+//     }
+// }
