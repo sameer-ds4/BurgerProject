@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public BurgerObject[] burgerPart;
+    // public BurgerObject[] burgerPart;
     public Camera mainCam;
 
     public delegate void Matchmaking(int x, int y);
@@ -12,6 +12,9 @@ public class PlayerInput : MonoBehaviour
 
     public delegate void RemoveMatch();
     public static event RemoveMatch MatchRemoval;
+
+    public delegate void RandomizeComps();
+    public static event RandomizeComps RandomBurger;
 
     private void Update() 
     {
@@ -42,10 +45,12 @@ public class PlayerInput : MonoBehaviour
         char[] place = name.ToCharArray();
         if(GridManager.gridFormed[place[0] - '0', place[1] - '0'] == null)
         {
-            BurgerObject plateFormed = Instantiate(burgerPart[Random.Range(0, burgerPart.Length)], position, Quaternion.identity);
-            GridManager.gridFormed[place[0] - '0', place[1] - '0'] = plateFormed;
+            BurgerObject burgerSpawned = Instantiate(GameManager.Instance.currentBurgerItem.burgerObject, position, Quaternion.identity);
+            // BurgerObject plateFormed = Instantiate(burgerPart[Random.Range(0, burgerPart.Length)], position, Quaternion.identity);
+            GridManager.gridFormed[place[0] - '0', place[1] - '0'] = burgerSpawned;
             CheckMatch?.Invoke(place[0] - '0', place[1] - '0');
             MatchRemoval?.Invoke();
+            RandomBurger?.Invoke();
         }
     }
 }

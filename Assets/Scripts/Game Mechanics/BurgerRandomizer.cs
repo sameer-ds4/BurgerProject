@@ -10,7 +10,6 @@ public class BurgerRandomizer: MonoBehaviour
     public BurgerItem currentBurgerItem;
     public BurgerItem nextBurgerItem;
 
-    public List<BurgerObject> burgerComponents;
 
     // public BurgerObject currentCompenent;
     int x;
@@ -18,13 +17,9 @@ public class BurgerRandomizer: MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        // foodObjects = GameManager.Instance.foodObjects;
     }
 
-    private void Start() 
-    {
-        currentBurgerItem = Randomize();
-        nextBurgerItem = Randomize();
-    }
     public BurgerItem Randomize()
     {
         x = Random.Range(0, foodObjects.burgerItems.Length);
@@ -32,9 +27,4 @@ public class BurgerRandomizer: MonoBehaviour
         return currentCompenent;
     }
 
-    private void NextBurgerComps()
-    {
-        currentBurgerItem = nextBurgerItem;
-        nextBurgerItem = Randomize();
-    }
 }

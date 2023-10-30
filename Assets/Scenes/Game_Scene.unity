@@ -347,6 +347,12 @@ MonoBehaviour:
   gridData: {fileID: 11400000, guid: 280e6e776bbdd4e0d908a2d1909b3bc8, type: 2}
   levelSpawnPoint: {fileID: 552464866}
   foodParent: {fileID: 1725559216}
+  currentBurgerItem:
+    burgerObject: {fileID: 0}
+    image: {fileID: 0}
+  nextBurgerItem:
+    burgerObject: {fileID: 0}
+    image: {fileID: 0}
   currenterLevelContainer: {fileID: 0}
 --- !u!1 &552464865
 GameObject:
@@ -391,6 +397,7 @@ GameObject:
   - component: {fileID: 557403328}
   - component: {fileID: 557403327}
   - component: {fileID: 557403326}
+  - component: {fileID: 557403329}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -480,6 +487,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &557403329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557403324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919ef5163dfd8432cab7e725fd53f147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currImg: {fileID: 1325735983}
+  nxtImg: {fileID: 173677542}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +714,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -739,6 +760,7 @@ GameObject:
   - component: {fileID: 1103503688}
   - component: {fileID: 1103503687}
   - component: {fileID: 1103503691}
+  - component: {fileID: 1103503692}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -837,9 +859,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90bd1e89074a94e46a1dd2cc85445fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burgerPart:
-  - {fileID: 9195770632598853515, guid: 76642104797526f4c887873d0a84f1e3, type: 3}
   mainCam: {fileID: 963194227}
+--- !u!114 &1103503692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103503686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cdea32a53feb846a73e7814ba3b8b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodObjects: {fileID: 11400000, guid: 1c9a5f39ca223e24ab5191cbc73bc987, type: 2}
+  currentBurgerItem:
+    burgerObject: {fileID: 0}
+    image: {fileID: 0}
+  nextBurgerItem:
+    burgerObject: {fileID: 0}
+    image: {fileID: 0}
 --- !u!1 &1325735981
 GameObject:
   m_ObjectHideFlags: 0

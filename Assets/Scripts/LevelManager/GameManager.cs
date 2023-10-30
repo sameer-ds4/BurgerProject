@@ -16,22 +16,49 @@ public class GameManager : MonoBehaviour
     public Transform levelSpawnPoint;
     public Transform foodParent;
 
+    public BurgerItem currentBurgerItem;
+    public BurgerItem nextBurgerItem;
 
+    public delegate void UpdateUI();
+    public static event UpdateUI UpdateBurgerInfo;
+    private void Awake()
+    {
+        Instance = this;
+        InitializeBurgerComps();
+
+    }
+    private void OnEnable() 
+    {
+        PlayerInput.RandomBurger += NextBurger;
+    }
+
+    private void OnDisable() 
+    {
+        PlayerInput.RandomBurger -= NextBurger;
+    }
 
     // public LevelContainerData _levelContainerData;
 
     protected GameObject levelLoaded;
     [HideInInspector]
     public LevelContainerBase currenterLevelContainer;
-    private void Awake()
-    {
-        Instance = this;
-    }
+
     private void Start()
     {
-        //CreateLevel();
     }
 
+    private void InitializeBurgerComps()
+    {
+        currentBurgerItem = BurgerRandomizer.Instance.Randomize();
+        nextBurgerItem = BurgerRandomizer.Instance.Randomize();
+    }
+
+    private void NextBurger()
+    {
+        currentBurgerItem = nextBurgerItem;
+        nextBurgerItem = BurgerRandomizer.Instance.Randomize();
+        UpdateBurgerInfo?.Invoke();
+    }
 }
 
 
