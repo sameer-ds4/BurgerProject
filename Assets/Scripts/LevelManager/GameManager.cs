@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public Transform levelSpawnPoint;
     public Transform foodParent;
 
+    public BurgerItem[] burgerItemsList;
     public BurgerItem currentBurgerItem;
     public BurgerItem nextBurgerItem;
 
@@ -37,82 +38,29 @@ public class GameManager : MonoBehaviour
         PlayerInput.RandomBurger -= NextBurger;
     }
 
-    // public LevelContainerData _levelContainerData;
-
-    protected GameObject levelLoaded;
-    [HideInInspector]
-    public LevelContainerBase currenterLevelContainer;
-
     private void Start()
     {
     }
 
     private void InitializeBurgerComps()
     {
-        currentBurgerItem = BurgerRandomizer.Instance.Randomize();
-        nextBurgerItem = BurgerRandomizer.Instance.Randomize();
+        for (int i = 0; i < burgerItemsList.Length; i++)
+        {
+            burgerItemsList[i] = BurgerRandomizer.Instance.Randomize();    
+        }
+        // currentBurgerItem = BurgerRandomizer.Instance.Randomize();
+        // nextBurgerItem = BurgerRandomizer.Instance.Randomize();
     }
 
     private void NextBurger()
     {
-        currentBurgerItem = nextBurgerItem;
-        nextBurgerItem = BurgerRandomizer.Instance.Randomize();
+        burgerItemsList[0] = burgerItemsList[1];
+        burgerItemsList[1] = burgerItemsList[2];
+        burgerItemsList[2] = BurgerRandomizer.Instance.Randomize();
         UpdateBurgerInfo?.Invoke();
+        // currentBurgerItem = nextBurgerItem;
+        // nextBurgerItem = BurgerRandomizer.Instance.Randomize();
     }
+
+    
 }
-
-
-
-    // public void CreateLevel()
-    // {        
-    //     //AudioManager.Instance.PlaySound("BG");
-        //UIManager.Instance.OnStartDisabel();
-        //UIManager.Instance.SetLevelIDNumber();
-        // if (levelLoaded)
-        // {
-        //     Destroy(levelLoaded);
-        // }
-        // InstantiateLevel();
-        //ThemeManager.Instance.InstantiateLevelTheme(((int)currenterLevelContainer.themeType));
-    // }
-    // private void InstantiateLevel()
-    // {
-    //     ClearSpawnedOBJ();
-    //     if (SaveDataHandler.Instance.LevelID >= _levelContainerData.levelContainers.Count)
-    //     {
-    //         //Debug.Log(PlayerPrefs.GetInt("LEVELID"));
-    //         int re = SaveDataHandler.Instance.LevelID % _levelContainerData.levelContainers.Count;
-    //         levelLoaded = Instantiate(Resources.Load<LevelContainerBase>("Levels/" + _levelContainerData.levelContainers[SaveDataHandler.Instance.LevelID]).gameObject, levelSpawnPoint.position, Quaternion.identity);
-    //         currenterLevelContainer = levelLoaded.GetComponent<LevelContainerBase>();
-    //         SpawnInChild(levelLoaded);
-    //     }
-    //     else
-    //     {
-    //         levelLoaded = Instantiate(Resources.Load<LevelContainerBase>("Levels/" + _levelContainerData.levelContainers[SaveDataHandler.Instance.LevelID]).gameObject, levelSpawnPoint.position, Quaternion.identity);
-    //         currenterLevelContainer = levelLoaded.GetComponent<LevelContainerBase>();
-    //         SpawnInChild(levelLoaded);
-    //     }
-    // }
-//     public void NextLevel()
-//     {
-//         CreateLevel();
-//     }
-//     public void RetryLevel()
-//     {
-//         NextLevel();
-//     }
-
-
-//     public void SpawnInChild(GameObject makeChild)
-//     {
-//         makeChild.transform.parent = levelSpawnPoint.transform;
-//     }
-
-//     public void ClearSpawnedOBJ()
-//     {
-//         foreach (Transform child in levelSpawnPoint.transform)
-//         {
-//             Destroy(child.gameObject);
-//         }
-//     }
-// }

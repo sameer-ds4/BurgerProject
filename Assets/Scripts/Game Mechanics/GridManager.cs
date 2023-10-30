@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
@@ -158,11 +157,12 @@ public class GridManager : MonoBehaviour
 
     IEnumerator AnimateMatchMade(List<BurgerObject> objects)
     {
+        yield return new WaitForSeconds(0.3f);
         foreach (var item in objects)
         {
             Tweening.BubbleOut_gameobject(item.gameObject, 0.5f, Vector3.one * 1.8f, Vector3.one * 0.3f);
         }
-        yield return new WaitForSeconds(0.55f);
+        yield return new WaitForSeconds(0.5f);
         foreach (var item in objects)
         {
             Destroy(item.gameObject);

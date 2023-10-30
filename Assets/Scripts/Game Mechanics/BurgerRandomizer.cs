@@ -11,18 +11,14 @@ public class BurgerRandomizer: MonoBehaviour
     public BurgerItem nextBurgerItem;
 
 
-    // public BurgerObject currentCompenent;
-    int x;
-
     private void Awake()
     {
         Instance = this;
-        // foodObjects = GameManager.Instance.foodObjects;
     }
 
     public BurgerItem Randomize()
     {
-        x = Random.Range(0, foodObjects.burgerItems.Length);
+        int x = Random.Range(0, foodObjects.burgerItems.Length);
         BurgerItem currentCompenent = foodObjects.burgerItems[x];
         return currentCompenent;
     }

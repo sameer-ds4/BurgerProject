@@ -7,6 +7,11 @@ public class BurgerObject : MonoBehaviour
 {
     public BurgerPart burgerPart;
     
+    private void OnEnable() 
+    {
+        Tweening.TweenIn_gameObject(this.gameObject, 0.3f, Vector3.one * 0.3f, Vector3.one * 1);    
+    }
+
     void Start()
     {
         transform.DORotate(new Vector3(0, 360, 0), 6, RotateMode.FastBeyond360)

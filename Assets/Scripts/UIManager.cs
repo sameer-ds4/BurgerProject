@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public Image[] BurgerInfos;
     public Image currImg;
     public Image nxtImg;
     
@@ -24,7 +25,11 @@ public class UIManager : MonoBehaviour
 
     private void UpdateComps()
     {
-        currImg.sprite = GameManager.Instance.currentBurgerItem.image;
-        nxtImg.sprite = GameManager.Instance.nextBurgerItem.image;
+        for (int i = 0; i < BurgerInfos.Length; i++)
+        {
+            BurgerInfos[i].sprite = GameManager.Instance.burgerItemsList[i].image;
+        }
+        // currImg.sprite = GameManager.Instance.currentBurgerItem.image;
+        // nxtImg.sprite = GameManager.Instance.nextBurgerItem.image;
     }
 }
