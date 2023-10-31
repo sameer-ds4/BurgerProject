@@ -45,7 +45,7 @@ public class PlayerInput : MonoBehaviour
         char[] place = name.ToCharArray();
         if(GridManager.gridFormed[place[0] - '0', place[1] - '0'] == null)
         {
-            BurgerObject burgerSpawned = Instantiate(GameManager.Instance.burgerItemsList[0].burgerObject, position, Quaternion.identity);
+            BurgerObject burgerSpawned = Instantiate(GameManager.Instance.burgerItemsList[0].burgerObject, position, Quaternion.identity, GameManager.Instance.foodParent);
             // BurgerObject plateFormed = Instantiate(burgerPart[Random.Range(0, burgerPart.Length)], position, Quaternion.identity);
             GridManager.gridFormed[place[0] - '0', place[1] - '0'] = burgerSpawned;
             CheckMatch?.Invoke(place[0] - '0', place[1] - '0');
