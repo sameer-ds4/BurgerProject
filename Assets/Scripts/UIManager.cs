@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject mainMenu;
+    public GameObject inGameSc;
+    public GameObject settingsMenu;
+
     public Image[] BurgerInfos;
     public Image currImg;
     public Image nxtImg;

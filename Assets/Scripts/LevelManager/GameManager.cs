@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public Transform foodParent;
     public Transform orderBurgerSpawnPoint;
 
+    [Header("Burger Data")]
     public BurgerItem[] burgerItemsList;
     public BurgerItem currentBurgerItem;
     public BurgerItem nextBurgerItem;
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Set target burger from comps
-    private void BurgerOrder()
+    private void SpawnBurgerOrder()
     {
         int x = 4;
         Instantiate(foodObjects.burgerItems[0].burgerObject, orderBurgerSpawnPoint.position, Quaternion.identity, orderBurgerSpawnPoint);
@@ -79,4 +80,13 @@ public class GameManager : MonoBehaviour
             // orderBurgerSpawnPoint.transform.position += orderBurger.transform.position
         }
     }
+}
+ 
+[System.Serializable]
+class OrderBvurger
+{
+    public GameObject[] buns;
+    public GameObject[] pattys;
+    public GameObject[] cheese;
+    public GameObject[] salads;
 }
