@@ -5,15 +5,22 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance;
+
     public GameObject mainMenu;
     public GameObject inGameSc;
     public Settings settingsMenu;
     public GameObject burgerMain_P;
+    public GameObject gameOver;
 
     public Image[] BurgerInfos;
     public Image currImg;
     public Image nxtImg;
     
+    private void Awake() 
+    {
+        Instance = this;    
+    }
     private void OnEnable() 
     {
         GameManager.UpdateBurgerInfo += UpdateComps;    
@@ -62,6 +69,7 @@ public class UIManager : MonoBehaviour
     {
         inGameSc.SetActive(false);
         settingsMenu.gameObject.SetActive(false);
+        gameOver.SetActive(false);
     }
 
     private void UpdateComps()

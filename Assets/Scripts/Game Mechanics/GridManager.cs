@@ -6,9 +6,10 @@ public class GridManager : MonoBehaviour
 {
     [Header ("Grid Charateristics")]
     public Vector2Int gridSize;
-    [SerializeField]
-    private Transform spawnPoint;
+    [SerializeField] private Transform spawnPoint;
     public static BurgerObject[,] gridFormed;
+
+    public static int gridCount;
 
 
   private void OnEnable() 
@@ -146,18 +147,32 @@ public class GridManager : MonoBehaviour
     private void DestroyMatch()
     {
         if(match_H.Count >= 3)
+        {
             StartCoroutine(AnimateMatchMade(match_H));
+            gridCount = gridCount - match_H.Count;
+        }
         else
             match_H.Clear();
 
         if(match_V.Count >= 3)
+        {
             StartCoroutine(AnimateMatchMade(match_V));
+            gridCount = gridCount - match_V.Count;
+        }
         else
             match_V.Clear();
+
+        gridCount++;
+
+        if (gridCount == 9)
+        {
+            UIManager.Instance.gameOver.SetActive(true);
+        }
     }
 
     IEnumerator AnimateMatchMade(List<BurgerObject> objects)
     {
+        GameManager.startPlay = false;
         yield return new WaitForSeconds(0.3f);
         foreach (var item in objects)
         {
@@ -169,5 +184,6 @@ public class GridManager : MonoBehaviour
             Destroy(item.gameObject);
         }
         objects.Clear();
+        GameManager.startPlay = true;
     }
 }
