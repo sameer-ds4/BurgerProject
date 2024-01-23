@@ -8,7 +8,6 @@ public class GridManager : MonoBehaviour
     public Vector2Int gridSize;
     [SerializeField]
     private Transform spawnPoint;
-
     public static BurgerObject[,] gridFormed;
 
 
@@ -37,7 +36,6 @@ public class GridManager : MonoBehaviour
         GenerateGrid();
     }
 
-
     public void GenerateGrid()
     {
         for (int i = 0; i < gridSize.x; i++)
@@ -52,6 +50,9 @@ public class GridManager : MonoBehaviour
             spawnPoint.position += new Vector3(-3 * gridSize.y, 0, -3);
         }
     }
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
 
     [HideInInspector]
     public List<BurgerObject> match_H;

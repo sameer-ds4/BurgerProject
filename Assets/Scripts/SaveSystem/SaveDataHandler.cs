@@ -45,20 +45,11 @@ public class SaveDataHandler : Singleton<SaveDataHandler>
         if(PlayerPrefs.GetInt("Override", 0) == 0)
         {
             saveData.firstPlay = false;
-            saveData.ContinueState = false;
-            saveData.ghostSpeed = 1.34f + 0.03f * saveData.levelID % 3;
-
-            PlayerPrefs.SetInt("Override", 1);
         }
     }
 
     private void onSaveInitialized()
     {
-        for (int i = 0; i < 3; i++)
-        {
-            saveData.Opened.Add(false);
-        }
-
         saveData.firstPlay = true;
 
         saveData.musicVol = 0;
@@ -67,16 +58,6 @@ public class SaveDataHandler : Singleton<SaveDataHandler>
 
         saveData.pl_name = "Player";
         saveData.levelID = 1;
-
-        saveData.highScore = 0;
-        saveData.cupCakes = 0;
-        saveData.splItems = 0;
-
-        saveData.ContinueState = false;
-        saveData.ghostSpeed = 1.34f;
-
-
-        // saveData.testParam = 20;
     }
 
     private void OnApplicationFocus(bool focus)

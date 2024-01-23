@@ -84,13 +84,13 @@ public class Settings : MonoBehaviour
         if (SaveDataHandler.Instance.saveData.vibrationOn)
         {
             SaveDataHandler.Instance.saveData.vibrationOn = false;
-            AudioManager.Instance.PlaySound("ToggleOff");
+            // AudioManager.Instance.PlaySound("ToggleOff");
             vibrationStatus.sprite = toggleOff;
         }
         else
         {
             SaveDataHandler.Instance.saveData.vibrationOn = true;
-            AudioManager.Instance.PlaySound("ToggleOn");
+            // AudioManager.Instance.PlaySound("ToggleOn");
             // HapticPatterns.PlayPreset(HapticPatterns.PresetType.LightImpact);
             vibrationStatus.sprite = toggleOn;
         }

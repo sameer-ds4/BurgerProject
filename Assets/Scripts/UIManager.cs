@@ -7,7 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject inGameSc;
-    public GameObject settingsMenu;
+    public Settings settingsMenu;
+    public GameObject burgerMain_P;
 
     public Image[] BurgerInfos;
     public Image currImg;
@@ -23,9 +24,45 @@ public class UIManager : MonoBehaviour
     }
     void Start()
     {
-        UpdateComps();
+        MainMenu_Set();
+        ClosePages();
     }
 
+    public void OnBtn_Click(string name)
+    {
+        mainMenu.SetActive(false);
+        burgerMain_P.SetActive(false);
+
+        switch (name)
+        {
+            case "Play":
+                inGameSc.SetActive(true);
+                UpdateComps();
+                GameManager.startPlay = true;
+                break;
+
+            case "Settings":
+                settingsMenu.gameObject.SetActive(true);
+                break;
+
+            case "Main":
+                MainMenu_Set();
+                ClosePages();
+                break;
+        }
+    }
+
+    private void MainMenu_Set()
+    {
+        mainMenu.SetActive(true);
+        burgerMain_P.SetActive(true);
+    }
+
+    private void ClosePages()
+    {
+        inGameSc.SetActive(false);
+        settingsMenu.gameObject.SetActive(false);
+    }
 
     private void UpdateComps()
     {

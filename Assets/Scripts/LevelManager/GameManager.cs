@@ -19,9 +19,13 @@ public class GameManager : MonoBehaviour
 
     [Header("Burger Data")]
     public BurgerItem[] burgerItemsList;
-    public BurgerItem currentBurgerItem;
-    public BurgerItem nextBurgerItem;
+    // public BurgerItem currentBurgerItem;
+    // public BurgerItem nextBurgerItem;
 
+    public static bool startPlay;
+
+
+    // EVENTS 
     public delegate void UpdateUI();
     public static event UpdateUI UpdateBurgerInfo;
     private void Awake()
@@ -80,13 +84,10 @@ public class GameManager : MonoBehaviour
             // orderBurgerSpawnPoint.transform.position += orderBurger.transform.position
         }
     }
+
+    private void CheckOrderMatch()
+    {
+        
+    }
 }
  
-[System.Serializable]
-class OrderBvurger
-{
-    public GameObject[] buns;
-    public GameObject[] pattys;
-    public GameObject[] cheese;
-    public GameObject[] salads;
-}

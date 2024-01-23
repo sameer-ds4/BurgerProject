@@ -18,6 +18,8 @@ public class PlayerInput : MonoBehaviour
 
     private void Update() 
     {
+        if (!GameManager.startPlay) return;
+
         if(Input.GetMouseButtonDown(0))
         {
             CheckPlate();

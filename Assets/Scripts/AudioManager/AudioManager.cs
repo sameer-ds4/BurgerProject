@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using DG.Tweening;
 
 public class AudioManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup sfxMixer;
     public AudioMixerGroup bgmMixer;
 
+    int audioCount;
     private void Awake()
     {
         //DontDestroyOnLoad(this);
@@ -39,13 +41,13 @@ public class AudioManager : MonoBehaviour
 
     private void InitializeAudio()
     {
+        audioCount = 0;
         if (sounds != null)
         {
-            int i = 0;
             foreach (Audio s in sounds)
             {
-                s.audioSource = transform.GetChild(i).GetComponent<AudioSource>();
-                i++;
+                s.audioSource = transform.GetChild(audioCount).GetComponent<AudioSource>();
+                audioCount++;
                 s.audioSource.name = s.name;
                 s.audioSource.clip = s.audioClip;
                 s.audioSource.volume = s.volume;
@@ -61,6 +63,7 @@ public class AudioManager : MonoBehaviour
         {
             foreach (Audio m in music)
             {
+                m.audioSource = transform.GetChild(audioCount).GetComponent<AudioSource>();
                 m.audioSource.name = m.name;
                 m.audioSource.clip = m.audioClip;
                 m.audioSource.volume = m.volume;
@@ -82,7 +85,9 @@ public class AudioManager : MonoBehaviour
     public void StopSound(string name)
     {
         Audio audio = Array.Find(sounds, sound => sound.name == name);
-        audio.audioSource.Stop();
+    
+        if(audio != null)
+            audio.audioSource.Stop();
     }
 
     public void PlayMusic(string name)
@@ -97,24 +102,35 @@ public class AudioManager : MonoBehaviour
         audio.audioSource.Stop();
     }
 
+    public void ChangeVol_Music()   //Only for BGM when present as 1
+    {
+        // Audio audio = Array.Find(music, sound => sound.name == name);
+        AudioSource audioSource = transform.GetChild(audioCount).GetComponent<AudioSource>();
+        audioSource.DOFade(0.2f, 1);
+    }
+
     //--------------------- Audio Settings -------------------------//
 
     private void SoundVolume_Update(float vol)
     {
         sfxMixer.audioMixer.SetFloat("SFXvolume", vol);
         SaveDataHandler.Instance.saveData.soundVol = vol;
+        // PlayerPref_Save.soundVol = vol;
     }
 
     private void MusicVolume_Update(float vol)
     {
         bgmMixer.audioMixer.SetFloat("BGMvolume", vol);
         SaveDataHandler.Instance.saveData.musicVol = vol;
+        // PlayerPref_Save.musicVol = vol;
     }
 
     private void UpdateAudioSettings()
     {
         sfxMixer.audioMixer.SetFloat("SFXvolume", SaveDataHandler.Instance.saveData.soundVol);
         bgmMixer.audioMixer.SetFloat("BGMvolume", SaveDataHandler.Instance.saveData.musicVol);
+        // sfxMixer.audioMixer.SetFloat("SFXvolume", PlayerPref_Save.soundVol);
+        // bgmMixer.audioMixer.SetFloat("BGMvolume", PlayerPref_Save.musicVol);
     }
 }
 
@@ -150,3 +166,6 @@ public class SpatialAudio : Audio
     [Range(50, 500)]
     public float maxDistance;
 }
+
+
+//Sound - Success, LC, Hit
