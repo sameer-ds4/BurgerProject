@@ -148,6 +148,7 @@ public class GridManager : MonoBehaviour
     {
         if(match_H.Count >= 3)
         {
+            OrderManager.Instance.CheckMatch(match_H[0].burgerPart);
             StartCoroutine(AnimateMatchMade(match_H));
             gridCount = gridCount - match_H.Count;
         }
@@ -156,6 +157,7 @@ public class GridManager : MonoBehaviour
 
         if(match_V.Count >= 3)
         {
+            OrderManager.Instance.CheckMatch(match_V[0].burgerPart);
             StartCoroutine(AnimateMatchMade(match_V));
             gridCount = gridCount - match_V.Count;
         }

@@ -23,7 +23,7 @@ public class PlayerInput : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             CheckPlate();
-            Debug.LogError(GridManager.gridCount);
+            // Debug.LogError(GridManager.gridCount);
         }    
     }
 
@@ -45,6 +45,7 @@ public class PlayerInput : MonoBehaviour
 
     private void PlacePicks(Vector3 position, string name)
     {
+        // Debug.LogError(name);
         char[] place = name.ToCharArray();
         if(GridManager.gridFormed[place[0] - '0', place[1] - '0'] == null)
         {
