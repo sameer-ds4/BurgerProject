@@ -13,12 +13,9 @@ public class GameManager : MonoBehaviour
     public GridData gridData;
 
     [Header("Scene Data")]
-    public Transform levelSpawnPoint;
     public Transform foodParent;
-    public Transform orderBurgerSpawnPoint;
 
-    [Header("Burger Data")]
-    public BurgerItem[] burgerItemsList;
+    [HideInInspector] public BurgerItem[] burgerItemsList;
     // public BurgerItem currentBurgerItem;
     // public BurgerItem nextBurgerItem;
 
@@ -54,7 +51,7 @@ public class GameManager : MonoBehaviour
         // nextBurgerItem = BurgerRandomizer.Instance.Randomize();
     }
 
-    private void NextBurger()
+    private void NextBurger()       // Rotating burger Components coming up UI backend
     {
         burgerItemsList[0] = burgerItemsList[1];
         burgerItemsList[1] = burgerItemsList[2];
@@ -64,7 +61,7 @@ public class GameManager : MonoBehaviour
         // nextBurgerItem = BurgerRandomizer.Instance.Randomize();
     }
 
-    public BurgerItem Randomize()
+    public BurgerItem Randomize()       // Randomizing burger component
     {
         int x = Random.Range(0, foodObjects.burgerItems.Length - 3);
         BurgerItem currentCompenent = foodObjects.burgerItems[x];
@@ -74,20 +71,16 @@ public class GameManager : MonoBehaviour
     // Set target burger from comps
     private void SpawnBurgerOrder()
     {
-        int x = 4;
-        Instantiate(foodObjects.burgerItems[0].burgerObject, orderBurgerSpawnPoint.position, Quaternion.identity, orderBurgerSpawnPoint);
+        // Instantiate(ordersData.orderBurger[0], orderBurgerSpawnPoint.position, orderBurgerSpawnPoint.rotation, orderBurgerSpawnPoint);
+        // int x = 4;
+        // Instantiate(foodObjects.burgerItems[0].burgerObject, orderBurgerSpawnPoint.position, Quaternion.identity, orderBurgerSpawnPoint);
         //Spawn target burger at the top
 
-        for (int i = 0; i < x; i++)
+        // for (int i = 0; i < x; i++)
         {
-            BurgerObject orderBurger = Instantiate(foodObjects.burgerItems[Random.Range(1, foodObjects.burgerItems.Length)].burgerObject, orderBurgerSpawnPoint.position, Quaternion.identity, orderBurgerSpawnPoint);
+            // BurgerObject orderBurger = Instantiate(foodObjects.burgerItems[Random.Range(1, foodObjects.burgerItems.Length)].burgerObject, orderBurgerSpawnPoint.position, Quaternion.identity, orderBurgerSpawnPoint);
             // orderBurgerSpawnPoint.transform.position += orderBurger.transform.position
         }
-    }
-
-    private void CheckOrderMatch()
-    {
-        
     }
 }
  

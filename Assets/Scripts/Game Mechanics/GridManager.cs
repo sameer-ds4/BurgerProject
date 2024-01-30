@@ -8,8 +8,7 @@ public class GridManager : MonoBehaviour
     public Vector2Int gridSize;
     [SerializeField] private Transform spawnPoint;
     public static BurgerObject[,] gridFormed;
-
-    public static int gridCount;
+    private int gridCount;
 
 
   private void OnEnable() 
@@ -31,7 +30,7 @@ public class GridManager : MonoBehaviour
     private void Start()
     {
         gridSize = GameManager.Instance.gridData.gridSize;
-        gridFormed = new BurgerObject[gridSize.x, gridSize.y];
+        gridFormed = new BurgerObject[gridSize.x, gridSize.y];      //Reinitializing grid on every start/reload
         spawnPoint.position = Vector3.zero;
 
         GenerateGrid();

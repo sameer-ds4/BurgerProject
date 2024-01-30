@@ -5,7 +5,9 @@ using UnityEngine;
 public class OrderManager : MonoBehaviour
 {
     public static OrderManager Instance;
-    public OrderBurger burgerOrder;
+    public Orders ordersData;
+    public Transform orderBurgerSpawnpoint;
+    private OrderBurger burgerOrder;
     // private Dictionary<string, GameObject[]> currentOrder;
 
     private void Awake() 
@@ -13,10 +15,13 @@ public class OrderManager : MonoBehaviour
         Instance = this;
     }
 
-    private void OrderArrange()
+    private void Start() 
     {
-        // currentOrder
-        
+        PlaceOrder();
+    }
+    private void PlaceOrder()
+    {
+        burgerOrder = Instantiate(ordersData.orderBurger[0], orderBurgerSpawnpoint.position, orderBurgerSpawnpoint.rotation, orderBurgerSpawnpoint);
     }
 
     public void CheckMatch(BurgerPart burgerObject)       //Passing the matched type here to check with the main order
@@ -25,7 +30,6 @@ public class OrderManager : MonoBehaviour
         {
             if(burgerObject == burgerOrder.burgerParts[i])
             {
-                Debug.LogError("nvfkjvjnkd");
                 burgerOrder.burgerParts.RemoveAt(i);
                 break;
             }
