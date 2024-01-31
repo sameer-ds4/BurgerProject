@@ -54,10 +54,8 @@ public class GridManager : MonoBehaviour
 //-----------------------------------------------------------------------------------------------------------------------------------------
 
 
-    [HideInInspector]
-    public List<BurgerObject> match_H;
-    [HideInInspector]
-    public List<BurgerObject> match_V;
+    [HideInInspector] public List<BurgerObject> match_H;
+    [HideInInspector] public List<BurgerObject> match_V;
     
     private void MatchCheck_S(int x, int y)
     {

@@ -15,8 +15,7 @@ public class UIManager : MonoBehaviour
     public GameObject gameOver;
 
     public Image[] BurgerInfos;
-    public Image currImg;
-    public Image nxtImg;
+    
     
     private void Awake() 
     {
@@ -83,7 +82,5 @@ public class UIManager : MonoBehaviour
         {
             BurgerInfos[i].sprite = GameManager.Instance.burgerItemsList[i].image;
         }
-        // currImg.sprite = GameManager.Instance.currentBurgerItem.image;
-        // nxtImg.sprite = GameManager.Instance.nextBurgerItem.image;
     }
 }

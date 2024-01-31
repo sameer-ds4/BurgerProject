@@ -47,7 +47,7 @@ public class PlayerInput : MonoBehaviour
     {
         // Debug.LogError(name);
         char[] place = name.ToCharArray();
-        if(GridManager.gridFormed[place[0] - '0', place[1] - '0'] == null)
+        if(GridManager.gridFormed[place[0] - '0', place[1] - '0'] == null)    // Taking index from character array, so adding "- '0'" to reformat ASCII.
         {
             BurgerObject burgerSpawned = Instantiate(GameManager.Instance.burgerItemsList[0].burgerObject, position, Quaternion.identity, GameManager.Instance.foodParent);
             // BurgerObject plateFormed = Instantiate(burgerPart[Random.Range(0, burgerPart.Length)], position, Quaternion.identity);
