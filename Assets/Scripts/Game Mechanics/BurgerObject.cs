@@ -7,6 +7,7 @@ public class BurgerObject : MonoBehaviour
 {
     public bool isStatic;
     public BurgerPart burgerPart;
+    // public Sprite iconPart;
     
     private void OnEnable() 
     {

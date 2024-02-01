@@ -12,5 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389deb1f0e6314feb8b0655053864982, type: 3}
   m_Name: OrdersData
   m_EditorClassIdentifier: 
-  orderBurger:
-  - {fileID: 6675223906795867293, guid: ed3638f6c4b5f4262847c96371917319, type: 3}
+  order:
+  - orderName: Double Crispy Burger
+    quantities:
+    - burgerPart: 0
+      quantity: 2
+    - burgerPart: 1
+      quantity: 1
+    - burgerPart: 3
+      quantity: 1
+    - burgerPart: 2
+      quantity: 2
+    - burgerPart: 4
+      quantity: 0
+    - burgerPart: 6
+      quantity: 0

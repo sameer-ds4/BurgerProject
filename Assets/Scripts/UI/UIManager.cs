@@ -13,8 +13,12 @@ public class UIManager : MonoBehaviour
     public Settings settingsMenu;
     public GameObject burgerMain_P;
     public GameObject gameOver;
+    public GameObject levelComp;
 
     public Image[] BurgerInfos;
+
+    public OrderCard orderCard;
+    public List<OrderCard> orderCards;
     
     
     private void Awake() 
@@ -74,6 +78,7 @@ public class UIManager : MonoBehaviour
         inGameSc.SetActive(false);
         settingsMenu.gameObject.SetActive(false);
         gameOver.SetActive(false);
+        levelComp.SetActive(false);
     }
 
     private void UpdateComps()
@@ -81,6 +86,23 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < BurgerInfos.Length; i++)
         {
             BurgerInfos[i].sprite = GameManager.Instance.burgerItemsList[i].image;
+        }
+    }
+
+    public void PlaceOrderCard()
+    {
+        OrderCard cardCurrent = Instantiate(orderCard);
+        orderCards.Add(cardCurrent);
+    }
+
+    public void PopulateItems(OrderCard orderCard, BurgerPart burgerPart)
+    {
+        for (int i = 0; i < orderCard.itemQuantities.Length; i++)
+        {
+            if(burgerPart == orderCard.itemQuantities[i].burgerPart)
+            {
+                
+            }
         }
     }
 }

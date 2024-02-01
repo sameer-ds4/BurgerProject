@@ -96,4 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5059b791fae85346bb1f8662e2bc924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStatic: 0
   burgerPart: 0
+  iconPart: {fileID: 21300000, guid: 3b497fdd383584ec78d3b053042d2b00, type: 3}

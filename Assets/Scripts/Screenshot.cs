@@ -4,7 +4,6 @@ using System.IO;
 
 public class Screenshot : MonoBehaviour
 {
-
     public Camera mainCam;
 
     public int cWidth;
@@ -30,6 +29,7 @@ public class Screenshot : MonoBehaviour
 
         for (int i = 0; i < groupShotPics.Length; i++)
         {
+            Debug.LogError("1");
             groupShotPics[i].SetActive(true);
 
             rt = new RenderTexture(cWidth, cHeight, 24);
@@ -43,15 +43,15 @@ public class Screenshot : MonoBehaviour
 
             mainCam.targetTexture = null;
             RenderTexture.active = null;
-
+            Debug.LogError("2");
             Destroy(rt);
 
             byte[] bytes = screenshotOutput.EncodeToPNG();
-            File.WriteAllBytes(folderPath + "Didder" + i + ".PNG", bytes);
-
+            File.WriteAllBytes(folderPath + "Img" + i + ".PNG", bytes);
+            Debug.LogError("3");
             AssetDatabase.Refresh();
 
-            groupShotPics[i].SetActive(false);
+            // groupShotPics[i].SetActive(false);
         }
     }
 }
