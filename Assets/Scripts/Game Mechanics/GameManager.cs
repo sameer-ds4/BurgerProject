@@ -68,19 +68,5 @@ public class GameManager : MonoBehaviour
         return currentCompenent;
     }
 
-    // Set target burger from comps
-    private void SpawnBurgerOrder()
-    {
-        // Instantiate(ordersData.orderBurger[0], orderBurgerSpawnPoint.position, orderBurgerSpawnPoint.rotation, orderBurgerSpawnPoint);
-        // int x = 4;
-        // Instantiate(foodObjects.burgerItems[0].burgerObject, orderBurgerSpawnPoint.position, Quaternion.identity, orderBurgerSpawnPoint);
-        //Spawn target burger at the top
-
-        // for (int i = 0; i < x; i++)
-        {
-            // BurgerObject orderBurger = Instantiate(foodObjects.burgerItems[Random.Range(1, foodObjects.burgerItems.Length)].burgerObject, orderBurgerSpawnPoint.position, Quaternion.identity, orderBurgerSpawnPoint);
-            // orderBurgerSpawnPoint.transform.position += orderBurger.transform.position
-        }
-    }
 }
  

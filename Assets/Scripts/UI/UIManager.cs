@@ -89,20 +89,4 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void PlaceOrderCard()
-    {
-        OrderCard cardCurrent = Instantiate(orderCard);
-        orderCards.Add(cardCurrent);
-    }
-
-    public void PopulateItems(OrderCard orderCard, BurgerPart burgerPart)
-    {
-        for (int i = 0; i < orderCard.itemQuantities.Length; i++)
-        {
-            if(burgerPart == orderCard.itemQuantities[i].burgerPart)
-            {
-                
-            }
-        }
-    }
 }

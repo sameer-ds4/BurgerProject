@@ -4,68 +4,69 @@ using UnityEngine;
 
 public class OrderManager : MonoBehaviour
 {
-    public static OrderManager Instance;
-    public OrdersData ordersData;
-    public Transform orderBurgerSpawnpoint;
-    private List<Order> orders;
-    private OrderBurger burgerOrder;
-    private Order currentOrder;
+	public static OrderManager Instance;
+		
+	[Header("Order Card")]
+	private OrderCard currentOrder;
+	// private List<OrderCard> orderList;
+	public OrderCard orderCard;
+	public Transform orderCardSpawnpoint;
 
-    public OrderCard orderCard;
-    public List<OrderCard> orderCards;
-    // private Dictionary<string, GameObject[]> currentOrder;
+	private void Awake() 
+	{
+		Instance = this;
+	}
 
-    private void Awake() 
-    {
-        Instance = this;
-    }
+	private void Start() 
+	{
+		PlaceOrder();
+	}
 
-    private void Start() 
-    {
-        PlaceOrder();
-    }
+	private void PlaceOrder()
+	{
+		currentOrder = Instantiate(orderCard, orderCardSpawnpoint.position, Quaternion.identity, orderCardSpawnpoint);      // DisplayCard Spawn
+		
+		for (int i = 0; i < currentOrder.itemQuantities.Count; i++)
+		{
+			if (currentOrder.itemQuantities[i].quantity != 0)
+				currentOrder.comps.GetChild(i).gameObject.SetActive(true);
+				
+			currentOrder.itemQuantities[i].numbers.text = currentOrder.itemQuantities[i].quantity.ToString();
+		}
 
-    private void PlaceOrder()
-    {
+		// orderList.Add(currentOrder);
+	}
 
-    }
+	private void ClearItems(int i)
+	{
+		if (currentOrder.itemQuantities[i].quantity == 0)
+			currentOrder.itemQuantities.RemoveAt(i);
+	}
 
-    private void PlaceOrderSH()
-    {
-        // currentOrder.orderBurger = Instantiate(ordersData.orderBurger[0], orderBurgerSpawnpoint.position, orderBurgerSpawnpoint.rotation, orderBurgerSpawnpoint);
-        // currentOrder.orderCard = Instantiate(ordersData.)
-        orders.Add(currentOrder);
-        UIManager.Instance.PlaceOrderCard();
-    }
+	public void CheckMatch(BurgerPart burgerObject)       //Passing the matched type here to check with the main order
+	{
+		for (int i = 0; i < currentOrder.itemQuantities.Count; i++)
+		{
+			if(burgerObject == currentOrder.itemQuantities[i].burgerPart)
+			{	
+				currentOrder.itemQuantities[i].quantity--;
+				currentOrder.itemQuantities[i].numbers.text = currentOrder.itemQuantities[i].quantity.ToString();
+				
+				ClearItems(i);
+					
+				Debug.LogError(currentOrder.itemQuantities.Count);
+				
+				CheckOrderStatus();
+			}
+		}
+	}
 
-    private void PlaceOrderdd()
-    {
-        // burgerOrder = Instantiate(ordersData.orderBurger[0], orderBurgerSpawnpoint.position, orderBurgerSpawnpoint.rotation, orderBurgerSpawnpoint);
-        UIManager.Instance.PlaceOrderCard();
-    }
-
-
-
-
-    public void CheckMatch(BurgerPart burgerObject)       //Passing the matched type here to check with the main order
-    {
-        for (int i = 0; i < burgerOrder.burgerParts.Count; i++)
-        {
-            if(burgerObject == burgerOrder.burgerParts[i])
-            {
-                burgerOrder.burgerParts.RemoveAt(i);
-                CheckOrderStatus();
-                break;
-            }
-        }
-    }
-
-    private void CheckOrderStatus()
-    {
-        if(burgerOrder.burgerParts.Count == 0)
-        {
-            Debug.LogError("WIN WIN WIN");
-            UIManager.Instance.levelComp.SetActive(true);
-        }
-    }
+	private void CheckOrderStatus()
+	{
+		if(currentOrder.itemQuantities.Count == 0)
+		{
+			Debug.LogError("WIN WIN WIN");
+			UIManager.Instance.levelComp.SetActive(true);
+		}
+	}
 }

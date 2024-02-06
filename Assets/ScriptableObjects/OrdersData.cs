@@ -13,11 +13,11 @@ public class OrdersData : ScriptableObject
 public class Order
 {
     public string orderName;
-    public Test[] quantities;
+    public Recipe[] quantities;
 }
 
 [System.Serializable]
-public class Test
+public class Recipe
 {
     public BurgerPart burgerPart;
     public int quantity;

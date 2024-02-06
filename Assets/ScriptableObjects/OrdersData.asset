@@ -18,12 +18,12 @@ MonoBehaviour:
     - burgerPart: 0
       quantity: 2
     - burgerPart: 1
-      quantity: 1
-    - burgerPart: 3
-      quantity: 1
-    - burgerPart: 2
       quantity: 2
+    - burgerPart: 3
+      quantity: 2
+    - burgerPart: 2
+      quantity: 1
     - burgerPart: 4
-      quantity: 0
+      quantity: 1
     - burgerPart: 6
       quantity: 0
