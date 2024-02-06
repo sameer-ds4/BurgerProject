@@ -5,10 +5,13 @@ using UnityEngine;
 public class OrderManager : MonoBehaviour
 {
 	public static OrderManager Instance;
-		
+
+	public OrdersData ordersData;
+	
 	[Header("Order Card")]
 	private OrderCard currentOrder;
-	// private List<OrderCard> orderList;
+	private OrderCard orderPlacing;
+	public List<OrderCard> orderList;
 	public OrderCard orderCard;
 	public Transform orderCardSpawnpoint;
 
@@ -24,17 +27,21 @@ public class OrderManager : MonoBehaviour
 
 	private void PlaceOrder()
 	{
-		currentOrder = Instantiate(orderCard, orderCardSpawnpoint.position, Quaternion.identity, orderCardSpawnpoint);      // DisplayCard Spawn
-		
-		for (int i = 0; i < currentOrder.itemQuantities.Count; i++)
+		for (int i = 0; i < ordersData.order.Length; i++)
 		{
-			if (currentOrder.itemQuantities[i].quantity != 0)
-				currentOrder.comps.GetChild(i).gameObject.SetActive(true);
-				
-			currentOrder.itemQuantities[i].numbers.text = currentOrder.itemQuantities[i].quantity.ToString();
-		}
+			orderPlacing = Instantiate(ordersData.order[i], orderCardSpawnpoint.position, Quaternion.identity, orderCardSpawnpoint);      // DisplayCard Spawn
 
-		// orderList.Add(currentOrder);
+
+			for (int j = 0; j < orderPlacing.itemQuantities.Count; j++)
+			{
+				if (orderPlacing.itemQuantities[j].quantity != 0)
+					orderPlacing.comps.GetChild(j).gameObject.SetActive(true);
+
+				orderPlacing.itemQuantities[j].numbers.text = orderPlacing.itemQuantities[j].quantity.ToString();
+			}
+
+			orderList.Add(orderPlacing);
+		}
 	}
 
 	private void ClearItems(int i)
@@ -45,21 +52,32 @@ public class OrderManager : MonoBehaviour
 
 	public void CheckMatch(BurgerPart burgerObject)       //Passing the matched type here to check with the main order
 	{
-		for (int i = 0; i < currentOrder.itemQuantities.Count; i++)
+		for (int a = 0; a < orderList.Count; a++)
 		{
-			if(burgerObject == currentOrder.itemQuantities[i].burgerPart)
-			{	
-				currentOrder.itemQuantities[i].quantity--;
-				currentOrder.itemQuantities[i].numbers.text = currentOrder.itemQuantities[i].quantity.ToString();
-				
-				ClearItems(i);
-					
-				Debug.LogError(currentOrder.itemQuantities.Count);
-				
-				CheckOrderStatus();
+			currentOrder = orderList[a];
+
+			for (int i = 0; i < currentOrder.itemQuantities.Count; i++)
+			{
+				if (burgerObject == currentOrder.itemQuantities[i].burgerPart)
+				{
+					currentOrder.itemQuantities[i].quantity--;
+					currentOrder.itemQuantities[i].numbers.text = currentOrder.itemQuantities[i].quantity.ToString();
+
+					ClearItems(i);
+
+					Debug.LogError(currentOrder.itemQuantities.Count);
+
+					// CheckOrderStatus();
+
+					// break;
+					goto Lable;
+				}
 			}
 		}
+	Lable:;
+		
 	}
+	
 
 	private void CheckOrderStatus()
 	{

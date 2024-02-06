@@ -13,17 +13,5 @@ MonoBehaviour:
   m_Name: OrdersData
   m_EditorClassIdentifier: 
   order:
-  - orderName: Double Crispy Burger
-    quantities:
-    - burgerPart: 0
-      quantity: 2
-    - burgerPart: 1
-      quantity: 2
-    - burgerPart: 3
-      quantity: 2
-    - burgerPart: 2
-      quantity: 1
-    - burgerPart: 4
-      quantity: 1
-    - burgerPart: 6
-      quantity: 0
+  - {fileID: 3914790307115638032, guid: 34f879e657e4040a992765e3a08df87c, type: 3}
+  - {fileID: 3914790307115638032, guid: 7c5c99bd1e6f04d24a10aebb2392e8b0, type: 3}

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "OrdersData", menuName = "ScriptableObjects/OrdersData", order = 4)]
 public class OrdersData : ScriptableObject
 {
-    public Order[] order;
+    public OrderCard[] order;
 }
 
 
