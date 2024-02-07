@@ -32,12 +32,15 @@ public class OrderManager : MonoBehaviour
 			orderPlacing = Instantiate(ordersData.order[i], orderCardSpawnpoint.position, Quaternion.identity, orderCardSpawnpoint);      // DisplayCard Spawn
 
 
-			for (int j = 0; j < orderPlacing.itemQuantities.Count; j++)
+			for (int j = orderPlacing.itemQuantities.Count - 1; j >= 0; j--)
 			{
 				if (orderPlacing.itemQuantities[j].quantity != 0)
+				{
 					orderPlacing.comps.GetChild(j).gameObject.SetActive(true);
-
-				orderPlacing.itemQuantities[j].numbers.text = orderPlacing.itemQuantities[j].quantity.ToString();
+					orderPlacing.itemQuantities[j].numbers.text = orderPlacing.itemQuantities[j].quantity.ToString();	
+				}
+				else
+					orderPlacing.itemQuantities.RemoveAt(j);
 			}
 
 			orderList.Add(orderPlacing);
@@ -52,6 +55,8 @@ public class OrderManager : MonoBehaviour
 
 	public void CheckMatch(BurgerPart burgerObject)       //Passing the matched type here to check with the main order
 	{
+		bool flag = false;
+		
 		for (int a = 0; a < orderList.Count; a++)
 		{
 			currentOrder = orderList[a];
@@ -65,26 +70,39 @@ public class OrderManager : MonoBehaviour
 
 					ClearItems(i);
 
-					Debug.LogError(currentOrder.itemQuantities.Count);
+					CheckOrderStatus();
 
-					// CheckOrderStatus();
-
-					// break;
-					goto Lable;
+					flag = true;		// Breaking out of both loops as we only deduct one matched component
+					break;
 				}
 			}
+			
+			if (flag) break;
 		}
-	Lable:;
-		
 	}
 	
 
 	private void CheckOrderStatus()
 	{
-		if(currentOrder.itemQuantities.Count == 0)
+		int i = orderList.Count - 1;
+		while (i >= 0)
+		{
+			Debug.LogError("fnjfvbkn");
+			if(orderList[i].itemQuantities.Count == 0)
+			{
+				Debug.Log("REMOVE order");
+				orderList[i].gameObject.SetActive(false);
+				orderList.RemoveAt(i);
+			}
+			Debug.LogError(orderList[i].itemQuantities.Count);
+			i--;
+		}
+		
+		if(orderList.Count == 0)
 		{
 			Debug.LogError("WIN WIN WIN");
 			UIManager.Instance.levelComp.SetActive(true);
-		}
+		}		
+		
 	}
 }
