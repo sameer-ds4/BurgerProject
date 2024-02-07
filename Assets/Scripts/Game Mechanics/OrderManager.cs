@@ -53,7 +53,7 @@ public class OrderManager : MonoBehaviour
 			currentOrder.itemQuantities.RemoveAt(i);
 	}
 
-	public void CheckMatch(BurgerPart burgerObject)       //Passing the matched type here to check with the main order
+	public void CheckMatch(BurgerPart burgerObject)       //Passing the matched type here to check with the main orders
 	{
 		bool flag = false;
 		
@@ -87,14 +87,14 @@ public class OrderManager : MonoBehaviour
 		int i = orderList.Count - 1;
 		while (i >= 0)
 		{
-			Debug.LogError("fnjfvbkn");
+			// Debug.LogError("fnjfvbkn");
 			if(orderList[i].itemQuantities.Count == 0)
 			{
 				Debug.Log("REMOVE order");
 				orderList[i].gameObject.SetActive(false);
 				orderList.RemoveAt(i);
 			}
-			Debug.LogError(orderList[i].itemQuantities.Count);
+			// Debug.LogError(orderList[i].itemQuantities.Count);
 			i--;
 		}
 		
@@ -103,6 +103,5 @@ public class OrderManager : MonoBehaviour
 			Debug.LogError("WIN WIN WIN");
 			UIManager.Instance.levelComp.SetActive(true);
 		}		
-		
 	}
 }
