@@ -51,7 +51,7 @@ public class Screenshot : MonoBehaviour
             Debug.LogError("3");
             AssetDatabase.Refresh();
 
-            // groupShotPics[i].SetActive(false);
+            groupShotPics[i].SetActive(false);
         }
     }
 }

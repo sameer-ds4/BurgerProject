@@ -9,10 +9,8 @@ public class OrderManager : MonoBehaviour
 	public OrdersData ordersData;
 	
 	[Header("Order Card")]
-	private OrderCard currentOrder;
 	private OrderCard orderPlacing;
 	public List<OrderCard> orderList;
-	public OrderCard orderCard;
 	public Transform orderCardSpawnpoint;
 
 	private void Awake() 
@@ -37,20 +35,20 @@ public class OrderManager : MonoBehaviour
 				if (orderPlacing.itemQuantities[j].quantity != 0)
 				{
 					orderPlacing.comps.GetChild(j).gameObject.SetActive(true);
-					orderPlacing.itemQuantities[j].numbers.text = orderPlacing.itemQuantities[j].quantity.ToString();	
+					orderPlacing.itemQuantities[j].numbers.text = orderPlacing.itemQuantities[j].quantity.ToString();
 				}
 				else
-					orderPlacing.itemQuantities.RemoveAt(j);
+					ClearItems(j, orderPlacing);
 			}
 
 			orderList.Add(orderPlacing);
 		}
 	}
 
-	private void ClearItems(int i)
+	private void ClearItems(int i, OrderCard orderCard)
 	{
-		if (currentOrder.itemQuantities[i].quantity == 0)
-			currentOrder.itemQuantities.RemoveAt(i);
+		if (orderCard.itemQuantities[i].quantity == 0)
+			orderCard.itemQuantities.RemoveAt(i);
 	}
 
 	public void CheckMatch(BurgerPart burgerObject)       //Passing the matched type here to check with the main orders
@@ -59,16 +57,15 @@ public class OrderManager : MonoBehaviour
 		
 		for (int a = 0; a < orderList.Count; a++)
 		{
-			currentOrder = orderList[a];
 
-			for (int i = 0; i < currentOrder.itemQuantities.Count; i++)
+			for (int i = 0; i < orderList[a].itemQuantities.Count; i++)
 			{
-				if (burgerObject == currentOrder.itemQuantities[i].burgerPart)
+				if (burgerObject == orderList[a].itemQuantities[i].burgerPart)
 				{
-					currentOrder.itemQuantities[i].quantity--;
-					currentOrder.itemQuantities[i].numbers.text = currentOrder.itemQuantities[i].quantity.ToString();
+					orderList[a].itemQuantities[i].quantity--;
+					orderList[a].itemQuantities[i].numbers.text = orderList[a].itemQuantities[i].quantity.ToString();
 
-					ClearItems(i);
+					ClearItems(i, orderList[a]);
 
 					CheckOrderStatus();
 

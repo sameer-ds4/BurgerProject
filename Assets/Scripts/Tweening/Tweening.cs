@@ -128,7 +128,7 @@ public static class Tweening
     // Bubble Popout for gameobjects
     public static void BubbleOut_gameobject(GameObject obj_tween, float duration, Vector3 maxScale, Vector3 normScale)
     {
-        // obj_tween.transform.localScale = normScale;
+        obj_tween.transform.localScale = normScale;
         obj_tween.transform.DOScale(maxScale, duration / 2).SetEase(Ease.InCirc)
             .OnComplete(() => {
                 obj_tween.transform.DOScale(normScale, duration / 2);

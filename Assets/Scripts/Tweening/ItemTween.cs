@@ -9,8 +9,9 @@ public class ItemTween : MonoBehaviour
     public Scale scale;
     public Fade fade;
     public Ease ease;
-
     public float tweenTime;
+    public bool delay;
+    public float delayTime;
 
     private Vector3 actualPosition;
     private Vector3 actualScale;
@@ -23,19 +24,28 @@ public class ItemTween : MonoBehaviour
     {
         actualPosition = (transform as RectTransform).anchoredPosition;
         actualScale = (transform as RectTransform).localScale;
+        PreAnimate();
 
-        Animate();
+        if(delay)
+            DOVirtual.DelayedCall(delayTime, () => { Animate(); });
+        else
+            Animate();
     }
 
     private void OnDisable()
     {
         (transform as RectTransform).anchoredPosition = actualPosition;
-        (transform as RectTransform).localScale = actualScale; 
+        (transform as RectTransform).localScale = actualScale;
     }
 
-    private void Animate()
+    private void OnDestroy() 
     {
-        switch(tweenType)
+        transform.DOKill(false);
+    }
+    
+    private void PreAnimate()
+    {
+        switch (tweenType)
         {
             case TweenType.Move:
                 MoveUIitem();
@@ -47,6 +57,24 @@ public class ItemTween : MonoBehaviour
 
             case TweenType.Fade:
                 FadeUIitem();
+                break;
+        }
+    }
+
+    private void Animate()
+    {
+        switch(tweenType)
+        {
+            case TweenType.Move:
+                (transform as RectTransform).DOAnchorPos(actualPosition, tweenTime).SetEase(ease);
+                break;
+
+            case TweenType.Scale:
+                (transform as RectTransform).DOScale(actualScale, tweenTime).SetEase(ease);
+                break;
+
+            case TweenType.Fade:
+                gameObject.GetComponent<CanvasGroup>().DOFade(fadeTo, tweenTime).SetEase(ease);
                 break;
         }
     }
@@ -74,8 +102,6 @@ public class ItemTween : MonoBehaviour
         }
 
         (transform as RectTransform).localPosition = (transform as RectTransform).localPosition + tweenPosition;
-
-        (transform as RectTransform).DOAnchorPos(actualPosition, tweenTime).SetEase(ease);
     }
 
 
@@ -86,7 +112,7 @@ public class ItemTween : MonoBehaviour
         switch(scale)
         {
             case Scale.ScaleUp:
-                from = 0.2f;
+                from = 0.1f;
                 break;
 
             case Scale.ScaleDown:
@@ -95,7 +121,6 @@ public class ItemTween : MonoBehaviour
         }
 
         transform.localScale = Vector3.one * from;
-        (transform as RectTransform).DOScale(actualScale, tweenTime).SetEase(ease);
     }
 
     int fadeFrom, fadeTo;
@@ -120,7 +145,6 @@ public class ItemTween : MonoBehaviour
             gameObject.AddComponent<CanvasGroup>();
 
         gameObject.GetComponent<CanvasGroup>().alpha = fadeFrom;
-        gameObject.GetComponent<CanvasGroup>().DOFade(fadeTo, tweenTime).SetEase(ease);
     }
 }
 

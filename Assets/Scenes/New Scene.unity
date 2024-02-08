@@ -326,9 +326,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 2085839100}
-  cWidth: 200
-  cHeight: 200
-  folderPath: /Users/webappclouds/Unity Projects/BurgerProject
+  cWidth: 640
+  cHeight: 640
+  folderPath: /Users/webappclouds/Unity Projects/BurgerProject/Assets
   groupShotPics:
   - {fileID: 1261152453}
   - {fileID: 624249631}

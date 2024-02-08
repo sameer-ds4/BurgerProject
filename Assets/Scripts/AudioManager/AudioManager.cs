@@ -114,23 +114,23 @@ public class AudioManager : MonoBehaviour
     private void SoundVolume_Update(float vol)
     {
         sfxMixer.audioMixer.SetFloat("SFXvolume", vol);
+        // SaveDataHandler.Instance.saveData.soundVol = vol;
         SaveDataHandler.Instance.saveData.soundVol = vol;
-        // PlayerPref_Save.soundVol = vol;
     }
 
     private void MusicVolume_Update(float vol)
     {
         bgmMixer.audioMixer.SetFloat("BGMvolume", vol);
+        // SaveDataHandler.Instance.saveData.musicVol = vol;
         SaveDataHandler.Instance.saveData.musicVol = vol;
-        // PlayerPref_Save.musicVol = vol;
     }
 
     private void UpdateAudioSettings()
     {
+        // sfxMixer.audioMixer.SetFloat("SFXvolume", SaveDataHandler.Instance.saveData.soundVol);
+        // bgmMixer.audioMixer.SetFloat("BGMvolume", SaveDataHandler.Instance.saveData.musicVol);
         sfxMixer.audioMixer.SetFloat("SFXvolume", SaveDataHandler.Instance.saveData.soundVol);
         bgmMixer.audioMixer.SetFloat("BGMvolume", SaveDataHandler.Instance.saveData.musicVol);
-        // sfxMixer.audioMixer.SetFloat("SFXvolume", PlayerPref_Save.soundVol);
-        // bgmMixer.audioMixer.SetFloat("BGMvolume", PlayerPref_Save.musicVol);
     }
 }
 
@@ -166,6 +166,3 @@ public class SpatialAudio : Audio
     [Range(50, 500)]
     public float maxDistance;
 }
-
-
-//Sound - Success, LC, Hit
