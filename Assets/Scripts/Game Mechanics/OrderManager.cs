@@ -84,14 +84,12 @@ public class OrderManager : MonoBehaviour
 		int i = orderList.Count - 1;
 		while (i >= 0)
 		{
-			// Debug.LogError("fnjfvbkn");
 			if(orderList[i].itemQuantities.Count == 0)
 			{
 				Debug.Log("REMOVE order");
 				orderList[i].gameObject.SetActive(false);
 				orderList.RemoveAt(i);
 			}
-			// Debug.LogError(orderList[i].itemQuantities.Count);
 			i--;
 		}
 		

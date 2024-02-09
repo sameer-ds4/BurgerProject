@@ -45,7 +45,6 @@ public class GridManager : MonoBehaviour
                 GameObject currentcube = Instantiate(GameManager.Instance.gridData.cube, spawnPoint.position, Quaternion.identity, spawnPoint.parent);
                 spawnPoint.position += new Vector3(3, 0, 0);
                 currentcube.name = "" + i + j;
-                // cubes.Add(currentcube);
             }
             spawnPoint.position += new Vector3(-3 * gridSize.y, 0, -3);
         }
@@ -72,8 +71,6 @@ public class GridManager : MonoBehaviour
 
             if(gridFormed[i, y].burgerPart == gridFormed[x, y].burgerPart)
             {
-                // if(i == x) continue;
-
                 if(match_H.Contains(gridFormed[i, y])) continue;
 
                 match_H.Add(gridFormed[i, y]);
@@ -88,8 +85,6 @@ public class GridManager : MonoBehaviour
 
             if(gridFormed[i, y].burgerPart == gridFormed[x, y].burgerPart)
             {
-                // if(i == x) continue;
-
                 if(match_H.Contains(gridFormed[i, y])) continue;
 
                 match_H.Add(gridFormed[i, y]);
@@ -110,8 +105,6 @@ public class GridManager : MonoBehaviour
 
             if (gridFormed[x, i].burgerPart == gridFormed[x, y].burgerPart)
             {
-                // if(i == y) continue;
-
                 if (match_V.Contains(gridFormed[x, i])) continue;
 
                 match_V.Add(gridFormed[x, i]);
@@ -128,8 +121,6 @@ public class GridManager : MonoBehaviour
 
             if (gridFormed[x, i].burgerPart == gridFormed[x, y].burgerPart)
             {
-                // if(i == y) continue;
-
                 if (match_V.Contains(gridFormed[x, i])) continue;
 
                 match_V.Add(gridFormed[x, i]);

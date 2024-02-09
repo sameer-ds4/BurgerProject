@@ -16,8 +16,6 @@ public class GameManager : MonoBehaviour
 	public Transform foodParent;
 
 	[HideInInspector] public BurgerItem[] burgerItemsList;
-	// public BurgerItem currentBurgerItem;
-	// public BurgerItem nextBurgerItem;
 
 	public static bool startPlay;
 
@@ -47,8 +45,6 @@ public class GameManager : MonoBehaviour
 		{
 			burgerItemsList[i] = Randomize();    
 		}
-		// currentBurgerItem = BurgerRandomizer.Instance.Randomize();
-		// nextBurgerItem = BurgerRandomizer.Instance.Randomize();
 	}
 
 	private void NextBurger()       // Rotating burger Components coming up UI backend
@@ -57,8 +53,6 @@ public class GameManager : MonoBehaviour
 		burgerItemsList[1] = burgerItemsList[2];
 		burgerItemsList[2] = Randomize();
 		UpdateBurgerInfo?.Invoke();
-		// currentBurgerItem = nextBurgerItem;
-		// nextBurgerItem = BurgerRandomizer.Instance.Randomize();
 	}
 
 	public BurgerItem Randomize()       // Randomizing burger component
@@ -69,4 +63,3 @@ public class GameManager : MonoBehaviour
 	}
 
 }
- //56083 315338 50000 20000 441463  294231

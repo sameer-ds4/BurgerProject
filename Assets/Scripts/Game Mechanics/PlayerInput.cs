@@ -22,7 +22,6 @@ public class PlayerInput : MonoBehaviour
 		if(Input.GetMouseButtonDown(0))
 		{
 			CheckPlate();
-			// Debug.LogError(GridManager.gridCount);
 		}    
 	}
 
