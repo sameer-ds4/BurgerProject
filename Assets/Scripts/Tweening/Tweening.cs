@@ -141,7 +141,7 @@ public static class Tweening
         obj_tween.transform.DORotate(endPosition, duration).SetEase(Ease.Linear);
     }
 
-    public static void Scale_gameobject(GameObject obj_tween, float duration, Vector3 startScale, Vector3 endScale)
+    public static void ScaleChange_gameobject(GameObject obj_tween, float duration, Vector3 startScale, Vector3 endScale)
     {
         obj_tween.transform.localScale = startScale;
         obj_tween.transform.DOScale(endScale, duration);

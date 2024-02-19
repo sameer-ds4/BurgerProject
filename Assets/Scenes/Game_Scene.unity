@@ -3859,7 +3859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a2cec358664474ce992a2a59671dfe47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a2cec358664474ce992a2a59671dfe47, type: 3}
       propertyPath: m_LocalScale.z
@@ -3871,7 +3871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a2cec358664474ce992a2a59671dfe47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a2cec358664474ce992a2a59671dfe47, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4676,6 +4676,7 @@ GameObject:
   - component: {fileID: 1983119628}
   - component: {fileID: 1983119630}
   - component: {fileID: 1983119629}
+  - component: {fileID: 1983119631}
   m_Layer: 0
   m_Name: MM
   m_TagString: Untagged
@@ -4743,6 +4744,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983119627}
   m_CullTransparentMesh: 1
+--- !u!114 &1983119631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983119627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7fbe24c38317485384ea92f2cfdad06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenType: 0
+  direction: 0
+  scale: 0
+  fade: 0
+  ease: 1
+  tweenTime: 1
+  delay: 0
+  delayTime: 0
 --- !u!1 &1997097742
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92da03f1141c2ef4390f4ec206055917, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ed44c8988fb741c3b5173dade1bd0fa, type: 3}
   m_Name: ParticleSystemData
   m_EditorClassIdentifier: 
-  FX:
+  particleSystems:
   - {fileID: 0}
-  showPanelText: []
-  showPanelTextColor: []

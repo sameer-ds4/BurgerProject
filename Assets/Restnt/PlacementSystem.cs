@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlacementSystem : MonoBehaviour
 {
-	[SerializeField] private GameObject point;
+	// [SerializeField] private GameObject point;
 	[SerializeField] private GameObject cellIndicator;
 	[SerializeField] private PlaceInput placeInput;
 	[SerializeField] private Grid grid;
@@ -15,7 +15,7 @@ public class PlacementSystem : MonoBehaviour
 	{
 		Vector3 mousePosition = placeInput.GetSlotPosition();
 		Vector3Int gridPos = grid.WorldToCell(mousePosition);
-		point.transform.position = mousePosition;
+		// point.transform.position = mousePosition;
 		cellIndicator.transform.position = grid.CellToWorld(gridPos);
 		
 		if(Input.GetMouseButtonDown(0))
