@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class OrderManager : MonoBehaviour
@@ -25,9 +26,10 @@ public class OrderManager : MonoBehaviour
 
 	private void PlaceOrder()
 	{
+		Vector3 yOffset = Vector3.zero;
 		for (int i = 0; i < ordersData.order.Length; i++)
 		{
-			orderPlacing = Instantiate(ordersData.order[i], orderCardSpawnpoint.position, Quaternion.identity, orderCardSpawnpoint);      // DisplayCard Spawn
+			orderPlacing = Instantiate(ordersData.order[i], orderCardSpawnpoint.position + yOffset, Quaternion.identity, orderCardSpawnpoint);      // DisplayCard Spawn
 
 
 			for (int j = orderPlacing.itemQuantities.Count - 1; j >= 0; j--)
@@ -42,6 +44,8 @@ public class OrderManager : MonoBehaviour
 			}
 
 			orderList.Add(orderPlacing);
+
+			yOffset.y -= 300; // Card offset to spawn each
 		}
 	}
 
@@ -86,9 +90,10 @@ public class OrderManager : MonoBehaviour
 		{
 			if(orderList[i].itemQuantities.Count == 0)
 			{
-				Debug.Log("REMOVE order");
-				orderList[i].gameObject.SetActive(false);
-				orderList.RemoveAt(i);
+				orderList[i].Clear();
+				// ClearOrder(orderList[i].gameObject, i);
+				// orderList[i].gameObject.SetActive(false);
+				// orderList.RemoveAt(i);
 			}
 			i--;
 		}
@@ -98,5 +103,15 @@ public class OrderManager : MonoBehaviour
 			Debug.LogError("WIN WIN WIN");
 			UIManager.Instance.levelComp.SetActive(true);
 		}		
+	}
+
+	private void ClearOrder(GameObject obj, int i)
+	{
+		// Tweening.TweenMove(obj, 1f, new Vector2(0, 500), (transform as RectTransform).position);
+		DOVirtual.DelayedCall(1.2f, () =>
+		{
+			obj.SetActive(false);
+			orderList.RemoveAt(i);
+		});
 	}
 }
