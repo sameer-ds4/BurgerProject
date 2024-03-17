@@ -8,10 +8,9 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    public GameObject mainMenu;
-    public GameObject inGameSc;
-    public Settings settingsMenu;
-    public GameObject burgerMain_P;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject inGameSc;
+    [SerializeField] private Settings settingsMenu;
     public GameObject gameOver;
     public GameObject levelComp;
 
@@ -42,7 +41,6 @@ public class UIManager : MonoBehaviour
     public void OnBtn_Click(string name)
     {
         mainMenu.SetActive(false);
-        burgerMain_P.SetActive(false);
 
         switch (name)
         {
@@ -70,7 +68,6 @@ public class UIManager : MonoBehaviour
     private void MainMenu_Set()
     {
         mainMenu.SetActive(true);
-        burgerMain_P.SetActive(true);
     }
 
     private void ClosePages()

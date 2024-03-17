@@ -5,7 +5,7 @@ using UnityEngine;
 public class GridManager : MonoBehaviour
 {
     [Header ("Grid Charateristics")]
-    public Vector2Int gridSize;
+    private Vector2Int gridSize;
     [SerializeField] private Transform spawnPoint;
     public static BurgerObject[,] gridFormed;
     private int gridCount;
@@ -154,7 +154,7 @@ public class GridManager : MonoBehaviour
 
         gridCount++;
 
-        if (gridCount == 9)
+        if (gridCount == gridSize.x * gridSize.y)
         {
             UIManager.Instance.gameOver.SetActive(true);
         }
