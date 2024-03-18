@@ -97,12 +97,6 @@ public class OrderManager : MonoBehaviour
 				// orderList.RemoveAt(i);
 			}
 			i--;
-		}
-		
-		if(orderList.Count == 0)
-		{
-			Debug.LogError("WIN WIN WIN");
-			UIManager.Instance.levelComp.SetActive(true);
 		}		
 	}
 
@@ -113,6 +107,17 @@ public class OrderManager : MonoBehaviour
 		{
 			obj.SetActive(false);
 			orderList.RemoveAt(i);
+			CheckForWin();
 		});
+
+	}
+
+	private void CheckForWin()
+	{
+		if(orderList.Count == 0)
+		{
+			Debug.LogError("WIN WIN WIN");
+			UIManager.Instance.levelComp.SetActive(true);
+		}
 	}
 }
