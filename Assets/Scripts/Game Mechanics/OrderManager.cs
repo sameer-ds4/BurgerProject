@@ -86,12 +86,13 @@ public class OrderManager : MonoBehaviour
 	private void CheckOrderStatus()
 	{
 		int i = orderList.Count - 1;
+		Debug.LogError(i);
 		while (i >= 0)
 		{
 			if(orderList[i].itemQuantities.Count == 0)
 			{
 				orderList[i].Clear();
-				// ClearOrder(orderList[i].gameObject, i);
+				ClearOrder(orderList[i].gameObject, i);
 				// orderList[i].gameObject.SetActive(false);
 				// orderList.RemoveAt(i);
 			}

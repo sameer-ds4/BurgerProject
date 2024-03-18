@@ -12,7 +12,8 @@ public class OrderCard : MonoBehaviour
 
 	public void Clear()
 	{
-		transform.DOMoveY(1000, 1);
+		transform.DOLocalMoveY(1000, 1).OnComplete(() =>
+		{ gameObject.SetActive(false); });
 	}
 }
 
