@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Grid Data
   m_EditorClassIdentifier: 
   cube: {fileID: 8182553429752846789, guid: 70ea1a6c404eebd48b7de59768df8c05, type: 3}
-  gridSize: {x: 3, y: 3}
+  gridSize: {x: 5, y: 5}

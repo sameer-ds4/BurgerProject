@@ -34,6 +34,7 @@ public class GridManager : MonoBehaviour
         spawnPoint.position = Vector3.zero;
 
         GenerateGrid();
+        CameraSet();
     }
 
     public void GenerateGrid()
@@ -48,6 +49,14 @@ public class GridManager : MonoBehaviour
             }
             spawnPoint.position += new Vector3(-3 * gridSize.y, 0, -3);
         }
+
+    }
+
+    private void CameraSet()
+    {
+        Vector2 middlePoint = new Vector2((3 * ((float)gridSize.y - 1))/2, (-3 * ((float)gridSize.x - 1))/2);
+        Debug.LogError(middlePoint);
+        CameraManager.Instance.SetCameraFocus(middlePoint, gridSize.y - 3);
     }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------

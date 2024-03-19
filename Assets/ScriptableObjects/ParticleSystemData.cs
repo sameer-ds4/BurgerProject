@@ -10,27 +10,27 @@ public class ParticleSystemData : ScriptableObject
     public List <ParticleSystem> particleSystems;
 
 
-    public void PlayFXs(Vector3 pos, Vector3 posOffSet, int FxsId, Vector3 size, Transform prient)
+    public void PlayFXs(Vector3 pos, Vector3 posOffSet, int FxsId, Vector3 size, Transform parent)
     {
-        ParticleSystem particlesCash = Instantiate(particleSystems[FxsId], (pos + posOffSet), Quaternion.Euler(new Vector3(0, 0, 0)));
-        particlesCash.transform.localScale = size;
-        particlesCash.Play();
+        ParticleSystem particleFX = Instantiate(particleSystems[FxsId], (pos + posOffSet), Quaternion.Euler(new Vector3(0, 0, 0)));
+        particleFX.transform.localScale = size;
+        particleFX.Play();
         // particlesCash.transform.parent = LevelManager.Instance.currenterLevelContainer.trash;
-        particlesCash.transform.parent = prient;
+        particleFX.transform.parent = parent;
     }
     public void PlayFXs(Vector3 pos, Vector3 posOffSet, int FxsId, Vector3 size)
     {
-        ParticleSystem particlesCash = Instantiate(particleSystems[FxsId], (pos + posOffSet), Quaternion.Euler(new Vector3(-90, 0, 0)));
-        particlesCash.transform.localScale = size;
-        particlesCash.Play();
+        ParticleSystem particleFX = Instantiate(particleSystems[FxsId], (pos + posOffSet), Quaternion.Euler(new Vector3(-90, 0, 0)));
+        particleFX.transform.localScale = size;
+        particleFX.Play();
     }
-    public void PlayFXs(Vector3 pos, Vector3 posOffSet, int FxsId, Vector3 size, float daly)
+    public void PlayFXs(Vector3 pos, Vector3 posOffSet, int FxsId, Vector3 size, float delay)
     {
-        ParticleSystem particlesCash = Instantiate(particleSystems[FxsId], (pos + posOffSet), Quaternion.Euler(new Vector3(-0, 0, 0)));
-        particlesCash.transform.localScale = size;
-        DOVirtual.DelayedCall(daly, () =>
+        ParticleSystem particleFX = Instantiate(particleSystems[FxsId], (pos + posOffSet), Quaternion.Euler(new Vector3(-0, 0, 0)));
+        particleFX.transform.localScale = size;
+        DOVirtual.DelayedCall(delay, () =>
         {
-            particlesCash.Play();
+            particleFX.Play();
         });
     }
 }

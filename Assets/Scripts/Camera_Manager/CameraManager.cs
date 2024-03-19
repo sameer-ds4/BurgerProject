@@ -7,7 +7,6 @@ public class CameraManager : MonoBehaviour
 
     //public Camera uiCamera;
     public Camera inGameCamera;
-    public GameObject directionalLight;
     public Light dirlight;
 
     [Header("Camera Pos & Rot Valus")]
@@ -18,7 +17,8 @@ public class CameraManager : MonoBehaviour
 
     [Header ("FOV Settings")]
     public float playerNormalFov = 60;
-    public float playerSlowFov = 55;
+
+
     private void Awake()
     {
         Instance = this;
@@ -34,12 +34,12 @@ public class CameraManager : MonoBehaviour
         inGameCamera.DOFieldOfView(fov, 0.3f);
     }
        
-
     public void SetCamParent(GameObject parent)
     {
         inGameCamera.transform.parent = parent.transform;
         SetCameraStartValus();
     }
+
     private void SetCameraStartValus()
     {
         inGameCamera.transform.position = startCameraPos;
@@ -47,10 +47,9 @@ public class CameraManager : MonoBehaviour
         inGameCamera.fieldOfView = playerNormalFov;
     }
 
-
-    public void ChangeLight (Vector3 updaterot, float timet, float intensity)
+    public void SetCameraFocus(Vector2 posPoint, int offset)
     {
-        directionalLight.transform.DORotate(updaterot, timet);
-        dirlight.intensity = intensity;
+        inGameCamera.transform.position = new Vector3(posPoint.x, 18, posPoint.y + 2.65f);
+        inGameCamera.orthographicSize = inGameCamera.orthographicSize + 2 * offset;
     }
 }
