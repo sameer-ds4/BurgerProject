@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class OrderManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class OrderManager : MonoBehaviour
 	public static OrderManager Instance;
 
 	public OrdersData ordersData;
+	public OrderCard cardPrefab;
 	
 	[Header("Order Card")]
 	private OrderCard orderPlacing;
@@ -21,8 +23,48 @@ public class OrderManager : MonoBehaviour
 
 	private void Start() 
 	{
-		PlaceOrder();
+		// PlaceOrder();
+		OrderPlace();
 	}
+
+	float t1, t2 = 7;
+	bool place;
+	private void Update() 
+	{
+		if(!GameManager.startPlay) return;
+
+		t1 += Time.deltaTime;
+
+		if(t1 > t2 && ! place)
+		{
+			OrderPlace();
+			place = true;
+		}
+	}
+
+	Vector3 yOffsetL;
+	int orderIndex;
+	private void OrderPlace()
+	{
+		orderPlacing = Instantiate(ordersData.order[orderIndex], orderCardSpawnpoint.position+ yOffsetL, Quaternion.identity, orderCardSpawnpoint);
+
+		for (int i = orderPlacing.itemQuantities.Count - 1; i >= 0; i--)
+		{
+			if(orderPlacing.itemQuantities[i].quantity != 0)
+			{
+				orderPlacing.comps.GetChild(i).gameObject.SetActive(true);
+				orderPlacing.itemQuantities[i].numbers.text = orderPlacing.itemQuantities[i].quantity.ToString();	
+			}
+			else
+			ClearItems(i, orderPlacing);
+		}
+
+		orderIndex++;
+		orderList.Add(orderPlacing);
+
+		yOffsetL.y -= 300;
+	}
+
 
 	private void PlaceOrder()
 	{
@@ -57,7 +99,7 @@ public class OrderManager : MonoBehaviour
 
 	public void CheckMatch(BurgerPart burgerObject)       //Passing the matched type here to check with the main orders
 	{
-		bool flag = false;
+		bool flag = false;		// Flag to detect single match and exit loop 2
 		
 		for (int a = 0; a < orderList.Count; a++)
 		{
@@ -86,30 +128,35 @@ public class OrderManager : MonoBehaviour
 	private void CheckOrderStatus()
 	{
 		int i = orderList.Count - 1;
-		Debug.LogError(i);
 		while (i >= 0)
 		{
 			if(orderList[i].itemQuantities.Count == 0)
-			{
-				orderList[i].Clear();
-				ClearOrder(orderList[i].gameObject, i);
-				// orderList[i].gameObject.SetActive(false);
-				// orderList.RemoveAt(i);
-			}
+				ClearOrder(orderList[i], i);
+
 			i--;
 		}		
 	}
 
-	private void ClearOrder(GameObject obj, int i)
+	private void ClearOrder(OrderCard obj, int i)
 	{
-		// Tweening.TweenMove(obj, 1f, new Vector2(0, 500), (transform as RectTransform).position);
 		DOVirtual.DelayedCall(1.2f, () =>
 		{
-			obj.SetActive(false);
+			obj.Clear();
 			orderList.RemoveAt(i);
 			CheckForWin();
 		});
+		DOVirtual.DelayedCall(1.3f, ()=>
+		{
+			RearrangeOrderCards();
+		});
+	}
 
+	private void RearrangeOrderCards()
+	{
+		if(orderList.Count > 0)
+		{
+			orderList[0].Move(0);
+		}
 	}
 
 	private void CheckForWin()

@@ -13,7 +13,14 @@ public class OrderCard : MonoBehaviour
 	public void Clear()
 	{
 		transform.DOLocalMoveY(1000, 1).OnComplete(() =>
-		{ gameObject.SetActive(false); });
+		{ 
+			gameObject.SetActive(false); 
+		});
+	}
+
+	public void Move(float pos)
+	{
+		transform.DOLocalMoveY(pos, 1);
 	}
 }
 
