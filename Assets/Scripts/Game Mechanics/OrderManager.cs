@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class OrderManager : MonoBehaviour
@@ -15,6 +14,8 @@ public class OrderManager : MonoBehaviour
 	private OrderCard orderPlacing;
 	public List<OrderCard> orderList;
 	public Transform orderCardSpawnpoint;
+
+	public Transform[] spawnRef;
 
 	private void Awake() 
 	{
@@ -42,54 +43,68 @@ public class OrderManager : MonoBehaviour
 		}
 	}
 
-	Vector3 yOffsetL;
+	// Vector3 yOffsetL;
+	int x;
 	int orderIndex;
 	private void OrderPlace()
 	{
-		orderPlacing = Instantiate(ordersData.order[orderIndex], orderCardSpawnpoint.position+ yOffsetL, Quaternion.identity, orderCardSpawnpoint);
+		orderIndex = ordersData.GetOrderIndex();
+
+		orderCardSpawnpoint.eulerAngles = new Vector3(90, 0, 0);
+
+		orderPlacing = Instantiate(cardPrefab, spawnRef[x].position, new Quaternion(0, 0, 0, 0), orderCardSpawnpoint);
+		// Debug.LogError((orderCardSpawnpoint.transform as RectTransform).position);
+		// Debug.LogError((orderCardSpawnpoint.transform as RectTransform).eulerAngles);
 
 		for (int i = orderPlacing.itemQuantities.Count - 1; i >= 0; i--)
 		{
-			if(orderPlacing.itemQuantities[i].quantity != 0)
+			if(ordersData.orders[orderIndex].parts[i].quantity == 0)
 			{
-				orderPlacing.comps.GetChild(i).gameObject.SetActive(true);
-				orderPlacing.itemQuantities[i].numbers.text = orderPlacing.itemQuantities[i].quantity.ToString();	
+				ClearItems(i, orderPlacing);
 			}
 			else
-			ClearItems(i, orderPlacing);
+			{
+				orderPlacing.comps.GetChild(i).gameObject.SetActive(true);
+				orderPlacing.itemQuantities[i].quantity = ordersData.orders[orderIndex].parts[i].quantity;
+				// orderPlacing.itemQuantities[i].numbers.text = ordersData.orders[orderIndex].parts[i].quantity.ToString();
+				orderPlacing.itemQuantities[i].numbers.text = ordersData.orders[orderIndex].parts[i].quantity.ToString();
+			}
 		}
 
-		orderIndex++;
+		x++;
+
+		// orderIndex++;
 		orderList.Add(orderPlacing);
 
-		yOffsetL.y -= 300;
+		// yOffsetL += new Vector3(0, -300, 0);
+		// yOffsetL.anchoredPosition = new Vector3(0,,0);
 	}
 
 
-	private void PlaceOrder()
-	{
-		Vector3 yOffset = Vector3.zero;
-		for (int i = 0; i < ordersData.order.Length; i++)
-		{
-			orderPlacing = Instantiate(ordersData.order[i], orderCardSpawnpoint.position + yOffset, Quaternion.identity, orderCardSpawnpoint);      // DisplayCard Spawn
+	// private void PlaceOrder()
+	// {
+	// 	Vector3 yOffset = Vector3.zero;
+	// 	for (int i = 0; i < ordersData.order.Length; i++)
+	// 	{
+	// 		orderPlacing = Instantiate(ordersData.order[i], orderCardSpawnpoint.position + yOffset, Quaternion.identity, orderCardSpawnpoint);      // DisplayCard Spawn
 
 
-			for (int j = orderPlacing.itemQuantities.Count - 1; j >= 0; j--)
-			{
-				if (orderPlacing.itemQuantities[j].quantity != 0)
-				{
-					orderPlacing.comps.GetChild(j).gameObject.SetActive(true);
-					orderPlacing.itemQuantities[j].numbers.text = orderPlacing.itemQuantities[j].quantity.ToString();
-				}
-				else
-					ClearItems(j, orderPlacing);
-			}
+	// 		for (int j = orderPlacing.itemQuantities.Count - 1; j >= 0; j--)
+	// 		{
+	// 			if (orderPlacing.itemQuantities[j].quantity != 0)
+	// 			{
+	// 				orderPlacing.comps.GetChild(j).gameObject.SetActive(true);
+	// 				orderPlacing.itemQuantities[j].numbers.text = orderPlacing.itemQuantities[j].quantity.ToString();
+	// 			}
+	// 			else
+	// 				ClearItems(j, orderPlacing);
+	// 		}
 
-			orderList.Add(orderPlacing);
+	// 		orderList.Add(orderPlacing);
 
-			yOffset.y -= 300; // Card offset to spawn each
-		}
-	}
+	// 		yOffset.y -= 300; // Card offset to spawn each
+	// 	}
+	// }
 
 	private void ClearItems(int i, OrderCard orderCard)
 	{
@@ -97,7 +112,7 @@ public class OrderManager : MonoBehaviour
 			orderCard.itemQuantities.RemoveAt(i);
 	}
 
-	public void CheckMatch(BurgerPart burgerObject)       //Passing the matched type here to check with the main orders
+	public void CheckMatch_old(BurgerPart burgerObject)       //Passing the matched type here to check with the main orders
 	{
 		bool flag = false;		// Flag to detect single match and exit loop 2
 		
@@ -109,7 +124,8 @@ public class OrderManager : MonoBehaviour
 				if (burgerObject == orderList[a].itemQuantities[i].burgerPart)
 				{
 					orderList[a].itemQuantities[i].quantity--;
-					orderList[a].itemQuantities[i].numbers.text = orderList[a].itemQuantities[i].quantity.ToString();
+
+					UpdateDisplayCount(a, i);	
 
 					ClearItems(i, orderList[a]);
 
@@ -123,6 +139,33 @@ public class OrderManager : MonoBehaviour
 			if (flag) break;
 		}
 	}
+
+	public bool /*Vector2*/ CheckMatch(BurgerPart burgerObject)
+	{
+		for (int i = 0; i < orderList.Count; i++)
+		{
+			for (int j = 0; j < orderList[i].itemQuantities.Count; j++)
+			{
+				if(burgerObject == orderList[i].itemQuantities[j].burgerPart)
+				{
+					orderList[i].itemQuantities[j].quantity--;
+					orderList[i].itemQuantities[j].numbers.text = orderList[i].itemQuantities[j].quantity.ToString();
+
+					Vector2 icon = orderList[i].itemQuantities[j].itemImg.transform.position;
+
+					ClearItems(j, orderList[i]);
+
+					CheckOrderStatus();
+
+					// return icon;
+					return true;
+				}
+			}
+		}
+
+		// return Vector2.one;
+		return false;
+	}
 	
 
 	private void CheckOrderStatus()
@@ -131,11 +174,21 @@ public class OrderManager : MonoBehaviour
 		while (i >= 0)
 		{
 			if(orderList[i].itemQuantities.Count == 0)
+			{
+				Debug.LogError(i);	
 				ClearOrder(orderList[i], i);
+			}
 
 			i--;
 		}		
 	}
+
+	private void UpdateDisplayCount(int order, int item)
+	{
+		orderList[order].itemQuantities[item].numbers.text = orderList[order].itemQuantities[item].quantity.ToString();
+		orderList[order].itemQuantities[item].itemImg.transform.DOPunchScale(Vector3.one * 1.2f, .5f, 2, 0.5f);
+	}
+
 
 	private void ClearOrder(OrderCard obj, int i)
 	{

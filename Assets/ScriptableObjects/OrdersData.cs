@@ -8,7 +8,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "OrdersData", menuName = "ScriptableObjects/OrdersData", order = 4)]
 public class OrdersData : ScriptableObject
 {
-	[SerializeField] public OrderCard[] order;
+	public Order[] orders;
+	// public Recipe[] items;
+	// [SerializeField] public OrderCard[] order;
+
+	public int GetOrderIndex()
+	{
+		return Random.Range(0, orders.Length);
+	}
 }
 
 
@@ -16,7 +23,7 @@ public class OrdersData : ScriptableObject
 public class Order
 {
 	public string orderName;
-	public Recipe[] quantities;
+	public Recipe[] parts;
 }
 
 [System.Serializable]

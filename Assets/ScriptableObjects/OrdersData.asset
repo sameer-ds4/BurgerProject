@@ -12,6 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389deb1f0e6314feb8b0655053864982, type: 3}
   m_Name: OrdersData
   m_EditorClassIdentifier: 
-  order:
-  - {fileID: 3914790307115638032, guid: 34f879e657e4040a992765e3a08df87c, type: 3}
-  - {fileID: 3914790307115638032, guid: d764ad5755bae4b91894ee1c4708b5b8, type: 3}
+  orders:
+  - orderName: Burger 1
+    parts:
+    - burgerPart: 0
+      quantity: 1
+    - burgerPart: 1
+      quantity: 2
+    - burgerPart: 3
+      quantity: 2
+    - burgerPart: 2
+      quantity: 1
+    - burgerPart: 4
+      quantity: 1
+    - burgerPart: 6
+      quantity: 2
+  - orderName: Burger 2
+    parts:
+    - burgerPart: 0
+      quantity: 1
+    - burgerPart: 1
+      quantity: 2
+    - burgerPart: 3
+      quantity: 1
+    - burgerPart: 2
+      quantity: 1
+    - burgerPart: 4
+      quantity: 1
+    - burgerPart: 6
+      quantity: 0

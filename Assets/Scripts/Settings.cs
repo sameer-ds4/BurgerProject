@@ -10,6 +10,7 @@ public class Settings : MonoBehaviour
 {
     public Slider soundController;
     public Slider musicController;
+    public Slider hapticController;
 
     public Image vibrationStatus;
 
@@ -25,13 +26,13 @@ public class Settings : MonoBehaviour
     private void OnEnable()
     {
         DefaultSettings += SlidersUpdate;
-        DefaultSettings += UpdateVibrations;
+        // DefaultSettings += UpdateHaptics;
     }
 
     private void OnDisable()
     {
         DefaultSettings -= SlidersUpdate;
-        DefaultSettings -= UpdateVibrations;
+        // DefaultSettings -= UpdateHaptics;
     }
 
     private void Start()
@@ -48,7 +49,7 @@ public class Settings : MonoBehaviour
     }
 
 
-    public void SoundUpdate()
+    private void SoundUpdate()
     {
         soundController.onValueChanged.AddListener((v) => ChangeSoundVolume?.Invoke(v));
 
@@ -57,7 +58,7 @@ public class Settings : MonoBehaviour
 
     }
 
-    public void MusicUpdate()
+    private void MusicUpdate()
     {
         musicController.onValueChanged.AddListener((v) => ChangeMusicVolume?.Invoke(v));
 
@@ -69,6 +70,7 @@ public class Settings : MonoBehaviour
     {
         soundController.value = SaveDataHandler.Instance.saveData.soundVol;
         musicController.value = SaveDataHandler.Instance.saveData.musicVol;
+        hapticController.value = SaveDataHandler.Instance.saveData.hapticState;
 
         if(soundController.value < -25f)
             ChangeSoundVolume?.Invoke(-80f);
@@ -96,13 +98,23 @@ public class Settings : MonoBehaviour
         }
     }
 
-    private void UpdateVibrations()
+    public void HapticUpdate()
     {
-        if (SaveDataHandler.Instance.saveData.vibrationOn)
-            vibrationStatus.sprite = toggleOn;
-        else
-            vibrationStatus.sprite = toggleOff;
+        hapticController.onValueChanged.AddListener((v) => ChangeHaptics(v));
     }
+
+    private void ChangeHaptics(float i)
+    {
+        SaveDataHandler.Instance.saveData.hapticState = (int)i;
+    }
+
+    // private void UpdateVibrations()
+    // {
+    //     if (SaveDataHandler.Instance.saveData.vibrationOn)
+    //         vibrationStatus.sprite = toggleOn;
+    //     else
+    //         vibrationStatus.sprite = toggleOff;
+    // }
 
     private void MuteSound()
     {

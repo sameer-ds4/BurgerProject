@@ -58,7 +58,7 @@ public class GridManager : MonoBehaviour
         CameraManager.Instance.SetCameraFocus(middlePoint, gridSize.y - 3);
     }
 
-//-----------------------------------------------------------------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
 
 
     [HideInInspector] public List<BurgerObject> match_H;
@@ -140,12 +140,19 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    bool orderMatched;  //Remove after getting vector2 solution
+    [SerializeField] Vector2 iconPos;
     private void DestroyMatch()
     {
+        orderMatched = false;
+
         if(match_H.Count >= 3)
         {
-            OrderManager.Instance.CheckMatch(match_H[0].burgerPart);
+            // OrderManager.Instance.CheckMatch(match_H[0].burgerPart);
+            orderMatched = OrderManager.Instance.CheckMatch(match_H[0].burgerPart);
+            // iconPos = OrderManager.Instance.CheckMatch(match_H[0].burgerPart);
             StartCoroutine(AnimateMatchMade(match_H));
+            // StartCoroutine(AnimMatches(match_H, iconPos));
             gridCount = gridCount - match_H.Count;
         }
         else
@@ -153,8 +160,11 @@ public class GridManager : MonoBehaviour
 
         if(match_V.Count >= 3)
         {
-            OrderManager.Instance.CheckMatch(match_V[0].burgerPart);
+            // OrderManager.Instance.CheckMatch(match_V[0].burgerPart);
+            orderMatched = OrderManager.Instance.CheckMatch(match_V[0].burgerPart);
+            // iconPos = OrderManager.Instance.CheckMatch(match_V[0].burgerPart);
             StartCoroutine(AnimateMatchMade(match_V));
+            // StartCoroutine(AnimMatches(match_V, iconPos));
             gridCount = gridCount - match_V.Count;
         }
         else
@@ -168,7 +178,10 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    IEnumerator AnimateMatchMade(List<BurgerObject> objects)
+    //Take vector2 return type instead of bool and use it to animate the match. If no order item, send a extra or blank vector2 address.
+    //Make the match tween to one and move to the ordered object
+
+    IEnumerator AnimateMatchMade(List<BurgerObject> objects)        // Try to get the reference of matched item from UI card to animate when order item completed
     {
         GameManager.startPlay = false;
         yield return new WaitForSeconds(0.3f);
@@ -184,4 +197,35 @@ public class GridManager : MonoBehaviour
         objects.Clear();
         GameManager.startPlay = true;
     }
+
+    IEnumerator AnimMatches(List<BurgerObject> tweenObjects, Vector2 tweenPos)
+    {
+        GameManager.startPlay = false;
+        yield return new WaitForSeconds(0.3f);
+        
+        foreach (var item in tweenObjects)
+        {
+            //Tween together)
+        }
+
+        yield return new WaitForSeconds(.8f);
+
+        foreach (var item in tweenObjects)
+        {
+            
+            //Tween to tweenPos
+        }
+        
+        //Punch icon//
+
+        yield return new WaitForSeconds(1.3f);
+
+        foreach (var item in tweenObjects)
+        {
+            Destroy(item.gameObject);
+        }
+        tweenObjects.Clear();
+        GameManager.startPlay = true;
+    }
+
 }

@@ -9,6 +9,7 @@ public class SaveData
     public bool firstPlay;
     public float soundVol;
     public float musicVol;
+    public int hapticState;
     public bool vibrationOn;
 
     [Header("Player Details")]

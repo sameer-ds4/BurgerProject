@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
 	public BurgerItem Randomize()       // Randomizing burger component
 	{
-		int x = Random.Range(0, foodObjects.burgerItems.Length - 3);
+		int x = Random.Range(0, foodObjects.burgerItems.Length - 1);
 		BurgerItem currentCompenent = foodObjects.burgerItems[x];
 		return currentCompenent;
 	}

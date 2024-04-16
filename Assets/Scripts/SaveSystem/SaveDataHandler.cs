@@ -54,6 +54,7 @@ public class SaveDataHandler : Singleton<SaveDataHandler>
 
         saveData.musicVol = 0;
         saveData.soundVol = 0;
+        saveData.hapticState = 1;
         saveData.vibrationOn = true;
 
         saveData.pl_name = "Player";
