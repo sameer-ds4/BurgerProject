@@ -106,6 +106,8 @@ public class Settings : MonoBehaviour
     private void ChangeHaptics(float i)
     {
         SaveDataHandler.Instance.saveData.hapticState = (int)i;
+        // if(i == 1)
+            // HapticPatterns.PlayPreset(HapticPatterns.PresetType.LightImpact);
     }
 
     // private void UpdateVibrations()
