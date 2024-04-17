@@ -73,12 +73,13 @@ public class OrderManager : MonoBehaviour
 
 		x++;
 
-		// orderIndex++;
 		orderList.Add(orderPlacing);
+	}
+
+		// orderIndex++;
 
 		// yOffsetL += new Vector3(0, -300, 0);
 		// yOffsetL.anchoredPosition = new Vector3(0,,0);
-	}
 
 
 	// private void PlaceOrder()
@@ -140,7 +141,7 @@ public class OrderManager : MonoBehaviour
 		}
 	}
 
-	public bool /*Vector2*/ CheckMatch(BurgerPart burgerObject)
+	public /*bool*/ GameObject CheckMatch(BurgerPart burgerObject)
 	{
 		for (int i = 0; i < orderList.Count; i++)
 		{
@@ -148,36 +149,37 @@ public class OrderManager : MonoBehaviour
 			{
 				if(burgerObject == orderList[i].itemQuantities[j].burgerPart)
 				{
+					if(orderList[i].itemQuantities[j].quantity == 0) return null;
+
 					orderList[i].itemQuantities[j].quantity--;
 					orderList[i].itemQuantities[j].numbers.text = orderList[i].itemQuantities[j].quantity.ToString();
 
-					Vector2 icon = orderList[i].itemQuantities[j].itemImg.transform.position;
+					// Vector3 icon = orderList[i].itemQuantities[j].itemImg.transform.position;
+					GameObject icon = orderList[i].itemQuantities[j].itemImg.gameObject;
 
 					ClearItems(j, orderList[i]);
 
 					CheckOrderStatus();
 
-					// return icon;
-					return true;
+					return icon;
+					// return true;
 				}
 			}
 		}
-
-		// return Vector2.one;
-		return false;
+		return null;
+		// return Vector3.one;
+		// return false;
 	}
 	
 
 	private void CheckOrderStatus()
 	{
 		int i = orderList.Count - 1;
+
 		while (i >= 0)
 		{
 			if(orderList[i].itemQuantities.Count == 0)
-			{
-				Debug.LogError(i);	
 				ClearOrder(orderList[i], i);
-			}
 
 			i--;
 		}		

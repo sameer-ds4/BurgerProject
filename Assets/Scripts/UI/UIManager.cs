@@ -8,12 +8,15 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
+    [Header("UI Pages")]
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject inGameSc;
     [SerializeField] private Settings settingsMenu;
     public GameObject gameOver;
     public GameObject levelComp;
 
+    [Space]
+    [Header("Order Components")]
     public Image[] BurgerInfos;
 
     public OrderCard orderCard;

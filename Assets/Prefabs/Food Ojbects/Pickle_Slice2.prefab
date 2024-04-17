@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8588892422348505719}
   - component: {fileID: 5718339664595664314}
   - component: {fileID: -2410762251218070838}
+  - component: {fileID: -1119110412966411892}
   m_Layer: 0
   m_Name: Pickle_Slice2
   m_TagString: Untagged
@@ -96,4 +97,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5059b791fae85346bb1f8662e2bc924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStatic: 0
   burgerPart: 6
+--- !u!95 &-1119110412966411892
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445741418048560059}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d354b33e3e08d4f38b1912fb1904f07b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

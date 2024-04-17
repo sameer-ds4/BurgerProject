@@ -18,10 +18,10 @@ public class BurgerObject : MonoBehaviour
     {
         if (isStatic) return;
 
-        transform.DORotate(new Vector3(0, 360, 0), 6, RotateMode.FastBeyond360)
-        .SetLoops(-1, LoopType.Restart)
-        .SetRelative()
-        .SetEase(Ease.Linear);
+        // transform.DORotate(new Vector3(0, 360, 0), 6, RotateMode.FastBeyond360)
+        // .SetLoops(-1, LoopType.Restart)
+        // .SetRelative()
+        // .SetEase(Ease.Linear);
     }
 
     private void OnDestroy() 

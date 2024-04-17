@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
@@ -141,7 +142,8 @@ public class GridManager : MonoBehaviour
     }
 
     bool orderMatched;  //Remove after getting vector2 solution
-    [SerializeField] Vector2 iconPos;
+    // [SerializeField] Vector3 iconPos;
+    GameObject iconPos;
     private void DestroyMatch()
     {
         orderMatched = false;
@@ -149,10 +151,14 @@ public class GridManager : MonoBehaviour
         if(match_H.Count >= 3)
         {
             // OrderManager.Instance.CheckMatch(match_H[0].burgerPart);
-            orderMatched = OrderManager.Instance.CheckMatch(match_H[0].burgerPart);
-            // iconPos = OrderManager.Instance.CheckMatch(match_H[0].burgerPart);
-            StartCoroutine(AnimateMatchMade(match_H));
-            // StartCoroutine(AnimMatches(match_H, iconPos));
+            // orderMatched = OrderManager.Instance.CheckMatch(match_H[0].burgerPart);
+            iconPos = OrderManager.Instance.CheckMatch(match_H[0].burgerPart);
+
+            if(iconPos == null)
+                StartCoroutine(AnimateMatchMade(match_H));
+            else
+                StartCoroutine(AnimMatches(match_H, iconPos));
+    
             gridCount = gridCount - match_H.Count;
         }
         else
@@ -161,10 +167,14 @@ public class GridManager : MonoBehaviour
         if(match_V.Count >= 3)
         {
             // OrderManager.Instance.CheckMatch(match_V[0].burgerPart);
-            orderMatched = OrderManager.Instance.CheckMatch(match_V[0].burgerPart);
-            // iconPos = OrderManager.Instance.CheckMatch(match_V[0].burgerPart);
-            StartCoroutine(AnimateMatchMade(match_V));
-            // StartCoroutine(AnimMatches(match_V, iconPos));
+            // orderMatched = OrderManager.Instance.CheckMatch(match_V[0].burgerPart);
+            iconPos = OrderManager.Instance.CheckMatch(match_V[0].burgerPart);
+
+            if(iconPos == null)
+                StartCoroutine(AnimateMatchMade(match_V));
+            else
+                StartCoroutine(AnimMatches(match_V, iconPos));
+    
             gridCount = gridCount - match_V.Count;
         }
         else
@@ -198,8 +208,9 @@ public class GridManager : MonoBehaviour
         GameManager.startPlay = true;
     }
 
-    IEnumerator AnimMatches(List<BurgerObject> tweenObjects, Vector2 tweenPos)
+    IEnumerator AnimMatches(List<BurgerObject> tweenObjects, GameObject tweenPos)
     {
+        // Debug.LogError(tweenPos);
         GameManager.startPlay = false;
         yield return new WaitForSeconds(0.3f);
         
@@ -212,7 +223,16 @@ public class GridManager : MonoBehaviour
 
         foreach (var item in tweenObjects)
         {
-            
+            item.transform.DOScale(Vector3.one * .4f, 1);
+            item.transform.DOMove(tweenPos.transform.position, 1).OnComplete(() =>
+            {
+                foreach (var item in tweenObjects)
+                {
+                    Destroy(item.gameObject);
+                }
+                DOTween.KillAll();
+                tweenPos.transform.DOPunchScale(Vector3.one * 1.2f, 0.4f, 2, 0.5f);
+            });
             //Tween to tweenPos
         }
         
@@ -220,10 +240,6 @@ public class GridManager : MonoBehaviour
 
         yield return new WaitForSeconds(1.3f);
 
-        foreach (var item in tweenObjects)
-        {
-            Destroy(item.gameObject);
-        }
         tweenObjects.Clear();
         GameManager.startPlay = true;
     }

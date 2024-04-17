@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
 	private void OnEnable() 
 	{
 		PlayerInput.RandomBurger += NextBurger;
+		ForceMaxFPS();
 	}
 
 	private void OnDisable() 
@@ -62,4 +63,8 @@ public class GameManager : MonoBehaviour
 		return currentCompenent;
 	}
 
+	private void ForceMaxFPS()
+	{
+		Application.targetFrameRate = 120;
+	}
 }
