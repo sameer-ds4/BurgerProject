@@ -226,10 +226,6 @@ public class GridManager : MonoBehaviour
             item.transform.DOScale(Vector3.one * .4f, 1);
             item.transform.DOMove(tweenPos.transform.position, 1).OnComplete(() =>
             {
-                foreach (var item in tweenObjects)
-                {
-                    Destroy(item.gameObject);
-                }
                 DOTween.KillAll();
                 tweenPos.transform.DOPunchScale(Vector3.one * 1.2f, 0.4f, 2, 0.5f);
             });
@@ -237,8 +233,12 @@ public class GridManager : MonoBehaviour
         }
         
         //Punch icon//
+        yield return new WaitForSeconds(1.7f);
 
-        yield return new WaitForSeconds(1.3f);
+        foreach (var item in tweenObjects)
+        {
+            Destroy(item.gameObject);
+        }
 
         tweenObjects.Clear();
         GameManager.startPlay = true;
