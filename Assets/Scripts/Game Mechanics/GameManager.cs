@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
 	[Header("Scene Data")]
 	public Transform foodParent;
-
 	[HideInInspector] public BurgerItem[] burgerItemsList;
 
 	public static bool startPlay;
@@ -23,10 +22,10 @@ public class GameManager : MonoBehaviour
 	// EVENTS 
 	public delegate void UpdateUI();
 	public static event UpdateUI UpdateBurgerInfo;
+
 	private void Awake()
 	{
 		Instance = this;
-		InitializeBurgerComps();
 	}
 	
 	private void OnEnable() 
@@ -40,7 +39,15 @@ public class GameManager : MonoBehaviour
 		PlayerInput.RandomBurger -= NextBurger;
 	}
 
-	private void InitializeBurgerComps()
+	public void TutorialInitialize()
+	{
+		for (int i = 0; i < burgerItemsList.Length; i++)
+		{
+			burgerItemsList[i] = foodObjects.burgerItems[0];
+		}
+	}
+
+	public void InitializeBurgerComps()
 	{
 		for (int i = 0; i < burgerItemsList.Length; i++)
 		{
@@ -61,6 +68,8 @@ public class GameManager : MonoBehaviour
 		int x = Random.Range(0, foodObjects.burgerItems.Length - 1);
 		BurgerItem currentCompenent = foodObjects.burgerItems[x];
 		return currentCompenent;
+
+		// return foodObjects.burgerItems[3];
 	}
 
 	private void ForceMaxFPS()

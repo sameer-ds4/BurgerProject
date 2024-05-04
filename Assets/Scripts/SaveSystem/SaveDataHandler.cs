@@ -21,6 +21,7 @@ public class SaveDataHandler : Singleton<SaveDataHandler>
         {
             WriteSave();
             onSaveInitialized();
+            // Debug.LogError("kjndlskbdlsdb");
         }
     }
 
@@ -42,15 +43,12 @@ public class SaveDataHandler : Singleton<SaveDataHandler>
 
     private void LoadData()
     {
-        if(PlayerPrefs.GetInt("Override", 0) == 0)
-        {
-            saveData.firstPlay = false;
-        }
+ 
     }
 
     private void onSaveInitialized()
     {
-        saveData.firstPlay = true;
+        saveData.tutorial = true;
 
         saveData.musicVol = 0;
         saveData.soundVol = 0;

@@ -25,28 +25,30 @@ public class OrderManager : MonoBehaviour
 	private void Start() 
 	{
 		// PlaceOrder();
-		OrderPlace();
+		// OrderPlace();
 	}
 
-	float t1, t2 = 7;
-	bool place;
-	private void Update() 
-	{
-		if(!GameManager.startPlay) return;
+	// float t1, t2 = 7;
+	// bool place;
+	// private void Update() 
+	// {
+	// 	if(!GameManager.startPlay) return;
 
-		t1 += Time.deltaTime;
+	// 	t1 += Time.deltaTime;
 
-		if(t1 > t2 && ! place)
-		{
-			OrderPlace();
-			place = true;
-		}
-	}
+	// 	if(t1 > t2 && ! place)
+	// 	{
+	// 		OrderPlace();
+	// 		place = true;
+	// 	}
+	// }
 
 	// Vector3 yOffsetL;
 	int x;
 	int orderIndex;
-	private void OrderPlace()
+	
+	
+	public void OrderPlace()
 	{
 		orderIndex = ordersData.GetOrderIndex();
 
@@ -55,6 +57,8 @@ public class OrderManager : MonoBehaviour
 		orderPlacing = Instantiate(cardPrefab, spawnRef[x].position, new Quaternion(0, 0, 0, 0), orderCardSpawnpoint);
 		// Debug.LogError((orderCardSpawnpoint.transform as RectTransform).position);
 		// Debug.LogError((orderCardSpawnpoint.transform as RectTransform).eulerAngles);
+
+		orderPlacing.orderName.text = ordersData.orders[orderIndex].orderName;
 
 		for (int i = orderPlacing.itemQuantities.Count - 1; i >= 0; i--)
 		{
@@ -75,6 +79,7 @@ public class OrderManager : MonoBehaviour
 
 		orderList.Add(orderPlacing);
 	}
+
 
 		// orderIndex++;
 
@@ -113,33 +118,8 @@ public class OrderManager : MonoBehaviour
 			orderCard.itemQuantities.RemoveAt(i);
 	}
 
-	public void CheckMatch_old(BurgerPart burgerObject)       //Passing the matched type here to check with the main orders
-	{
-		bool flag = false;		// Flag to detect single match and exit loop 2
-		
-		for (int a = 0; a < orderList.Count; a++)
-		{
-
-			for (int i = 0; i < orderList[a].itemQuantities.Count; i++)
-			{
-				if (burgerObject == orderList[a].itemQuantities[i].burgerPart)
-				{
-					orderList[a].itemQuantities[i].quantity--;
-
-					UpdateDisplayCount(a, i);	
-
-					ClearItems(i, orderList[a]);
-
-					CheckOrderStatus();
-
-					flag = true;		// Breaking out of both loops as we only deduct one matched component
-					break;
-				}
-			}
-			
-			if (flag) break;
-		}
-	}
+	public int orderNo, componentNo, quantity;
+	public ItemQuantity itemQuantity;
 
 	public /*bool*/ GameObject CheckMatch(BurgerPart burgerObject)
 	{
@@ -152,14 +132,25 @@ public class OrderManager : MonoBehaviour
 					if(orderList[i].itemQuantities[j].quantity == 0) return null;
 
 					orderList[i].itemQuantities[j].quantity--;
-					orderList[i].itemQuantities[j].numbers.text = orderList[i].itemQuantities[j].quantity.ToString();
+					
+					// orderList[i].itemQuantities[j].numbers.text = orderList[i].itemQuantities[j].quantity.ToString();
+
+					itemQuantity = orderList[i].itemQuantities[j];
+					orderNo = i;
+					componentNo = j;
+
+					// quantity = orderList[i].itemQuantities[j].quantity;
+					// DOVirtual.DelayedCall(2.5f, () =>
+					// {
+					// 	UpdateDisplayCount();
+					// });
 
 					// Vector3 icon = orderList[i].itemQuantities[j].itemImg.transform.position;
 					GameObject icon = orderList[i].itemQuantities[j].itemImg.gameObject;
 
-					ClearItems(j, orderList[i]);
+					// ClearItems(j, orderList[i]);
 
-					CheckOrderStatus();
+					// CheckOrderStatus();
 
 					return icon;
 					// return true;
@@ -185,10 +176,18 @@ public class OrderManager : MonoBehaviour
 		}		
 	}
 
-	private void UpdateDisplayCount(int order, int item)
+	public void UpdateDisplayCount()
 	{
-		orderList[order].itemQuantities[item].numbers.text = orderList[order].itemQuantities[item].quantity.ToString();
-		orderList[order].itemQuantities[item].itemImg.transform.DOPunchScale(Vector3.one * 1.2f, .5f, 2, 0.5f);
+		for (int i = 0; i < orderList[orderNo].itemQuantities.Count; i++)
+		{
+			if(orderList[orderNo].itemQuantities[i].burgerPart == itemQuantity.burgerPart)
+			{
+				orderList[orderNo].itemQuantities[i].numbers.text = itemQuantity.quantity.ToString();
+			}
+		}
+
+		ClearItems(componentNo, orderList[orderNo]);
+		CheckOrderStatus();
 	}
 
 
@@ -218,8 +217,37 @@ public class OrderManager : MonoBehaviour
 	{
 		if(orderList.Count == 0)
 		{
-			Debug.LogError("WIN WIN WIN");
 			UIManager.Instance.levelComp.SetActive(true);
 		}
 	}
 }
+
+
+
+	// public void CheckMatch_old(BurgerPart burgerObject)       //Passing the matched type here to check with the main orders
+	// {
+	// 	bool flag = false;		// Flag to detect single match and exit loop 2
+		
+	// 	for (int a = 0; a < orderList.Count; a++)
+	// 	{
+
+	// 		for (int i = 0; i < orderList[a].itemQuantities.Count; i++)
+	// 		{
+	// 			if (burgerObject == orderList[a].itemQuantities[i].burgerPart)
+	// 			{
+	// 				orderList[a].itemQuantities[i].quantity--;
+
+	// 				// UpdateDisplayCount(a, i);	
+
+	// 				ClearItems(i, orderList[a]);
+
+	// 				CheckOrderStatus();
+
+	// 				flag = true;		// Breaking out of both loops as we only deduct one matched component
+	// 				break;
+	// 			}
+	// 		}
+			
+	// 		if (flag) break;
+	// 	}
+	// }

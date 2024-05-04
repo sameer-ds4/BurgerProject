@@ -6,7 +6,7 @@ using UnityEngine;
 public class SaveData
 {
     [Header("Game variable status")]
-    public bool firstPlay;
+    public bool tutorial;
     public float soundVol;
     public float musicVol;
     public int hapticState;

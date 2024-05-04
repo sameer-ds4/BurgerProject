@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerInput : MonoBehaviour
 {
 	public Camera mainCam;
+	public static string tagToTrack;
 
 	public delegate void Matchmaking(int x, int y);
 	public static event Matchmaking CheckMatch;
@@ -15,11 +17,24 @@ public class PlayerInput : MonoBehaviour
 	public delegate void RandomizeComps();
 	public static event RandomizeComps RandomBurger;
 
+	private void Start() 
+	{
+		SelectTag();
+	}
+
+	private void SelectTag()
+	{
+		if(SaveDataHandler.Instance.saveData.tutorial)
+			tagToTrack = "TutPlate";
+		else
+			tagToTrack = "Plate";
+	}
+
 	private void Update() 
 	{
 		if (!GameManager.startPlay) return;
 
-		if(Input.GetMouseButtonDown(0))
+		if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
 		{
 			CheckPlate();
 		}    
@@ -32,7 +47,7 @@ public class PlayerInput : MonoBehaviour
 		RaycastHit hit;
 		if(Physics.Raycast(ray, out hit, 100))                  // Checking for Slot occupied or not
 		{
-			if(hit.collider.tag == "Plate")
+			if(hit.collider.tag == tagToTrack)
 			{
 				Vector3 spawnPos = hit.collider.transform.position + new Vector3(0, 0.5f, 0);
 				string place = hit.collider.gameObject.name;

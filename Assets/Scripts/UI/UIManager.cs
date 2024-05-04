@@ -48,9 +48,11 @@ public class UIManager : MonoBehaviour
         switch (name)
         {
             case "Play":
-                inGameSc.SetActive(true);
-                UpdateComps();
-                GameManager.startPlay = true;
+                
+                // UpdateComps();
+                // TutorialStart();
+                StartGame();
+                // GameManager.startPlay = true;
                 break;
 
             case "Settings":
@@ -81,6 +83,25 @@ public class UIManager : MonoBehaviour
         levelComp.SetActive(false);
     }
 
+    private void StartGame()
+    {
+        inGameSc.SetActive(true);
+        // GameManager.startPlay = true;
+
+        if(!SaveDataHandler.Instance.saveData.tutorial)
+        {
+            GameManager.Instance.InitializeBurgerComps();
+            UpdateComps();
+            OrderManager.Instance.OrderPlace();
+            GameManager.startPlay = true;
+        }
+        else
+        {
+            GameManager.Instance.TutorialInitialize();
+            TutorialStart();
+        }
+    }
+
     private void UpdateComps()
     {
         for (int i = 0; i < BurgerInfos.Length; i++)
@@ -89,4 +110,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void TutorialStart()
+    {
+        TutorialManager.Instance.tutorialCard.SetActive(true);
+
+        for (int i = 0; i < BurgerInfos.Length; i++)
+        {
+            BurgerInfos[i].sprite = GameManager.Instance.burgerItemsList[i].image;
+        }
+    }
 }

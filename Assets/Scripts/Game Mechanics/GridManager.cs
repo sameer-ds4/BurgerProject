@@ -47,6 +47,12 @@ public class GridManager : MonoBehaviour
                 GameObject currentcube = Instantiate(GameManager.Instance.gridData.cube, spawnPoint.position, Quaternion.identity, spawnPoint.parent);
                 spawnPoint.position += new Vector3(3, 0, 0);
                 currentcube.name = "" + i + j;
+
+                if(SaveDataHandler.Instance.saveData.tutorial && i == 0)
+                {
+                    currentcube.tag = "TutPlate";
+                    TutorialManager.Instance.tutPlates.Add(currentcube);
+                }
             }
             spawnPoint.position += new Vector3(-3 * gridSize.y, 0, -3);
         }
@@ -146,7 +152,7 @@ public class GridManager : MonoBehaviour
     GameObject iconPos;
     private void DestroyMatch()
     {
-        orderMatched = false;
+        // orderMatched = false;
 
         if(match_H.Count >= 3)
         {
@@ -212,31 +218,36 @@ public class GridManager : MonoBehaviour
     {
         // Debug.LogError(tweenPos);
         GameManager.startPlay = false;
-        yield return new WaitForSeconds(0.3f);
+        // yield return new WaitForSeconds(0.3f);
         
+        // foreach (var item in tweenObjects)
+        // {
+        //     //Tween together)
+        // }
+
+        yield return new WaitForSeconds(.3f);
+
         foreach (var item in tweenObjects)
         {
-            //Tween together)
-        }
+            if(item == null) continue;
 
-        yield return new WaitForSeconds(.8f);
-
-        foreach (var item in tweenObjects)
-        {
             item.transform.DOScale(Vector3.one * .4f, 1);
             item.transform.DOMove(tweenPos.transform.position, 1).OnComplete(() =>
             {
                 DOTween.KillAll();
                 tweenPos.transform.DOPunchScale(Vector3.one * 1.2f, 0.4f, 2, 0.5f);
+                OrderManager.Instance.UpdateDisplayCount();
             });
             //Tween to tweenPos
         }
         
         //Punch icon//
-        yield return new WaitForSeconds(1.7f);
+        yield return new WaitForSeconds(1.3f);
 
         foreach (var item in tweenObjects)
         {
+            if(item == null) continue;
+
             Destroy(item.gameObject);
         }
 

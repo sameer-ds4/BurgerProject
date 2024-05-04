@@ -7,12 +7,13 @@ using UnityEngine.UI;
 
 public class OrderCard : MonoBehaviour
 {
-	public Image mainBurger;
+	public Image customerImg;
 	public List<ItemQuantity> itemQuantities;
 	public Transform comps;
+	public GameObject orderInfo;
+	public TextMeshProUGUI orderName;
 
-	public Image timerCirc;
-	[SerializeField] private float maxTime;
+	// [SerializeField] private float maxTime;
 
 	public void Clear()
 	{
@@ -27,20 +28,23 @@ public class OrderCard : MonoBehaviour
 		transform.DOLocalMoveY(pos, 1);
 	}
 
-	private void Update() 
-	{
-		if(maxTime > 0)
-		{
-			maxTime -= Time.deltaTime;
+	// private void Update() 
+	// {
+	// 	maxTime -= Time.deltaTime;
+		
+	// 	if(maxTime < 0)
+	// 	{
+			
+	// 		Tweening.AlphaFadeOut(gameObject, 0.7f);
+	// 		// Tweening.ScaleChange(orderInfo, 1, Vector3.one, Vector3.one * 0);
+    //         // timerCirc.fillAmount -= 1/maxTime * Time.deltaTime;  
+	// 	}	
+	// }
 
-            timerCirc.fillAmount -= 1/maxTime * Time.deltaTime;  
-		}	
-	}
+	// private void Timer()
+	// {
 
-	private void Timer()
-	{
-
-	}
+	// }
 }
 
 [System.Serializable]
