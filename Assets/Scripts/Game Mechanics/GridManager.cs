@@ -9,7 +9,7 @@ public class GridManager : MonoBehaviour
     private Vector2Int gridSize;
     [SerializeField] private Transform spawnPoint;
     public static BurgerObject[,] gridFormed;
-    private int gridCount;
+    [SerializeField] private int gridCount;
 
 
   private void OnEnable() 
@@ -68,8 +68,8 @@ public class GridManager : MonoBehaviour
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
 
 
-    [HideInInspector] public List<BurgerObject> match_H;
-    [HideInInspector] public List<BurgerObject> match_V;
+    public List<BurgerObject> match_H;
+    public List<BurgerObject> match_V;
     
     private void MatchCheck_S(int x, int y)
     {
@@ -147,12 +147,12 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    bool orderMatched;  //Remove after getting vector2 solution
-    // [SerializeField] Vector3 iconPos;
+
     GameObject iconPos;
+    bool mat_H, mat_V;
     private void DestroyMatch()
     {
-        // orderMatched = false;
+        mat_H = mat_V = false;
 
         if(match_H.Count >= 3)
         {
@@ -165,7 +165,8 @@ public class GridManager : MonoBehaviour
             else
                 StartCoroutine(AnimMatches(match_H, iconPos));
     
-            gridCount = gridCount - match_H.Count;
+            gridCount -= match_H.Count;
+            mat_H = true;
         }
         else
             match_H.Clear();
@@ -181,12 +182,15 @@ public class GridManager : MonoBehaviour
             else
                 StartCoroutine(AnimMatches(match_V, iconPos));
     
-            gridCount = gridCount - match_V.Count;
+            gridCount -= match_V.Count;
+            mat_V = true;
         }
         else
             match_V.Clear();
 
         gridCount++;
+
+        if(mat_H && mat_V) gridCount++;
 
         if (gridCount == gridSize.x * gridSize.y)
         {
