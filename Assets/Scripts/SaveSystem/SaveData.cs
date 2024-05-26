@@ -15,5 +15,6 @@ public class SaveData
     [Header("Player Details")]
     public string pl_name;
     public int levelID;
+    public int highScore;
 
 }

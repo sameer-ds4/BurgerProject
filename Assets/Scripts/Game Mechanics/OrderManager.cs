@@ -217,7 +217,7 @@ public class OrderManager : MonoBehaviour
 	{
 		if(orderList.Count == 0)
 		{
-			UIManager.Instance.levelComp.SetActive(true);
+			UIManager.Instance.LevelComplete();
 		}
 	}
 }

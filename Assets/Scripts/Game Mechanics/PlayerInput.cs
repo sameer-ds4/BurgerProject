@@ -68,6 +68,14 @@ public class PlayerInput : MonoBehaviour
 			CheckMatch?.Invoke(place[0] - '0', place[1] - '0');							// Event for starting matchmaking
 			MatchRemoval?.Invoke();														// Event for destroying matches, if any
 			RandomBurger?.Invoke();														// Event for generating next burger component
+
+			if(SaveDataHandler.Instance.saveData.tutorial)
+				MoveArrowNext();
 		}
+	}
+
+	private void MoveArrowNext()
+	{
+		TutorialManager.Instance.AdjustArrow();
 	}
 }

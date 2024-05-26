@@ -38,5 +38,6 @@ public enum BurgerPart
     cheese,
     bacon,
     onion,
-    pickle
+    pickle,
+    bomb
 }

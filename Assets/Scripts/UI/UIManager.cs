@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -48,12 +49,12 @@ public class UIManager : MonoBehaviour
         switch (name)
         {
             case "Play":
+                StartGame();
+                break;
                 
                 // UpdateComps();
                 // TutorialStart();
-                StartGame();
                 // GameManager.startPlay = true;
-                break;
 
             case "Settings":
                 settingsMenu.gameObject.SetActive(true);
@@ -118,5 +119,10 @@ public class UIManager : MonoBehaviour
         {
             BurgerInfos[i].sprite = GameManager.Instance.burgerItemsList[i].image;
         }
+    }
+
+    public void LevelComplete()
+    {
+        levelComp.gameObject.SetActive(true);
     }
 }

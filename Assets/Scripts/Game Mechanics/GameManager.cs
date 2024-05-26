@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
 
 	public static bool startPlay;
 
-
 	// EVENTS 
 	public delegate void UpdateUI();
 	public static event UpdateUI UpdateBurgerInfo;
@@ -37,6 +36,17 @@ public class GameManager : MonoBehaviour
 	private void OnDisable() 
 	{
 		PlayerInput.RandomBurger -= NextBurger;
+	}
+
+	private void Start() 
+	{
+		ResetParams();
+	}
+
+	private void ResetParams()
+	{
+		startPlay = false;
+		ScoreManager.scoreMain = 0;
 	}
 
 	public void TutorialInitialize()

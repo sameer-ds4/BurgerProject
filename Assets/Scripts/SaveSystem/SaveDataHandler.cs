@@ -57,6 +57,7 @@ public class SaveDataHandler : Singleton<SaveDataHandler>
 
         saveData.pl_name = "Player";
         saveData.levelID = 1;
+        saveData.highScore = 0;
     }
 
     private void OnApplicationFocus(bool focus)

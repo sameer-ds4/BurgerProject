@@ -25,5 +25,5 @@ MonoBehaviour:
     image: {fileID: 21300000, guid: 03d6648e209e244e2b5ef02b9036fded, type: 3}
   - burgerObject: {fileID: -2410762251218070838, guid: a2c8ddbe11c3c494c8c9164c68d721b3, type: 3}
     image: {fileID: 21300000, guid: 718d20208c0264f5b977cceb50962b79, type: 3}
-  - burgerObject: {fileID: -7715871272490370259, guid: 8653bbc34cd70074fbbdfffcd5918d51, type: 3}
+  - burgerObject: {fileID: -758116367135369418, guid: 3f2f92a59354c8b48a332b46ae7af9a2, type: 3}
     image: {fileID: 21300000, guid: 0fa5dbd3cd3b8408b8f74935c957b17d, type: 3}

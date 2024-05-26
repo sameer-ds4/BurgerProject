@@ -7,7 +7,7 @@ public class TutorialManager : MonoBehaviour
     public static TutorialManager Instance { get; private set;}
     [SerializeField] public GameObject tutorialCard;
     [SerializeField] private AnimatedDialog animatedDialog;
-    [SerializeField] private GameObject chefCard;
+    // [SerializeField] private GameObject chefCard;
     [SerializeField] private GameObject arrow;
     public List<GameObject> tutPlates = new List<GameObject>();
 
@@ -36,17 +36,28 @@ public class TutorialManager : MonoBehaviour
 
     public void ShowArrows()
     {
-        chefCard.SetActive(false);
+        tutorialCard.SetActive(false);
         arrow.SetActive(true);
-        // AdjustArrow();
-        EndTutorial();
+        GameManager.startPlay = true;
+        AdjustArrow();
+        // EndTutorial();
     }
 
+    int arrowIndex = 0;
 
     public void AdjustArrow()
     {
+        if(arrowIndex > tutPlates.Count - 2)
+        {
+            arrow.SetActive(false);
+            RenamePlates();
+            EndTutorial();
+            return;
+        }
         // (arrow.transform as RectTransform).position = tutPlates[0].transform.position;
-        arrow.transform.DOLocalMove(new Vector3(275, 151, -100), 0);
+        // arrow.transform.DOLocalMove(new Vector3(275, 151, -100), 0);
+        arrow.transform.DOMove(tutPlates[arrowIndex].transform.position + new Vector3(0.5f, 0.5f, -0.75f), 0.5f);
+        arrowIndex++;
     }
 
     public void EndTutorial()
@@ -55,7 +66,10 @@ public class TutorialManager : MonoBehaviour
         GameManager.startPlay = true;
         SaveDataHandler.Instance.saveData.tutorial = false;
         PlayerInput.tagToTrack = "Plate";
+    }
 
+    private void RenamePlates()
+    {
         foreach (var item in tutPlates)
         {
             item.tag = "Plate";

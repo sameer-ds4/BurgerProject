@@ -9,7 +9,10 @@ public class GridManager : MonoBehaviour
     private Vector2Int gridSize;
     [SerializeField] private Transform spawnPoint;
     public static BurgerObject[,] gridFormed;
-    [SerializeField] private int gridCount;
+    private int gridCount;
+
+    public delegate void ScoreUpdate(int amt);
+    public static event ScoreUpdate IncrementScore;
 
 
   private void OnEnable() 
@@ -17,6 +20,7 @@ public class GridManager : MonoBehaviour
         PlayerInput.CheckMatch += MatchCheck_S;
         PlayerInput.CheckMatch += MatchCheck_H;
         PlayerInput.CheckMatch += MatchCheck_V;
+        // PlayerInput.CheckMatch += BombCheck;
         PlayerInput.MatchRemoval += DestroyMatch;
     }
 
@@ -25,6 +29,7 @@ public class GridManager : MonoBehaviour
         PlayerInput.CheckMatch -= MatchCheck_S;
         PlayerInput.CheckMatch -= MatchCheck_H;
         PlayerInput.CheckMatch -= MatchCheck_V;
+        // PlayerInput.CheckMatch -= BombCheck;
         PlayerInput.MatchRemoval -= DestroyMatch;
     }
 
@@ -68,8 +73,8 @@ public class GridManager : MonoBehaviour
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
 
 
-    public List<BurgerObject> match_H;
-    public List<BurgerObject> match_V;
+     public List<BurgerObject> match_H;
+     public List<BurgerObject> match_V;
     
     private void MatchCheck_S(int x, int y)
     {
@@ -148,8 +153,82 @@ public class GridManager : MonoBehaviour
     }
 
 
+    public List<BurgerObject> bombedObjects_V;
+    public List<BurgerObject> bombedObjects_H;
+    public BurgerObject bombComp;
+    private void BombCheck(int x, int y)
+    {
+        for (int i = x; i >= gridSize.x; i++)
+        {
+            if (gridFormed[i, y] == null) break;
+
+            bombedObjects_V.Add(gridFormed[i, y]);
+        }
+        for (int i = y; i >= 0; i--)
+        {
+            if (gridFormed[i, y] == null) break;
+
+            bombedObjects_V.Add(gridFormed[i, y]);
+        }
+
+        for (int i = y; i < gridSize.y; i++)
+        {
+            if (gridFormed[x, i] == null) break;
+
+            bombedObjects_H.Add(gridFormed[x, i]);
+        }
+        for (int i = y; i >= 0; i--)
+        {
+            if (gridFormed[x, i] == null) break;
+
+            bombedObjects_H.Add(gridFormed[x, i]);
+        }
+
+        foreach (var item in bombedObjects_H)
+        {
+            if(item.burgerPart == BurgerPart.bomb && bombedObjects_H.Count > 1)
+            {
+                Debug.LogError(bombedObjects_H.Count);
+                foreach (var cc in bombedObjects_H)
+                {
+                    // cc.gameObject.SetActive(false);
+                    Destroy(cc.gameObject);
+                }
+                // item.gameObject.SetActive(false);
+                // StartCoroutine(AnimateMatchMade(bombedObjects));
+            }
+        }
+        foreach (var item in bombedObjects_V)
+        {
+            if(item.burgerPart == BurgerPart.bomb && bombedObjects_V.Count > 1)
+            {
+                Debug.LogError(bombedObjects_V.Count);
+                foreach (var cc in bombedObjects_V)
+                {
+                    // cc.gameObject.SetActive(false);
+                    Destroy(cc.gameObject);
+                }
+                // item.gameObject.SetActive(false);
+                // StartCoroutine(AnimateMatchMade(bombedObjects));
+            }
+        }
+        bombedObjects_H.Clear();
+        bombedObjects_V.Clear();
+        // else
+        // if(match_H.Contains(bombComp) && match_H.Count > 1)
+        // {
+        //     StartCoroutine(AnimateMatchMade(match_H));
+        // }
+
+        // if(match_V.Contains(bombComp) && match_V.Count > 1)
+        // {
+        //     StartCoroutine(AnimateMatchMade(match_V));
+        // }
+    }
+
+
     GameObject iconPos;
-    bool mat_H, mat_V;
+    bool mat_H, mat_V;  // Using for double match. Extra adding of grid count
     private void DestroyMatch()
     {
         mat_H = mat_V = false;
@@ -167,6 +246,7 @@ public class GridManager : MonoBehaviour
     
             gridCount -= match_H.Count;
             mat_H = true;
+            IncrementScore?.Invoke(100 * match_H.Count);
         }
         else
             match_H.Clear();
@@ -184,6 +264,7 @@ public class GridManager : MonoBehaviour
     
             gridCount -= match_V.Count;
             mat_V = true;
+            IncrementScore?.Invoke(100 * match_V.Count);
         }
         else
             match_V.Clear();
@@ -235,8 +316,8 @@ public class GridManager : MonoBehaviour
         {
             if(item == null) continue;
 
-            item.transform.DOScale(Vector3.one * .4f, 1);
-            item.transform.DOMove(tweenPos.transform.position, 1).OnComplete(() =>
+            item.transform.DOScale(Vector3.one * .4f, .7f);
+            item.transform.DOMove(tweenPos.transform.position, .7f).OnComplete(() =>
             {
                 DOTween.KillAll();
                 tweenPos.transform.DOPunchScale(Vector3.one * 1.2f, 0.4f, 2, 0.5f);
@@ -246,7 +327,7 @@ public class GridManager : MonoBehaviour
         }
         
         //Punch icon//
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(.7f);
 
         foreach (var item in tweenObjects)
         {
