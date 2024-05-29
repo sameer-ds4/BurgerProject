@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -188,16 +188,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76642104797526f4c887873d0a84f1e3, type: 3}
---- !u!1 &95663692 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 344013340249587191, guid: 104e1aa97b0fd8d4d9ff1ea9efa6f1b3, type: 3}
-  m_PrefabInstance: {fileID: 958568881}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &329618960 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8893603635720584567, guid: 553fb84f9443ff244a86d091727287d4, type: 3}
-  m_PrefabInstance: {fileID: 514781776}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &426988630
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &426988631
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -322,21 +312,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 457552451}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d782321fd224b06a5c54223f807630, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c2d3f420cf1f4687a39ea02972be3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 2085839100}
-  cWidth: 640
-  cHeight: 640
-  folderPath: /Users/webappclouds/Unity Projects/BurgerProject/Assets
+  cWidth: 1080
+  cHeight: 1080
+  folderPath: /Users/webappclouds/Ext_Projects/BurgerProject/Assets
   groupShotPics:
-  - {fileID: 1261152453}
-  - {fileID: 624249631}
-  - {fileID: 329618960}
-  - {fileID: 95663692}
-  - {fileID: 679569484}
-  - {fileID: 483851522}
-  - {fileID: 1257257842}
+  - {fileID: 0}
 --- !u!1001 &483851521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,11 +386,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2c8ddbe11c3c494c8c9164c68d721b3, type: 3}
---- !u!1 &483851522 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3445741418048560059, guid: a2c8ddbe11c3c494c8c9164c68d721b3, type: 3}
-  m_PrefabInstance: {fileID: 483851521}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &514781776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -537,11 +516,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df89ee486c749c64d955955fc2084132, type: 3}
---- !u!1 &624249631 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2366554938564775961, guid: 596c6aaa6dc62984dac20558008c1141, type: 3}
-  m_PrefabInstance: {fileID: 1946833868}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &644925535
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,11 +610,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &679569484 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3983628064932232685, guid: df89ee486c749c64d955955fc2084132, type: 3}
-  m_PrefabInstance: {fileID: 554997833}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &958568881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -771,16 +740,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8653bbc34cd70074fbbdfffcd5918d51, type: 3}
---- !u!1 &1257257842 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3065634772502315154, guid: 8653bbc34cd70074fbbdfffcd5918d51, type: 3}
-  m_PrefabInstance: {fileID: 1257257841}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1261152453 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2705679556930443929, guid: 76642104797526f4c887873d0a84f1e3, type: 3}
-  m_PrefabInstance: {fileID: 82854915}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1579898429
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1579898430
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -946,7 +905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1995466422
 MeshRenderer:
   m_ObjectHideFlags: 0

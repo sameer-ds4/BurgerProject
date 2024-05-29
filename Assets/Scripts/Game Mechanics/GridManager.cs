@@ -17,19 +17,19 @@ public class GridManager : MonoBehaviour
 
   private void OnEnable() 
     {
+        PlayerInput.CheckMatch += BombCheck;
         PlayerInput.CheckMatch += MatchCheck_S;
         PlayerInput.CheckMatch += MatchCheck_H;
         PlayerInput.CheckMatch += MatchCheck_V;
-        // PlayerInput.CheckMatch += BombCheck;
         PlayerInput.MatchRemoval += DestroyMatch;
     }
 
     private void OnDisable() 
     {
+        PlayerInput.CheckMatch -= BombCheck;
         PlayerInput.CheckMatch -= MatchCheck_S;
         PlayerInput.CheckMatch -= MatchCheck_H;
         PlayerInput.CheckMatch -= MatchCheck_V;
-        // PlayerInput.CheckMatch -= BombCheck;
         PlayerInput.MatchRemoval -= DestroyMatch;
     }
 
@@ -153,77 +153,39 @@ public class GridManager : MonoBehaviour
     }
 
 
-    public List<BurgerObject> bombedObjects_V;
-    public List<BurgerObject> bombedObjects_H;
-    public BurgerObject bombComp;
+    public List<BurgerObject> bombedObjects;
+
     private void BombCheck(int x, int y)
     {
-        for (int i = x; i >= gridSize.x; i++)
+        if(gridFormed[x, y].burgerPart != BurgerPart.bomb) return;
+
+        if(x + 1 < gridSize.x && gridFormed[x + 1, y] != null)
+            bombedObjects.Add(gridFormed[x + 1, y]);
+        if(x - 1 >= 0 && gridFormed[x - 1, y] != null)
+            bombedObjects.Add(gridFormed[x - 1, y]);
+
+        if(y + 1 < gridSize.y && gridFormed[x, y + 1] != null)
+            bombedObjects.Add(gridFormed[x, y + 1]);
+        if(y - 1 >= 0 && gridFormed[x, y - 1] != null)
+            bombedObjects.Add(gridFormed[x, y - 1]);
+
+        StartCoroutine(Blast(x, y));
+    }
+
+    private IEnumerator Blast(int x, int y)
+    {
+        yield return new WaitForSeconds(.2f);
+
+        gridCount -= bombedObjects.Count;
+        foreach (var item in bombedObjects)
         {
-            if (gridFormed[i, y] == null) break;
-
-            bombedObjects_V.Add(gridFormed[i, y]);
-        }
-        for (int i = y; i >= 0; i--)
-        {
-            if (gridFormed[i, y] == null) break;
-
-            bombedObjects_V.Add(gridFormed[i, y]);
+            Destroy(item.gameObject);
         }
 
-        for (int i = y; i < gridSize.y; i++)
-        {
-            if (gridFormed[x, i] == null) break;
+        Destroy(gridFormed[x, y].gameObject);
+        gridCount--;
 
-            bombedObjects_H.Add(gridFormed[x, i]);
-        }
-        for (int i = y; i >= 0; i--)
-        {
-            if (gridFormed[x, i] == null) break;
-
-            bombedObjects_H.Add(gridFormed[x, i]);
-        }
-
-        foreach (var item in bombedObjects_H)
-        {
-            if(item.burgerPart == BurgerPart.bomb && bombedObjects_H.Count > 1)
-            {
-                Debug.LogError(bombedObjects_H.Count);
-                foreach (var cc in bombedObjects_H)
-                {
-                    // cc.gameObject.SetActive(false);
-                    Destroy(cc.gameObject);
-                }
-                // item.gameObject.SetActive(false);
-                // StartCoroutine(AnimateMatchMade(bombedObjects));
-            }
-        }
-        foreach (var item in bombedObjects_V)
-        {
-            if(item.burgerPart == BurgerPart.bomb && bombedObjects_V.Count > 1)
-            {
-                Debug.LogError(bombedObjects_V.Count);
-                foreach (var cc in bombedObjects_V)
-                {
-                    // cc.gameObject.SetActive(false);
-                    Destroy(cc.gameObject);
-                }
-                // item.gameObject.SetActive(false);
-                // StartCoroutine(AnimateMatchMade(bombedObjects));
-            }
-        }
-        bombedObjects_H.Clear();
-        bombedObjects_V.Clear();
-        // else
-        // if(match_H.Contains(bombComp) && match_H.Count > 1)
-        // {
-        //     StartCoroutine(AnimateMatchMade(match_H));
-        // }
-
-        // if(match_V.Contains(bombComp) && match_V.Count > 1)
-        // {
-        //     StartCoroutine(AnimateMatchMade(match_V));
-        // }
+        bombedObjects.Clear();
     }
 
 

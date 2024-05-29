@@ -6557,9 +6557,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 552464866}
   match_H: []
   match_V: []
-  bombedObjects_V: []
-  bombedObjects_H: []
-  bombComp: {fileID: -758116367135369418, guid: 3f2f92a59354c8b48a332b46ae7af9a2, type: 3}
+  bombedObjects: []
 --- !u!1 &1449880037
 GameObject:
   m_ObjectHideFlags: 0
@@ -8144,7 +8142,7 @@ GameObject:
   - component: {fileID: 1876073506}
   - component: {fileID: 1876073508}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: Arrow-tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
