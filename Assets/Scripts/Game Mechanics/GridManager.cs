@@ -180,8 +180,10 @@ public class GridManager : MonoBehaviour
         foreach (var item in bombedObjects)
         {
             Destroy(item.gameObject);
+            GameManager.Instance._ParticleSystemData.PlayFXs(item.transform.position, Vector3.zero, 0, Vector3.one);
         }
 
+        GameManager.Instance._ParticleSystemData.PlayFXs(gridFormed[x,y].transform.position, Vector3.zero, 0, Vector3.one);
         Destroy(gridFormed[x, y].gameObject);
         gridCount--;
 
