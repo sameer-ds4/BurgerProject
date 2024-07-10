@@ -66,12 +66,12 @@ public class GridManager : MonoBehaviour
 
     private void CameraSet()
     {
-        Vector2 middlePoint = new Vector2((3 * ((float)gridSize.y - 1))/2, (-3 * ((float)gridSize.x - 1))/2);
+        // Vector2 middlePoint = new Vector2((3 * ((float)gridSize.y - 1))/2, (-3 * ((float)gridSize.x - 1))/2);    //Mobile Setting
+        Vector2 middlePoint = new Vector2((3 * ((float)gridSize.y - 1))/2, (-3 * ((float)gridSize.x))/2);       //PC Setting
         CameraManager.Instance.SetCameraFocus(middlePoint, gridSize.y - 3);
     }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
 
      public List<BurgerObject> match_H;
      public List<BurgerObject> match_V;
@@ -154,10 +154,13 @@ public class GridManager : MonoBehaviour
 
 
     public List<BurgerObject> bombedObjects;
+    private bool splItemUsed;
 
     private void BombCheck(int x, int y)
     {
         if(gridFormed[x, y].burgerPart != BurgerPart.bomb) return;
+
+        splItemUsed = true;
 
         if(x + 1 < gridSize.x && gridFormed[x + 1, y] != null)
             bombedObjects.Add(gridFormed[x + 1, y]);
@@ -188,6 +191,7 @@ public class GridManager : MonoBehaviour
         gridCount--;
 
         bombedObjects.Clear();
+        splItemUsed = false;
     }
 
 
@@ -239,6 +243,8 @@ public class GridManager : MonoBehaviour
 
         if (gridCount == gridSize.x * gridSize.y)
         {
+            if(splItemUsed) return;
+
             UIManager.Instance.gameOver.SetActive(true);
         }
     }

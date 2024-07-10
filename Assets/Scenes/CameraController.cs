@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private Camera m_Camera;
+
     [SerializeField] private Vector3 playerOffset;
-    [SerializeField] private float dampingFactor;
     [SerializeField] private Transform targetObject;
 
-    void FixedUpdate()
-    {
-        Vector3 desiredPosition = new Vector3(0, targetObject.position.y + playerOffset.y, playerOffset.z);
-		// Vector3 smoothedPosition = Vector3.Slerp(transform.position, desiredPosition, dampingFactor);
-		transform.position = desiredPosition;
+    float horInput;
+    float vertInput;
 
-        Debug.LogError(desiredPosition);
+
+    private void Update() 
+    {
+        horInput += Input.GetAxis("Mouse X");
+        vertInput += Input.GetAxis("Mouse Y");
+
+        var targetRotation = Quaternion.Euler(vertInput, horInput, 0);
+
+        transform.position = targetObject.position - targetRotation * playerOffset;
+        transform.rotation = targetRotation;
     }
 }

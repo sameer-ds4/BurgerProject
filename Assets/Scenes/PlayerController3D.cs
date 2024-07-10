@@ -16,17 +16,18 @@ public class PlayerController3D : MonoBehaviour
     private Vector3 direction;
     private bool isJumping;
 
+    private void Start() 
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;    
+    }
 
     void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        direction = transform.forward * vertical + transform.right * horizontal;
-
-        if(Input.GetKeyDown(KeyCode.Space) && !isJumping)
-            JumpPlayer();
-
+        direction = mainCam.transform.forward * vertical + mainCam.transform.right * horizontal;
     }
 
     private void FixedUpdate() 
@@ -37,10 +38,21 @@ public class PlayerController3D : MonoBehaviour
     private void MovePlayer()
     {
         rb.velocity = direction * walkSpeed * Time.deltaTime;
+
+        //Use velocity to detect motion and trigger aniamtions. 
+        // if(rb.velocity.magnitude > 0)
+        // {
+        //     animator.SetTrigger("walk");
+        // }
+        // else
+        // {
+        //     animator.SetTrigger("Idle");
+        // }
     }
 
     private void JumpPlayer()
     {
+        Debug.LogError("sdlkfvbsdf");
         rb.AddForce(new Vector3(0, jumpForce, 0) * Time.deltaTime);
         isJumping = true;
     }

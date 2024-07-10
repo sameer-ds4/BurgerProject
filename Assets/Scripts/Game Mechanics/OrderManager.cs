@@ -14,7 +14,6 @@ public class OrderManager : MonoBehaviour
 	private OrderCard orderPlacing;
 	public List<OrderCard> orderList;
 	public Transform orderCardSpawnpoint;
-
 	public Transform[] spawnRef;
 
 	private void Awake() 
@@ -28,23 +27,26 @@ public class OrderManager : MonoBehaviour
 		// OrderPlace();
 	}
 
-	// float t1, t2 = 7;
+	float t1, t2 = 7;
 	// bool place;
-	// private void Update() 
-	// {
-	// 	if(!GameManager.startPlay) return;
+	private void Update() 
+	{
+		if(!GameManager.startPlay) return;
+		if(x > 2) return;
 
-	// 	t1 += Time.deltaTime;
+		t1 += Time.deltaTime;
 
-	// 	if(t1 > t2 && ! place)
-	// 	{
-	// 		OrderPlace();
-	// 		place = true;
-	// 	}
-	// }
+		if(t1 > t2)
+		{
+			OrderPlace();
+			t1 = 0;
+			// x++;
+			// place = true;
+		}
+	}
 
 	// Vector3 yOffsetL;
-	int x;
+	int x;	//Get SpawnIndex
 	int orderIndex;
 	
 	
@@ -52,7 +54,7 @@ public class OrderManager : MonoBehaviour
 	{
 		orderIndex = ordersData.GetOrderIndex();
 
-		orderCardSpawnpoint.eulerAngles = new Vector3(90, 0, 0);
+		// orderCardSpawnpoint.eulerAngles = new Vector3(90, 0, 0);
 
 		orderPlacing = Instantiate(cardPrefab, spawnRef[x].position, new Quaternion(0, 0, 0, 0), orderCardSpawnpoint);
 		// Debug.LogError((orderCardSpawnpoint.transform as RectTransform).position);
@@ -118,7 +120,9 @@ public class OrderManager : MonoBehaviour
 			orderCard.itemQuantities.RemoveAt(i);
 	}
 
+	[HideInInspector]
 	public int orderNo, componentNo, quantity;
+	[HideInInspector]
 	public ItemQuantity itemQuantity;
 
 	public /*bool*/ GameObject CheckMatch(BurgerPart burgerObject)
@@ -170,7 +174,7 @@ public class OrderManager : MonoBehaviour
 		while (i >= 0)
 		{
 			if(orderList[i].itemQuantities.Count == 0)
-				ClearOrder(orderList[i], i);
+				ClearOrder_LS(orderList[i], i);
 
 			i--;
 		}		
@@ -203,6 +207,20 @@ public class OrderManager : MonoBehaviour
 		{
 			RearrangeOrderCards();
 		});
+	}
+
+	private void ClearOrder_LS(OrderCard obj, int i)
+	{
+		DOVirtual.DelayedCall(1.2f, () =>
+		{
+			obj.Clear();
+			orderList.RemoveAt(i);
+			CheckForWin();
+		});
+		// DOVirtual.DelayedCall(1.3f, ()=>
+		// {
+		// 	// RearrangeOrderCards();
+		// });
 	}
 
 	private void RearrangeOrderCards()

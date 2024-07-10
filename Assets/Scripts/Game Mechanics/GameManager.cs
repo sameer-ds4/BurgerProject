@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 	[HideInInspector] public BurgerItem[] burgerItemsList;
 
 	public static bool startPlay;
-
+	
 	// EVENTS 
 	public delegate void UpdateUI();
 	public static event UpdateUI UpdateBurgerInfo;
@@ -77,9 +77,8 @@ public class GameManager : MonoBehaviour
 	{
 		int x = Random.Range(0, foodObjects.burgerItems.Length );
 		BurgerItem currentCompenent = foodObjects.burgerItems[x];
-		return currentCompenent;
 
-		// return foodObjects.burgerItems[3];
+		return currentCompenent;
 	}
 
 	private void ForceMaxFPS()
