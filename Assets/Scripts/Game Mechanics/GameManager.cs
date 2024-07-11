@@ -10,13 +10,19 @@ public class GameManager : MonoBehaviour
 
 	[Header("Game Component Data")]
 	public FoodObjects foodObjects;
-	public GridData gridData;
+	// public GridData gridData;
+
+	[Header("Managers")]
+	public GridManager gridManager;
+	public OrderManager orderManager;
 
 	[Header("Scene Data")]
 	public Transform foodParent;
 	[HideInInspector] public BurgerItem[] burgerItemsList;
 
+	// Static Members
 	public static bool startPlay;
+	public static int difficultyIndex;
 	
 	// EVENTS 
 	public delegate void UpdateUI();
@@ -47,14 +53,30 @@ public class GameManager : MonoBehaviour
 	{
 		startPlay = false;
 		ScoreManager.scoreMain = 0;
+		difficultyIndex = 0;
 	}
 
 	public void TutorialInitialize()
 	{
+		difficultyIndex = 0;
+		gridManager.gridSize = Vector2Int.one * 5;
+		gridManager.gameObject.SetActive(true);
+
+		orderManager.maxOrders = 1;
+		orderManager.gameObject.SetActive(true);
+
 		for (int i = 0; i < burgerItemsList.Length; i++)
 		{
 			burgerItemsList[i] = foodObjects.burgerItems[0];
 		}
+	}
+
+	public void EnableManagers()
+	{
+		gridManager.gameObject.SetActive(true);
+		orderManager.gameObject.SetActive(true);
+
+		InitializeBurgerComps();
 	}
 
 	public void InitializeBurgerComps()

@@ -6,10 +6,15 @@ using UnityEngine;
 public class GridManager : MonoBehaviour
 {
     [Header ("Grid Charateristics")]
-    private Vector2Int gridSize;
     [SerializeField] private Transform spawnPoint;
+
+    public GridData gridData;
+
+    [HideInInspector] public Vector2Int gridSize;
     public static BurgerObject[,] gridFormed;
     private int gridCount;
+    private int gridDifficulty;
+
 
     public delegate void ScoreUpdate(int amt);
     public static event ScoreUpdate IncrementScore;
@@ -35,12 +40,22 @@ public class GridManager : MonoBehaviour
 
     private void Start()
     {
-        gridSize = GameManager.Instance.gridData.gridSize;
+        if(!SaveDataHandler.Instance.saveData.tutorial)
+            gridSize = SetDifficulty();
+    
         gridFormed = new BurgerObject[gridSize.x, gridSize.y];      //Reinitializing grid on every start/reload
         spawnPoint.position = Vector3.zero;
 
         GenerateGrid();
         CameraSet();
+    }
+
+    private Vector2Int SetDifficulty()
+    {
+        gridDifficulty = GameManager.difficultyIndex;
+
+        int option = gridData.levelDifficulty[gridDifficulty].difficulty.Length;
+        return gridData.levelDifficulty[gridDifficulty].difficulty[Random.Range(0, option)].gridSize;
     }
 
     public void GenerateGrid()
@@ -49,7 +64,7 @@ public class GridManager : MonoBehaviour
         {
             for (int j = 0; j < gridSize.y; j++)
             {
-                GameObject currentcube = Instantiate(GameManager.Instance.gridData.cube, spawnPoint.position, Quaternion.identity, spawnPoint.parent);
+                GameObject currentcube = Instantiate(gridData.cube, spawnPoint.position, Quaternion.identity, spawnPoint.parent);
                 spawnPoint.position += new Vector3(3, 0, 0);
                 currentcube.name = "" + i + j;
 

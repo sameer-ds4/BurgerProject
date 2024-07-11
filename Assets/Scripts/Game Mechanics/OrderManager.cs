@@ -8,13 +8,19 @@ public class OrderManager : MonoBehaviour
 	public static OrderManager Instance;
 
 	public OrdersData ordersData;
+	public GridData gridData;
 	public OrderCard cardPrefab;
 	
 	[Header("Order Card")]
 	private OrderCard orderPlacing;
 	public List<OrderCard> orderList;
-	public Transform orderCardSpawnpoint;
-	public Transform[] spawnRef;
+	public Transform cardParent;
+	public Transform[] cardSpawnPoints;
+
+	///// Orders count managing vars
+	public int maxOrders;
+	int ordersSpawned;	//Get SpawnIndex
+	int burgerIndex;	// Getting burger number to spawn from data
 
 	private void Awake() 
 	{
@@ -23,16 +29,19 @@ public class OrderManager : MonoBehaviour
 
 	private void Start() 
 	{
-		// PlaceOrder();
-		// OrderPlace();
+		if(SaveDataHandler.Instance.saveData.tutorial) return;
+		maxOrders = GetMaxOrders();
+		OrderPlace();
 	}
 
+	//Timers for Oders
 	float t1, t2 = 7;
-	// bool place;
+
+
 	private void Update() 
 	{
 		if(!GameManager.startPlay) return;
-		if(x > 2) return;
+		if(ordersSpawned > maxOrders) return;
 
 		t1 += Time.deltaTime;
 
@@ -45,39 +54,42 @@ public class OrderManager : MonoBehaviour
 		}
 	}
 
-	// Vector3 yOffsetL;
-	int x;	//Get SpawnIndex
-	int orderIndex;
+	private int GetMaxOrders()
+	{
+		int index = GameManager.difficultyIndex;
+		int count = gridData.levelDifficulty[index].ordersRange.y;
+		return gridData.levelDifficulty[index].ordersRange[ Random.Range(0, count)];
+	}
 	
 	
 	public void OrderPlace()
 	{
-		orderIndex = ordersData.GetOrderIndex();
+		burgerIndex = ordersData.GetOrderIndex();
 
 		// orderCardSpawnpoint.eulerAngles = new Vector3(90, 0, 0);
 
-		orderPlacing = Instantiate(cardPrefab, spawnRef[x].position, new Quaternion(0, 0, 0, 0), orderCardSpawnpoint);
+		orderPlacing = Instantiate(cardPrefab, cardSpawnPoints[ordersSpawned].position, new Quaternion(0, 0, 0, 0), cardParent);
 		// Debug.LogError((orderCardSpawnpoint.transform as RectTransform).position);
 		// Debug.LogError((orderCardSpawnpoint.transform as RectTransform).eulerAngles);
 
-		orderPlacing.orderName.text = ordersData.orders[orderIndex].orderName;
+		orderPlacing.orderName.text = ordersData.orders[burgerIndex].orderName;
 
 		for (int i = orderPlacing.itemQuantities.Count - 1; i >= 0; i--)
 		{
-			if(ordersData.orders[orderIndex].parts[i].quantity == 0)
+			if(ordersData.orders[burgerIndex].parts[i].quantity == 0)
 			{
 				ClearItems(i, orderPlacing);
 			}
 			else
 			{
 				orderPlacing.comps.GetChild(i).gameObject.SetActive(true);
-				orderPlacing.itemQuantities[i].quantity = ordersData.orders[orderIndex].parts[i].quantity;
+				orderPlacing.itemQuantities[i].quantity = ordersData.orders[burgerIndex].parts[i].quantity;
 				// orderPlacing.itemQuantities[i].numbers.text = ordersData.orders[orderIndex].parts[i].quantity.ToString();
-				orderPlacing.itemQuantities[i].numbers.text = ordersData.orders[orderIndex].parts[i].quantity.ToString();
+				orderPlacing.itemQuantities[i].numbers.text = ordersData.orders[burgerIndex].parts[i].quantity.ToString();
 			}
 		}
 
-		x++;
+		ordersSpawned++;
 
 		orderList.Add(orderPlacing);
 	}

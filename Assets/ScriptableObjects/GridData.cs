@@ -6,5 +6,21 @@ using UnityEngine;
 public class GridData : ScriptableObject
 {
     public GameObject cube;
+    // public Vector2Int gridSize;
+
+    public LevelDifficulty[] levelDifficulty;
+}
+
+[System.Serializable]
+public class LevelDifficulty
+{
+    public string difficultyName;
+    public Vector2Int ordersRange;
+    public Difficulty[] difficulty;
+}
+
+[System.Serializable]
+public class Difficulty
+{
     public Vector2Int gridSize;
 }

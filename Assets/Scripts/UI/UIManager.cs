@@ -11,17 +11,18 @@ public class UIManager : MonoBehaviour
 
     [Header("UI Pages")]
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private LevelSelect levelMenu;
     [SerializeField] private GameObject inGameSc;
     [SerializeField] private Settings settingsMenu;
     public GameObject gameOver;
     public GameObject levelComp;
 
-    [Space]
+    // [Space]
     [Header("Order Components")]
     public Image[] BurgerInfos;
 
-    public OrderCard orderCard;
-    public List<OrderCard> orderCards;
+    // public OrderCard orderCard;
+    // public List<OrderCard> orderCards;
     
     
     private void Awake() 
@@ -49,12 +50,24 @@ public class UIManager : MonoBehaviour
         switch (name)
         {
             case "Play":
-                StartGame();
+                // StartGame();
+                if(!SaveDataHandler.Instance.saveData.tutorial)
+                    levelMenu.gameObject.SetActive(true);
+                else
+                {
+                    inGameSc.SetActive(true);
+                    GameManager.Instance.TutorialInitialize();
+                    TutorialStart();
+                }
                 break;
                 
                 // UpdateComps();
                 // TutorialStart();
                 // GameManager.startPlay = true;
+
+            case "Start":
+                StartGame();
+                break;
 
             case "Settings":
                 settingsMenu.gameObject.SetActive(true);
@@ -84,23 +97,14 @@ public class UIManager : MonoBehaviour
         levelComp.SetActive(false);
     }
 
-    private void StartGame()
+    public void StartGame()
     {
         inGameSc.SetActive(true);
-        // GameManager.startPlay = true;
+        GameManager.Instance.EnableManagers();
+        UpdateComps();
+        // OrderManager.Instance.OrderPlace();
+        GameManager.startPlay = true;
 
-        if(!SaveDataHandler.Instance.saveData.tutorial)
-        {
-            GameManager.Instance.InitializeBurgerComps();
-            UpdateComps();
-            OrderManager.Instance.OrderPlace();
-            GameManager.startPlay = true;
-        }
-        else
-        {
-            GameManager.Instance.TutorialInitialize();
-            TutorialStart();
-        }
     }
 
     private void UpdateComps()

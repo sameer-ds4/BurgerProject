@@ -14,3 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cube: {fileID: 8182553429752846789, guid: 70ea1a6c404eebd48b7de59768df8c05, type: 3}
   gridSize: {x: 5, y: 5}
+  levelDifficulty:
+  - difficultyName: Easy
+    ordersRange: {x: 0, y: 3}
+    difficulty:
+    - gridSize: {x: 5, y: 5}
+    - gridSize: {x: 4, y: 5}
+    - gridSize: {x: 5, y: 4}
+  - difficultyName: Medium
+    ordersRange: {x: 0, y: 3}
+    difficulty:
+    - gridSize: {x: 4, y: 4}
+    - gridSize: {x: 3, y: 4}
+  - difficultyName: Hard
+    ordersRange: {x: 0, y: 2}
+    difficulty:
+    - gridSize: {x: 3, y: 3}
+    - gridSize: {x: 4, y: 3}
