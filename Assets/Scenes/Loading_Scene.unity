@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_half
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 689a5452d38634f0b8cbe8839c4c8956, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 689a5452d38634f0b8cbe8839c4c8956, type: 3}
 --- !u!1001 &19274441
@@ -234,6 +238,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 46f04f4df333d44679551a3c27e73843, type: 3}
       propertyPath: m_Name
       value: chair_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 46f04f4df333d44679551a3c27e73843, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46f04f4df333d44679551a3c27e73843, type: 3}
@@ -292,6 +300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table_round_A_decorated
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 858735af553a6423b92646238b5f67a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 858735af553a6423b92646238b5f67a7, type: 3}
 --- !u!1001 &24983042
@@ -348,6 +360,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f03a3486f2ebf4a92974eca3823cd359, type: 3}
       propertyPath: m_Name
       value: food_ingredient_steak_pieces
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f03a3486f2ebf4a92974eca3823cd359, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f03a3486f2ebf4a92974eca3823cd359, type: 3}
@@ -406,6 +422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jar_B_large
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb95b17781d054513a5576a6641ff9d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb95b17781d054513a5576a6641ff9d3, type: 3}
 --- !u!1001 &59902578
@@ -462,6 +482,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 19c4da29755994442b5b3ac36409aad9, type: 3}
       propertyPath: m_Name
       value: lid_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19c4da29755994442b5b3ac36409aad9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19c4da29755994442b5b3ac36409aad9, type: 3}
@@ -520,6 +544,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: shelf_papertowel_decorated
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1595e868b5b84471db2ca9550fc337ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1595e868b5b84471db2ca9550fc337ac, type: 3}
 --- !u!1001 &85726034
@@ -576,6 +604,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 58904d770e2a742f3b96a96b36f2bd97, type: 3}
       propertyPath: m_Name
       value: kitchencabinet_corner
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58904d770e2a742f3b96a96b36f2bd97, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58904d770e2a742f3b96a96b36f2bd97, type: 3}
@@ -634,6 +666,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchentable_B_large
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 18e021efe059e4e5fbec43a8fe32564a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e021efe059e4e5fbec43a8fe32564a, type: 3}
 --- !u!1001 &105490206
@@ -690,6 +726,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b71289c483b6e4b78bb007e9d5406c76, type: 3}
       propertyPath: m_Name
       value: jar_D_small
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b71289c483b6e4b78bb007e9d5406c76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71289c483b6e4b78bb007e9d5406c76, type: 3}
@@ -748,6 +788,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pot_A_stew
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 08bb7446475b444299bcc959a3841363, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08bb7446475b444299bcc959a3841363, type: 3}
 --- !u!1001 &115971730
@@ -804,6 +848,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 71f128455a7bf4eea855a78f8f04b28a, type: 3}
       propertyPath: m_Name
       value: stove_multi_countertop
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71f128455a7bf4eea855a78f8f04b28a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71f128455a7bf4eea855a78f8f04b28a, type: 3}
@@ -862,6 +910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jar_D_large
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a0ed214f33b704608af3095bb1a6068e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ed214f33b704608af3095bb1a6068e, type: 3}
 --- !u!1001 &176847211
@@ -918,6 +970,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b99cd4f83b2944e3ea9d1258f03e53d2, type: 3}
       propertyPath: m_Name
       value: kitchentable_sink
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b99cd4f83b2944e3ea9d1258f03e53d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b99cd4f83b2944e3ea9d1258f03e53d2, type: 3}
@@ -976,6 +1032,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_orderwindow_decorated
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e09526b44f77c426595850b907ece0ab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e09526b44f77c426595850b907ece0ab, type: 3}
 --- !u!1001 &198232573
@@ -1032,6 +1092,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ba5076d97e1554ffb9a7924632110a1a, type: 3}
       propertyPath: m_Name
       value: food_ingredient_burger_trash
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba5076d97e1554ffb9a7924632110a1a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba5076d97e1554ffb9a7924632110a1a, type: 3}
@@ -1090,6 +1154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table_round_A_small_decorated
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1beeadc46805b414f9ef1d13083953b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1beeadc46805b414f9ef1d13083953b1, type: 3}
 --- !u!1001 &263161799
@@ -1146,6 +1214,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4f85f29d5d4be4f36a5b120a2804f32c, type: 3}
       propertyPath: m_Name
       value: floor_kitchen
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4f85f29d5d4be4f36a5b120a2804f32c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f85f29d5d4be4f36a5b120a2804f32c, type: 3}
@@ -1204,6 +1276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jar_C_small
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 81c1c9a628d8a470fbc50955ef025798, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81c1c9a628d8a470fbc50955ef025798, type: 3}
 --- !u!1001 &277664889
@@ -1260,6 +1336,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bdb5cb93523544704bd2ce208b9363ff, type: 3}
       propertyPath: m_Name
       value: table_round_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bdb5cb93523544704bd2ce208b9363ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdb5cb93523544704bd2ce208b9363ff, type: 3}
@@ -1318,6 +1398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchencounter_outercorner_backsplash
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d4aa6ff5f69094727a859120bb1acb4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4aa6ff5f69094727a859120bb1acb4f, type: 3}
 --- !u!1001 &346041184
@@ -1374,6 +1458,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fda90cd97ac6d489da8874a09da3de43, type: 3}
       propertyPath: m_Name
       value: food_ingredient_tomato_slice
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fda90cd97ac6d489da8874a09da3de43, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda90cd97ac6d489da8874a09da3de43, type: 3}
@@ -1432,6 +1520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lid_large
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ac7f9e1292b30494bb3e456582131eb4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac7f9e1292b30494bb3e456582131eb4, type: 3}
 --- !u!1001 &369449483
@@ -1488,6 +1580,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 93f6593a64d214cf4b5dbf744b7cd703, type: 3}
       propertyPath: m_Name
       value: pot_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 93f6593a64d214cf4b5dbf744b7cd703, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93f6593a64d214cf4b5dbf744b7cd703, type: 3}
@@ -1546,6 +1642,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pot_large
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec76d7f42d9624b5186d8fb901cbc36e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec76d7f42d9624b5186d8fb901cbc36e, type: 3}
 --- !u!1001 &385965740
@@ -1602,6 +1702,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e442ceff6070f45cb84baedce5b7560f, type: 3}
       propertyPath: m_Name
       value: dishrack
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e442ceff6070f45cb84baedce5b7560f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e442ceff6070f45cb84baedce5b7560f, type: 3}
@@ -1660,6 +1764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_burger
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0187fe2df9c964c3e98885329644aeb0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0187fe2df9c964c3e98885329644aeb0, type: 3}
 --- !u!1001 &414438142
@@ -1716,6 +1824,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7ad8db370673c40d4b8d4ac5de89fe94, type: 3}
       propertyPath: m_Name
       value: pan_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7ad8db370673c40d4b8d4ac5de89fe94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ad8db370673c40d4b8d4ac5de89fe94, type: 3}
@@ -1774,6 +1886,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: shelf_papertowel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9c6c12609f88a44629def27d60227417, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c6c12609f88a44629def27d60227417, type: 3}
 --- !u!1001 &425206184
@@ -1830,6 +1946,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: df2a4c59ea9224ce9930f22b3e30c3fb, type: 3}
       propertyPath: m_Name
       value: kitchentable_sink_large
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: df2a4c59ea9224ce9930f22b3e30c3fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df2a4c59ea9224ce9930f22b3e30c3fb, type: 3}
@@ -1888,6 +2008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair_B
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3995f3b0d3ab44670b03af9992be2a29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3995f3b0d3ab44670b03af9992be2a29, type: 3}
 --- !u!1001 &428256992
@@ -1944,6 +2068,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb3548b9beb404cfa82cdd7d79e5f53a, type: 3}
       propertyPath: m_Name
       value: jar_B_small
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb3548b9beb404cfa82cdd7d79e5f53a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb3548b9beb404cfa82cdd7d79e5f53a, type: 3}
@@ -2002,6 +2130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchencabinet_half
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5a29fec7cb1e64919a9e27d7497a3f9e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a29fec7cb1e64919a9e27d7497a3f9e, type: 3}
 --- !u!1001 &447070001
@@ -2058,6 +2190,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b253a783c90034dac9a950cfa9cd2090, type: 3}
       propertyPath: m_Name
       value: food_ingredient_onion_rings
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b253a783c90034dac9a950cfa9cd2090, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b253a783c90034dac9a950cfa9cd2090, type: 3}
@@ -2116,6 +2252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate_cheese
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f93c1e103336542df95c581b78e6e7c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93c1e103336542df95c581b78e6e7c4, type: 3}
 --- !u!1001 &456220073
@@ -2172,6 +2312,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 23e512de2809b401581fea74da512ccb, type: 3}
       propertyPath: m_Name
       value: papertowel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23e512de2809b401581fea74da512ccb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e512de2809b401581fea74da512ccb, type: 3}
@@ -2230,6 +2374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchencounter_straight_A
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9ddd80381a92d44718c83a9b123c65d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ddd80381a92d44718c83a9b123c65d3, type: 3}
 --- !u!1001 &459651114
@@ -2286,6 +2434,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f3c59d5c2792a461fa85efc3996af4f7, type: 3}
       propertyPath: m_Name
       value: fridge_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f3c59d5c2792a461fa85efc3996af4f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3c59d5c2792a461fa85efc3996af4f7, type: 3}
@@ -2344,6 +2496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_vegetableburger
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 44e100435481f4f98884b4099187c6ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44e100435481f4f98884b4099187c6ad, type: 3}
 --- !u!1001 &499052070
@@ -2400,6 +2556,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 143e5c159f5a440339a9e6a20ac9ed76, type: 3}
       propertyPath: m_Name
       value: kitchencabinet
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 143e5c159f5a440339a9e6a20ac9ed76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 143e5c159f5a440339a9e6a20ac9ed76, type: 3}
@@ -2458,6 +2618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_cheese_chopped
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ce89cd0f9618e4025a2d6de55160df40, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce89cd0f9618e4025a2d6de55160df40, type: 3}
 --- !u!1001 &511046162
@@ -2514,6 +2678,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 79912336fd56847c6918a8154c7df181, type: 3}
       propertyPath: m_Name
       value: plate_dirty
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 79912336fd56847c6918a8154c7df181, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79912336fd56847c6918a8154c7df181, type: 3}
@@ -2572,6 +2740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair_stool
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fe75b2395835472daeeee971538f09d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fe75b2395835472daeeee971538f09d, type: 3}
 --- !u!1001 &537647986
@@ -2628,6 +2800,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7fb3cadfe41b14484b88e18ec2dba451, type: 3}
       propertyPath: m_Name
       value: food_ingredient_burger_cooked
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7fb3cadfe41b14484b88e18ec2dba451, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb3cadfe41b14484b88e18ec2dba451, type: 3}
@@ -2686,6 +2862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bowl_small
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be228632c074a4a74ab2950f534990f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be228632c074a4a74ab2950f534990f2, type: 3}
 --- !u!1001 &559786952
@@ -2742,6 +2922,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a0417c08b1105403d9be531832d1a304, type: 3}
       propertyPath: m_Name
       value: crate_lid
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a0417c08b1105403d9be531832d1a304, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0417c08b1105403d9be531832d1a304, type: 3}
@@ -2800,6 +2984,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: menu
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4eaa00820b9064470bd789028a8056b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eaa00820b9064470bd789028a8056b1, type: 3}
 --- !u!1001 &617518264
@@ -2856,6 +3044,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e54f2de93b16249c687b85094fd4c8aa, type: 3}
       propertyPath: m_Name
       value: food_ingredient_ham_trash
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e54f2de93b16249c687b85094fd4c8aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e54f2de93b16249c687b85094fd4c8aa, type: 3}
@@ -2914,6 +3106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_potato_chopped
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79f4cdf834444460856db6095db8de4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79f4cdf834444460856db6095db8de4, type: 3}
 --- !u!1001 &709981793
@@ -2970,6 +3166,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8e2f959a9635d43a58e5cc92e25cedbf, type: 3}
       propertyPath: m_Name
       value: crate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8e2f959a9635d43a58e5cc92e25cedbf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e2f959a9635d43a58e5cc92e25cedbf, type: 3}
@@ -3028,6 +3228,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchentable_B
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 802d241d6f02c42029ffc77171abc416, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 802d241d6f02c42029ffc77171abc416, type: 3}
 --- !u!1001 &719703941
@@ -3084,6 +3288,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 28c767e419b1f4506b1ba3d02955f755, type: 3}
       propertyPath: m_Name
       value: pillar_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28c767e419b1f4506b1ba3d02955f755, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c767e419b1f4506b1ba3d02955f755, type: 3}
@@ -3142,6 +3350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_ham_cooked
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fe2533f51bef04177a6b07b5becdeb7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe2533f51bef04177a6b07b5becdeb7e, type: 3}
 --- !u!1001 &734487035
@@ -3198,6 +3410,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eb10dfaaf5dfb4aa6b91bcf3d1dd4247, type: 3}
       propertyPath: m_Name
       value: kitchentable_A_large
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eb10dfaaf5dfb4aa6b91bcf3d1dd4247, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb10dfaaf5dfb4aa6b91bcf3d1dd4247, type: 3}
@@ -3256,6 +3472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: door_A
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b8ac44a421f704db69bd0b8c3c3875e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8ac44a421f704db69bd0b8c3c3875e1, type: 3}
 --- !u!1001 &739276496
@@ -3312,6 +3532,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 62ac8c20a63714b4c8d5e85d23c0bbfd, type: 3}
       propertyPath: m_Name
       value: food_ingredient_onion_chopped
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 62ac8c20a63714b4c8d5e85d23c0bbfd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62ac8c20a63714b4c8d5e85d23c0bbfd, type: 3}
@@ -3464,6 +3688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_stew
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8aaefa7db263346c2b714981218fba06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aaefa7db263346c2b714981218fba06, type: 3}
 --- !u!1001 &773319635
@@ -3520,6 +3748,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e3cebc3cc9e7741fe89b22fb38c2f6d6, type: 3}
       propertyPath: m_Name
       value: table_round_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3cebc3cc9e7741fe89b22fb38c2f6d6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3cebc3cc9e7741fe89b22fb38c2f6d6, type: 3}
@@ -3578,6 +3810,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchencounter_innercorner
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dee88e85a904445ddbe7f1a6efd5d2e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dee88e85a904445ddbe7f1a6efd5d2e4, type: 3}
 --- !u!1001 &812341733
@@ -3634,6 +3870,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: be2a5f93606c448ae8b9328773db743b, type: 3}
       propertyPath: m_Name
       value: food_ingredient_vegetableburger_cooked
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be2a5f93606c448ae8b9328773db743b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be2a5f93606c448ae8b9328773db743b, type: 3}
@@ -3692,6 +3932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jar_B_medium
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2fe1c4af2d904e10916997bdb71ea5b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2fe1c4af2d904e10916997bdb71ea5b, type: 3}
 --- !u!1001 &840521445
@@ -3749,8 +3993,109 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_bun_bottom
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f9fab6b3656f44cbeaff91897d8c080b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9fab6b3656f44cbeaff91897d8c080b, type: 3}
+--- !u!1 &859967244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 859967248}
+  - component: {fileID: 859967247}
+  - component: {fileID: 859967246}
+  - component: {fileID: 859967245}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &859967245
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859967244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &859967246
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859967244}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &859967247
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859967244}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &859967248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859967244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -27, y: 112.33594, z: 59}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 146
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &870371019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3805,6 +4150,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a2cec358664474ce992a2a59671dfe47, type: 3}
       propertyPath: m_Name
       value: cuttingboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a2cec358664474ce992a2a59671dfe47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2cec358664474ce992a2a59671dfe47, type: 3}
@@ -3863,6 +4212,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_window_closed
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f58bb064358d64459a5bdbd502321e81, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f58bb064358d64459a5bdbd502321e81, type: 3}
 --- !u!1001 &932550084
@@ -3919,6 +4272,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0ffd1998378634d3f85ba5c7751f73e0, type: 3}
       propertyPath: m_Name
       value: crate_lettuce
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0ffd1998378634d3f85ba5c7751f73e0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ffd1998378634d3f85ba5c7751f73e0, type: 3}
@@ -3977,6 +4334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: knife
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b04788dac9684389b3202e09e2b38a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b04788dac9684389b3202e09e2b38a7, type: 3}
 --- !u!1001 &958304257
@@ -4033,6 +4394,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6d637cdb5cc334978ae19b3fb9910641, type: 3}
       propertyPath: m_Name
       value: kitchencounter_straight_A_backsplash
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6d637cdb5cc334978ae19b3fb9910641, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d637cdb5cc334978ae19b3fb9910641, type: 3}
@@ -4091,6 +4456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pot_B_stew
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b3b2102dfed534e7e9f9432fd9fe4b09, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3b2102dfed534e7e9f9432fd9fe4b09, type: 3}
 --- !u!1001 &996577488
@@ -4147,6 +4516,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f5d366d234d684f5390e37edccae07b8, type: 3}
       propertyPath: m_Name
       value: stew_pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f5d366d234d684f5390e37edccae07b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5d366d234d684f5390e37edccae07b8, type: 3}
@@ -4205,6 +4578,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jar_A_large
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9769bf218bbc642f18b129f154c9e872, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9769bf218bbc642f18b129f154c9e872, type: 3}
 --- !u!1001 &1018731969
@@ -4261,6 +4638,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f63c09e6a9af4409990e60cd2eb0d57e, type: 3}
       propertyPath: m_Name
       value: fridge_A_decorated
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f63c09e6a9af4409990e60cd2eb0d57e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f63c09e6a9af4409990e60cd2eb0d57e, type: 3}
@@ -4319,6 +4700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b3fbce90b7674a2fba6fd822269d775, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b3fbce90b7674a2fba6fd822269d775, type: 3}
 --- !u!1001 &1057746554
@@ -4375,6 +4760,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: db2a0fc9869fe4346b65c2219e06a87b, type: 3}
       propertyPath: m_Name
       value: food_ingredient_bun
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db2a0fc9869fe4346b65c2219e06a87b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db2a0fc9869fe4346b65c2219e06a87b, type: 3}
@@ -4433,6 +4822,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: towelrail
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 53b9f8b0f87dc4e57983d3be91f48ab5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53b9f8b0f87dc4e57983d3be91f48ab5, type: 3}
 --- !u!1001 &1090277702
@@ -4489,6 +4882,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e72050ee4572249819eb65c871cd8cf0, type: 3}
       propertyPath: m_Name
       value: kitchencounter_straight_B_backsplash
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e72050ee4572249819eb65c871cd8cf0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e72050ee4572249819eb65c871cd8cf0, type: 3}
@@ -4547,6 +4944,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table_round_A_small
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68c735004e4444d57b52494a47f70164, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68c735004e4444d57b52494a47f70164, type: 3}
 --- !u!1001 &1101357730
@@ -4603,6 +5004,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c9d5a803f1b3547988edaafb3d93cd19, type: 3}
       propertyPath: m_Name
       value: food_dinner
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c9d5a803f1b3547988edaafb3d93cd19, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9d5a803f1b3547988edaafb3d93cd19, type: 3}
@@ -4661,6 +5066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchencounter_straight_A_decorated
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 245bd3a84d8364adbbcf317393acfec8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 245bd3a84d8364adbbcf317393acfec8, type: 3}
 --- !u!1001 &1175157847
@@ -4717,6 +5126,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6d2d87cac5614449d9901c6bba9ac0b5, type: 3}
       propertyPath: m_Name
       value: stove_multi
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6d2d87cac5614449d9901c6bba9ac0b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d2d87cac5614449d9901c6bba9ac0b5, type: 3}
@@ -4775,6 +5188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_steak
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e7281b3090737432a8ef8b3902e8b57b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7281b3090737432a8ef8b3902e8b57b, type: 3}
 --- !u!1001 &1206721404
@@ -4831,6 +5248,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ca8d3ad9f84f8447f81c5fb1e4572c5c, type: 3}
       propertyPath: m_Name
       value: kitchentable_sink_large_decorated
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ca8d3ad9f84f8447f81c5fb1e4572c5c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca8d3ad9f84f8447f81c5fb1e4572c5c, type: 3}
@@ -4910,14 +5331,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220638731}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.30545843, y: 0.29285708, z: -0.09933028, w: 0.9005906}
+  m_LocalPosition: {x: -1332.6687, y: 1378.0929, z: -1787.3378}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.673, y: 0, z: 0}
 --- !u!1001 &1224348643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4972,6 +5393,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9632b6d5f130e45bd801409e8748efab, type: 3}
       propertyPath: m_Name
       value: food_ingredient_ham
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9632b6d5f130e45bd801409e8748efab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9632b6d5f130e45bd801409e8748efab, type: 3}
@@ -5030,6 +5455,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchencounter_straight_decorated
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0f9f832728ae64e8488de00a89ced360, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f9f832728ae64e8488de00a89ced360, type: 3}
 --- !u!1001 &1285616138
@@ -5086,6 +5515,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c46fb2c908504445ca9bf0c5c5ebc95d, type: 3}
       propertyPath: m_Name
       value: kitchencounter_innercorner_backsplash
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c46fb2c908504445ca9bf0c5c5ebc95d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46fb2c908504445ca9bf0c5c5ebc95d, type: 3}
@@ -5144,6 +5577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate_potatoes
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0be152a522b8d41e8854ecb84d3d1c74, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0be152a522b8d41e8854ecb84d3d1c74, type: 3}
 --- !u!1001 &1304079959
@@ -5200,6 +5637,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 91ff27d1cf25b4190998b7fc7ffab570, type: 3}
       propertyPath: m_Name
       value: crate_buns
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 91ff27d1cf25b4190998b7fc7ffab570, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91ff27d1cf25b4190998b7fc7ffab570, type: 3}
@@ -5258,6 +5699,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchencabinet_corner_half
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 991882beeef2647d784db785d20f7d85, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 991882beeef2647d784db785d20f7d85, type: 3}
 --- !u!1001 &1315621684
@@ -5314,6 +5759,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8d064131d96054e8182bb39617710cf3, type: 3}
       propertyPath: m_Name
       value: food_ingredient_cheese_slice
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d064131d96054e8182bb39617710cf3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d064131d96054e8182bb39617710cf3, type: 3}
@@ -5372,6 +5821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stew_bowl
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: daba28b4f2e2a4b40a8b396b4ac02fec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daba28b4f2e2a4b40a8b396b4ac02fec, type: 3}
 --- !u!1001 &1331295808
@@ -5428,6 +5881,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2a4844560bc9043c3a83cf506bda970a, type: 3}
       propertyPath: m_Name
       value: food_ingredient_potato
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2a4844560bc9043c3a83cf506bda970a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a4844560bc9043c3a83cf506bda970a, type: 3}
@@ -5486,6 +5943,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jar_A_medium
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 737f250cd02dc4db2a1e401e80ce22dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737f250cd02dc4db2a1e401e80ce22dc, type: 3}
 --- !u!1001 &1352939547
@@ -5542,6 +6003,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: abf8b564874284186be73b2448537169, type: 3}
       propertyPath: m_Name
       value: kitchencounter_straight_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: abf8b564874284186be73b2448537169, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf8b564874284186be73b2448537169, type: 3}
@@ -5600,6 +6065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate_steak
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ff515ee9350d842e984530f8c12bd089, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff515ee9350d842e984530f8c12bd089, type: 3}
 --- !u!1001 &1389627597
@@ -5656,6 +6125,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ff1dc34e146784837b2b91c9619cc798, type: 3}
       propertyPath: m_Name
       value: plate_small
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ff1dc34e146784837b2b91c9619cc798, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff1dc34e146784837b2b91c9619cc798, type: 3}
@@ -5714,6 +6187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_potato_mashed
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 009551a4a084746d1aa7c4ad0115174d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 009551a4a084746d1aa7c4ad0115174d, type: 3}
 --- !u!1001 &1442136879
@@ -5770,6 +6247,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fbedb241266bf4db2bde95e2c01e7216, type: 3}
       propertyPath: m_Name
       value: food_ingredient_vegetableburger_uncooked
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fbedb241266bf4db2bde95e2c01e7216, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbedb241266bf4db2bde95e2c01e7216, type: 3}
@@ -5828,6 +6309,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate_carrots
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be907fe9b2acd4f8392d29ab1b61871c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be907fe9b2acd4f8392d29ab1b61871c, type: 3}
 --- !u!1001 &1446339762
@@ -5884,6 +6369,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9bfd4d11fef80410ca663bcf21c495e8, type: 3}
       propertyPath: m_Name
       value: stove_single
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bfd4d11fef80410ca663bcf21c495e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bfd4d11fef80410ca663bcf21c495e8, type: 3}
@@ -5942,6 +6431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pillar_B
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6fd88c65f87d34299a4de8ca437c6cc8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fd88c65f87d34299a4de8ca437c6cc8, type: 3}
 --- !u!1001 &1486639897
@@ -5998,6 +6491,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 467d9ec1b57984018bd2d4db24e8478e, type: 3}
       propertyPath: m_Name
       value: dishrack_plates
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 467d9ec1b57984018bd2d4db24e8478e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 467d9ec1b57984018bd2d4db24e8478e, type: 3}
@@ -6056,6 +6553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_bun_top
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 564e6321fd11648fbbc2a207af9c59f6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 564e6321fd11648fbbc2a207af9c59f6, type: 3}
 --- !u!1001 &1506770109
@@ -6112,6 +6613,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7054355f558ff4124bde2f4026512828, type: 3}
       propertyPath: m_Name
       value: wall_decorated
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7054355f558ff4124bde2f4026512828, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7054355f558ff4124bde2f4026512828, type: 3}
@@ -6170,6 +6675,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jar_C_medium
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1fce0494aedc4454ba5e3f131395020b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fce0494aedc4454ba5e3f131395020b, type: 3}
 --- !u!1001 &1544013942
@@ -6226,6 +6735,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 133318ac573ee457491afb518f9b20cb, type: 3}
       propertyPath: m_Name
       value: kitchencounter_sink
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 133318ac573ee457491afb518f9b20cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 133318ac573ee457491afb518f9b20cb, type: 3}
@@ -6284,6 +6797,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lid_B
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afcbb82c96a204f43991b00ed66bc9b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afcbb82c96a204f43991b00ed66bc9b0, type: 3}
 --- !u!1001 &1556547154
@@ -6340,6 +6857,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2d633b8d2b38f463b8cbcf81e4e602b4, type: 3}
       propertyPath: m_Name
       value: wall_orderwindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d633b8d2b38f463b8cbcf81e4e602b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d633b8d2b38f463b8cbcf81e4e602b4, type: 3}
@@ -6398,6 +6919,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_lettuce_chopped
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3d787b83378d4b3b98deeefb6a11472, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3d787b83378d4b3b98deeefb6a11472, type: 3}
 --- !u!1001 &1567036319
@@ -6454,6 +6979,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 315060ea7c2064074817c0d49440bb5c, type: 3}
       propertyPath: m_Name
       value: fridge_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 315060ea7c2064074817c0d49440bb5c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 315060ea7c2064074817c0d49440bb5c, type: 3}
@@ -6512,6 +7041,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchencounter_outercorner
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 283afdeaee7b24fbd9fd08da26a9d0af, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283afdeaee7b24fbd9fd08da26a9d0af, type: 3}
 --- !u!1001 &1585174867
@@ -6568,6 +7101,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fdd5bd5ed47b247e1bb1abfee6402a47, type: 3}
       propertyPath: m_Name
       value: bowl_dirty
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdd5bd5ed47b247e1bb1abfee6402a47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd5bd5ed47b247e1bb1abfee6402a47, type: 3}
@@ -6626,6 +7163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_window_open
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b57ac24c4380a4e759e3821a115d0dda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b57ac24c4380a4e759e3821a115d0dda, type: 3}
 --- !u!1001 &1645317890
@@ -6682,6 +7223,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 79c140d673cfe42098d8d3cc3decc187, type: 3}
       propertyPath: m_Name
       value: wall_doorway
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 79c140d673cfe42098d8d3cc3decc187, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c140d673cfe42098d8d3cc3decc187, type: 3}
@@ -6740,6 +7285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_burger_uncooked
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b9d41d47cadf4211b064323d64697e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b9d41d47cadf4211b064323d64697e6, type: 3}
 --- !u!1001 &1663738374
@@ -6796,6 +7345,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 33ead471e0293412ab9198d6775df9a3, type: 3}
       propertyPath: m_Name
       value: jar_D_medium
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33ead471e0293412ab9198d6775df9a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33ead471e0293412ab9198d6775df9a3, type: 3}
@@ -6854,6 +7407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jar_A_small
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 631017853bc03489492d5ac3b18ccc41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 631017853bc03489492d5ac3b18ccc41, type: 3}
 --- !u!1001 &1693253036
@@ -6910,6 +7467,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eb0b879ca101d490caa8849dcff07a29, type: 3}
       propertyPath: m_Name
       value: plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eb0b879ca101d490caa8849dcff07a29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb0b879ca101d490caa8849dcff07a29, type: 3}
@@ -6968,6 +7529,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_tomato_slices
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b563efb506b25460a8cb7446672d2376, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b563efb506b25460a8cb7446672d2376, type: 3}
 --- !u!1001 &1710576866
@@ -7024,6 +7589,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: facbdcc18de9b4c33923973ebc0442e4, type: 3}
       propertyPath: m_Name
       value: extractorhood
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: facbdcc18de9b4c33923973ebc0442e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: facbdcc18de9b4c33923973ebc0442e4, type: 3}
@@ -7082,6 +7651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pot_B
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7126c6fd26b56438db90569e7e9aa67b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7126c6fd26b56438db90569e7e9aa67b, type: 3}
 --- !u!1001 &1726273728
@@ -7138,6 +7711,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ebab7d47ead55475ebb4643ffd859cd1, type: 3}
       propertyPath: m_Name
       value: stove_single_countertop
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ebab7d47ead55475ebb4643ffd859cd1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebab7d47ead55475ebb4643ffd859cd1, type: 3}
@@ -7196,6 +7773,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_cheese
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa0eb65267a94434ab9f36120a4e3fc5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa0eb65267a94434ab9f36120a4e3fc5, type: 3}
 --- !u!1001 &1768444694
@@ -7252,6 +7833,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b4577ae267fe04d42bf955cd79c87645, type: 3}
       propertyPath: m_Name
       value: food_ingredient_carrot_chopped
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b4577ae267fe04d42bf955cd79c87645, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4577ae267fe04d42bf955cd79c87645, type: 3}
@@ -7310,6 +7895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pan_A
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc28abe79341f4ed28ed2313e59ac900, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc28abe79341f4ed28ed2313e59ac900, type: 3}
 --- !u!1001 &1784612759
@@ -7366,6 +7955,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0c04879cb1d6a4b65ad50c41c0ef8051, type: 3}
       propertyPath: m_Name
       value: kitchencounter_sink_backsplash
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c04879cb1d6a4b65ad50c41c0ef8051, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c04879cb1d6a4b65ad50c41c0ef8051, type: 3}
@@ -7424,6 +8017,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate_tomatoes
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 20b6125b1a1db4715804ab0cb0118884, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b6125b1a1db4715804ab0cb0118884, type: 3}
 --- !u!1001 &1804370626
@@ -7480,6 +8077,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 775f15dd6ff24409e8ba9f8ec77ea6a1, type: 3}
       propertyPath: m_Name
       value: food_ingredient_lettuce_slice
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775f15dd6ff24409e8ba9f8ec77ea6a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775f15dd6ff24409e8ba9f8ec77ea6a1, type: 3}
@@ -7538,6 +8139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_tomato
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3baae438c31014af78845d5ddcec37f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3baae438c31014af78845d5ddcec37f9, type: 3}
 --- !u!1001 &1810334216
@@ -7594,6 +8199,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fc6e4523238084e8ea928005405a2f03, type: 3}
       propertyPath: m_Name
       value: food_ingredient_onion
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc6e4523238084e8ea928005405a2f03, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc6e4523238084e8ea928005405a2f03, type: 3}
@@ -7652,6 +8261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jar_C_large
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 814517d5f768146839ef226fabe8cc8f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 814517d5f768146839ef226fabe8cc8f, type: 3}
 --- !u!1001 &1844142202
@@ -7708,6 +8321,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9258a75e755bf406f8710b4fcadbd7d2, type: 3}
       propertyPath: m_Name
       value: pan_006
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9258a75e755bf406f8710b4fcadbd7d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9258a75e755bf406f8710b4fcadbd7d2, type: 3}
@@ -7766,6 +8383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floor_kitchen_small
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 62032afdf91ca4e739aa307785fb8834, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62032afdf91ca4e739aa307785fb8834, type: 3}
 --- !u!1001 &1890630625
@@ -7822,6 +8443,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eb792472238a84163bc82086b343587c, type: 3}
       propertyPath: m_Name
       value: stove_multi_decorated
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eb792472238a84163bc82086b343587c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb792472238a84163bc82086b343587c, type: 3}
@@ -7880,6 +8505,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchentable_A
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 650df627d76a84ac487f717caf341ef5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 650df627d76a84ac487f717caf341ef5, type: 3}
 --- !u!1001 &1906306781
@@ -7936,6 +8565,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 52a431e935ddf4a299702f297ebd7ac0, type: 3}
       propertyPath: m_Name
       value: bowl
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 52a431e935ddf4a299702f297ebd7ac0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52a431e935ddf4a299702f297ebd7ac0, type: 3}
@@ -7994,6 +8627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: food_ingredient_carrot_pieces
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 03357e31c746f4c3ab708456f71daae3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03357e31c746f4c3ab708456f71daae3, type: 3}
 --- !u!1001 &1919073756
@@ -8050,6 +8687,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e106726157f8140339f0889c80e7db95, type: 3}
       propertyPath: m_Name
       value: crate_ham
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e106726157f8140339f0889c80e7db95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e106726157f8140339f0889c80e7db95, type: 3}
@@ -8108,6 +8749,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchentable_A_large_decorated
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63c78e18687548f3bdb52ee84491bc0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d63c78e18687548f3bdb52ee84491bc0, type: 3}
 --- !u!1001 &1945026319
@@ -8164,6 +8809,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3e8d069fd05ca40a89f41a503645fa4e, type: 3}
       propertyPath: m_Name
       value: food_ingredient_lettuce
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e8d069fd05ca40a89f41a503645fa4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e8d069fd05ca40a89f41a503645fa4e, type: 3}
@@ -8222,6 +8871,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ketchup
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7c90b3612a79b4f9cbc1b7df9c832a4a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c90b3612a79b4f9cbc1b7df9c832a4a, type: 3}
 --- !u!1001 &2017469035
@@ -8278,6 +8931,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 70e1efb69c39245cc9bb7148f6620cd4, type: 3}
       propertyPath: m_Name
       value: food_ingredient_carrot
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 70e1efb69c39245cc9bb7148f6620cd4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70e1efb69c39245cc9bb7148f6620cd4, type: 3}
@@ -8336,6 +8993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate_onions
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75e40b556f41d4f14adc37990ab5345f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75e40b556f41d4f14adc37990ab5345f, type: 3}
 --- !u!1001 &2054936528
@@ -8392,6 +9053,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 924a5dc06e9a54f0aa48f3f1ac39f948, type: 3}
       propertyPath: m_Name
       value: door_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 924a5dc06e9a54f0aa48f3f1ac39f948, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 924a5dc06e9a54f0aa48f3f1ac39f948, type: 3}
@@ -8450,6 +9115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mustard
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 66f0297ba06da48559531c92baf908e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66f0297ba06da48559531c92baf908e4, type: 3}
 --- !u!1001 &2082911355
@@ -8506,6 +9175,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38038fff132da4a55ad05ccfeb3c3d68, type: 3}
       propertyPath: m_Name
       value: oven
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38038fff132da4a55ad05ccfeb3c3d68, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38038fff132da4a55ad05ccfeb3c3d68, type: 3}

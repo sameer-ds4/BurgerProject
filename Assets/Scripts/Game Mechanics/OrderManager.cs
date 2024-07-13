@@ -58,7 +58,13 @@ public class OrderManager : MonoBehaviour
 	{
 		int index = GameManager.difficultyIndex;
 		int count = gridData.levelDifficulty[index].ordersRange.y;
-		return gridData.levelDifficulty[index].ordersRange[ Random.Range(0, count)];
+		int reult = Random.Range(0, count);
+		// // int reult = gridData.levelDifficulty[index].ordersRange[ Random.Range(0, count) ];
+		// Debug.Log(reult);
+		// // Debug.Log(index);
+		// // Debug.Log(gridData.levelDifficulty[index].ordersRange[ Random.Range(0, count) ]);
+		// // return gridData.levelDifficulty[index].ordersRange[ Random.Range(0, count) ];
+		return reult;
 	}
 	
 	
