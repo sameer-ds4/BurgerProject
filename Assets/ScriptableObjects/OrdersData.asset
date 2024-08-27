@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OrdersData
   m_EditorClassIdentifier: 
   orders:
-  - orderName: Burger 1
+  - orderName: Bacon Burger
     parts:
     - burgerPart: 0
       quantity: 1
@@ -27,7 +27,7 @@ MonoBehaviour:
       quantity: 1
     - burgerPart: 6
       quantity: 2
-  - orderName: Burger 2
+  - orderName: Double Cheese Burger
     parts:
     - burgerPart: 0
       quantity: 1

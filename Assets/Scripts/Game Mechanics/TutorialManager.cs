@@ -47,7 +47,7 @@ public class TutorialManager : MonoBehaviour
 
     public void AdjustArrow()
     {
-        if(arrowIndex > tutPlates.Count - 2)
+        if(arrowIndex > tutPlates.Count - 3)
         {
             arrow.SetActive(false);
             RenamePlates();
