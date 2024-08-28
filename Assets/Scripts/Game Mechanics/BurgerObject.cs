@@ -11,7 +11,7 @@ public class BurgerObject : MonoBehaviour
     
     private void OnEnable() 
     {
-        Tweening.TweenIn_gameObject(this.gameObject, 0.3f, Vector3.one * 0.3f, Vector3.one * 1);    
+        Tweening.TweenIn_gameObject(this.gameObject, 0.8f, Vector3.one * 0.3f, Vector3.one * 1);    
     }
 
     void Start()

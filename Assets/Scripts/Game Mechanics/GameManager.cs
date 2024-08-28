@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 	[Header("Managers")]
 	public GridManager gridManager;
 	public OrderManager orderManager;
+	public AudioManager audioManager;
 
 	[Header("Scene Data")]
 	public Transform foodParent;
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
 	private void Start() 
 	{
 		ResetParams();
+		InitializeAudio();
 	}
 
 	private void ResetParams()
@@ -54,6 +56,11 @@ public class GameManager : MonoBehaviour
 		startPlay = false;
 		ScoreManager.scoreMain = 0;
 		difficultyIndex = 0;
+	}
+
+	private void InitializeAudio()
+	{
+		audioManager.PlayMusic("BG");
 	}
 
 	public void TutorialInitialize()

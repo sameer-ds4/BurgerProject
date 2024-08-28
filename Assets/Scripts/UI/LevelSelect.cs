@@ -18,6 +18,7 @@ public class LevelSelect : MonoBehaviour
 
     public void UpdateLevelInfo_Display(int levelDifficulty)
     {
+        AudioManager.Instance.PlaySound("Click");
         GameManager.difficultyIndex = levelDifficulty;
         levelInd.text = levelInfos[levelDifficulty].level;
         gridInfo.text = "Grid Size - " + levelInfos[levelDifficulty].gridContent;

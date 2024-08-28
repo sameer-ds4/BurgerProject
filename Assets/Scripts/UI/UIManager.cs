@@ -46,6 +46,7 @@ public class UIManager : MonoBehaviour
     public void OnBtn_Click(string name)
     {
         mainMenu.SetActive(false);
+        AudioManager.Instance.PlaySound("Button");
 
         switch (name)
         {

@@ -70,6 +70,7 @@ public class OrderManager : MonoBehaviour
 	
 	public void OrderPlace()
 	{
+		AudioManager.Instance.PlaySound("Order");
 		burgerIndex = ordersData.GetOrderIndex();
 
 		// orderCardSpawnpoint.eulerAngles = new Vector3(90, 0, 0);
