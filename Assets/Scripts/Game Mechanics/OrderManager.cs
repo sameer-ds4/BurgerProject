@@ -75,7 +75,8 @@ public class OrderManager : MonoBehaviour
 
 		// orderCardSpawnpoint.eulerAngles = new Vector3(90, 0, 0);
 
-		orderPlacing = Instantiate(cardPrefab, cardSpawnPoints[ordersSpawned].position, new Quaternion(0, 0, 0, 0), cardParent);
+		// orderPlacing = Instantiate(cardPrefab, cardSpawnPoints[ordersSpawned].position, new Quaternion(0, 0, 0, 0), cardParent);
+		orderPlacing = Instantiate(cardPrefab, cardParent);
 		// Debug.LogError((orderCardSpawnpoint.transform as RectTransform).position);
 		// Debug.LogError((orderCardSpawnpoint.transform as RectTransform).eulerAngles);
 
@@ -213,7 +214,7 @@ public class OrderManager : MonoBehaviour
 		CheckOrderStatus();
 	}
 
-
+	//old way to check for order and rearrange the cards
 	private void ClearOrder(OrderCard obj, int i)
 	{
 		DOVirtual.DelayedCall(1.2f, () =>
@@ -228,6 +229,7 @@ public class OrderManager : MonoBehaviour
 		});
 	}
 
+	//new way to check order status, rearranging managed by layout group for parent of card
 	private void ClearOrder_LS(OrderCard obj, int i)
 	{
 		DOVirtual.DelayedCall(1.2f, () =>

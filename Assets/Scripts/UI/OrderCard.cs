@@ -22,7 +22,7 @@ public class OrderCard : MonoBehaviour
 		// 	gameObject.SetActive(false); 
 		// });
 
-		transform.DOLocalMoveX(1000, 1).OnComplete(() =>
+		transform.DOLocalMoveY(500, 1).OnComplete(() =>
 		{ 
 			gameObject.SetActive(false); 
 		});

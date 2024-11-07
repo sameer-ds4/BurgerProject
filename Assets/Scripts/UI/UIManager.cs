@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private LevelSelect levelMenu;
     [SerializeField] private GameObject inGameSc;
+    [SerializeField] private GameObject pauseSc;
     [SerializeField] private Settings settingsMenu;
     public GameObject gameOver;
     public GameObject levelComp;
@@ -74,12 +75,24 @@ public class UIManager : MonoBehaviour
                 settingsMenu.gameObject.SetActive(true);
                 break;
 
+            case "Pause":
+                PauseGame();
+                break;
+
+            case "Resume":
+                ResumeGame();
+                break;
+
             case "Main":
                 MainMenu_Set();
                 ClosePages();
                 break;
 
             case "Retry":
+                SceneManager.LoadScene(0);
+                break;
+
+            case "Home":
                 SceneManager.LoadScene(0);
                 break;
         }
@@ -129,5 +142,21 @@ public class UIManager : MonoBehaviour
     public void LevelComplete()
     {
         levelComp.gameObject.SetActive(true);
+    }
+
+    private void PauseGame()
+    {
+        inGameSc.SetActive(false);
+        pauseSc.SetActive(true);
+        GameManager.startPlay = false;
+        AudioManager.Instance.ChangeVol_Music();
+    }
+
+    private void ResumeGame()
+    {
+        pauseSc.SetActive(false);
+        inGameSc.SetActive(true);
+        GameManager.startPlay = true;
+        AudioManager.Instance.bgmMixer.audioMixer.SetFloat("BGMvolume", 1);
     }
 }

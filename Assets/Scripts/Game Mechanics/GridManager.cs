@@ -9,6 +9,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
 
     public GridData gridData;
+    public EverMatter_UI everMatter_UI;
 
     [HideInInspector] public Vector2Int gridSize;
     public static BurgerObject[,] gridFormed;
@@ -22,20 +23,32 @@ public class GridManager : MonoBehaviour
 
   private void OnEnable() 
     {
+        PlayerInput.CheckMatch += EverMatterCheck;
         PlayerInput.CheckMatch += BombCheck;
         PlayerInput.CheckMatch += MatchCheck_S;
         PlayerInput.CheckMatch += MatchCheck_H;
         PlayerInput.CheckMatch += MatchCheck_V;
         PlayerInput.MatchRemoval += DestroyMatch;
+
+        EverMatter_UI.CheckMatch_EM += MatchCheck_S;
+        EverMatter_UI.CheckMatch_EM += MatchCheck_H;
+        EverMatter_UI.CheckMatch_EM += MatchCheck_V;
+        EverMatter_UI.MatchRemoval_EM += DestroyMatch;
     }
 
     private void OnDisable() 
     {
+        PlayerInput.CheckMatch -= EverMatterCheck;
         PlayerInput.CheckMatch -= BombCheck;
         PlayerInput.CheckMatch -= MatchCheck_S;
         PlayerInput.CheckMatch -= MatchCheck_H;
         PlayerInput.CheckMatch -= MatchCheck_V;
         PlayerInput.MatchRemoval -= DestroyMatch;
+
+        EverMatter_UI.CheckMatch_EM -= MatchCheck_S;
+        EverMatter_UI.CheckMatch_EM -= MatchCheck_H;
+        EverMatter_UI.CheckMatch_EM -= MatchCheck_V;
+        EverMatter_UI.MatchRemoval_EM -= DestroyMatch;
     }
 
     private void Start()
@@ -81,8 +94,8 @@ public class GridManager : MonoBehaviour
 
     private void CameraSet()
     {
-        // Vector2 middlePoint = new Vector2((3 * ((float)gridSize.y - 1))/2, (-3 * ((float)gridSize.x - 1))/2);    //Mobile Setting
-        Vector2 middlePoint = new Vector2((3 * ((float)gridSize.y - 1))/2, (-3 * ((float)gridSize.x))/2);       //PC Setting
+        Vector2 middlePoint = new Vector2((3 * ((float)gridSize.y - 1))/2, (-3 * ((float)gridSize.x - 1))/2);    //Mobile Setting
+        // Vector2 middlePoint = new Vector2((3 * ((float)gridSize.y - 1))/2, (-3 * ((float)gridSize.x))/2);       //PC Setting
         CameraManager.Instance.SetCameraFocus(middlePoint, gridSize.y - 3);
     }
 
@@ -207,6 +220,47 @@ public class GridManager : MonoBehaviour
 
         bombedObjects.Clear();
         splItemUsed = false;
+    }
+
+
+    public List<BurgerPart> evrMtrObjects;
+    private void EverMatterCheck(int x, int y)
+    {
+        evrMtrObjects.Clear();
+        if(gridFormed[x, y].burgerPart != BurgerPart.evermatter) return;
+        // Debug.LogError("skjbfvksrubvskruyvs rhvbsrhgvbsirvb");
+
+        splItemUsed = true;
+
+        if(x + 1 < gridSize.x && gridFormed[x + 1, y] != null)
+            evrMtrObjects.Add(gridFormed[x + 1, y].burgerPart);
+        else /*if(gridFormed[x + 1, y] == null)*/
+            evrMtrObjects.Add(BurgerPart.bun);
+
+        if(x - 1 >= 0 && gridFormed[x - 1, y] != null)
+            evrMtrObjects.Add(gridFormed[x - 1, y].burgerPart);
+        else /*if(gridFormed[x - 1, y] == null)*/
+            evrMtrObjects.Add(BurgerPart.bun);
+
+        if(y + 1 < gridSize.y && gridFormed[x, y + 1] != null)
+            evrMtrObjects.Add(gridFormed[x, y + 1].burgerPart);
+        else/*if (gridFormed[x, y + 1] == null)*/
+            evrMtrObjects.Add(BurgerPart.bun);
+
+        if(y - 1 >= 0 && gridFormed[x, y - 1] != null)
+            evrMtrObjects.Add(gridFormed[x, y - 1].burgerPart);
+        else /*if(gridFormed[x, y - 1] == null)*/
+            evrMtrObjects.Add(BurgerPart.bun);
+    
+        everMatter_UI.gameObject.SetActive(true);
+        //get the indices and assign to ui
+        
+        everMatter_UI.AssignData(evrMtrObjects, gridFormed[x, y].transform.position, new Vector2Int(x, y));
+
+        gridCount--;
+        Destroy(gridFormed[x, y].gameObject);
+        splItemUsed = false;
+        
     }
 
 

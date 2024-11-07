@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 	public static GameManager Instance;
+	public BurgerObject everMatter;
 
 	[Header("Particle System Data")]
 	public ParticleSystemData _ParticleSystemData;
@@ -104,7 +105,7 @@ public class GameManager : MonoBehaviour
 
 	public BurgerItem Randomize()       // Randomizing burger component
 	{
-		int x = Random.Range(0, foodObjects.burgerItems.Length );
+		int x = Random.Range(0, foodObjects.burgerItems.Length - 1);
 		BurgerItem currentCompenent = foodObjects.burgerItems[x];
 
 		return currentCompenent;
@@ -113,5 +114,13 @@ public class GameManager : MonoBehaviour
 	private void ForceMaxFPS()
 	{
 		Application.targetFrameRate = 120;
+	}
+
+	public void FlipPower()
+	{
+		// burgerItemsList[0].burgerObject = everMatter;
+		// burgerItemsList[0].image = null;
+
+		burgerItemsList[0] = foodObjects.burgerItems[foodObjects.burgerItems.Length - 1];
 	}
 }

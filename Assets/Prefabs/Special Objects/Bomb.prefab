@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStatic: 0
-  burgerPart: 7
+  burgerPart: 6
 --- !u!95 &5520955083872192401
 Animator:
   serializedVersion: 4
